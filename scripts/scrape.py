@@ -56,11 +56,13 @@ AIRLINE_PATTERNS = [
     ("VUELING", "Vueling"),
 ]
 
-DATE_TIME_RE = re.compile(r"^(\d{2}/\d{2})\s+(\d{2}:\d{2})$")
+DATE_RE = re.compile(r"^\d{2}/\d{2}$")
+TIME_RE = re.compile(r"^\d{2}:\d{2}$")
 CITY_RE = re.compile(r"^[A-ZÀÂÄÉÈÊËÎÏÔÖÙÛÜÇ0-9'\-\s]+$")
 
 STATUS_KEYWORDS = {
     "décollé": "decolle",
+    "arrivé": "atterri",
     "atterri": "atterri",
     "prévu": "prevu",
     "retardé": "retarde",
@@ -123,8 +125,19 @@ def slice_section(lines: list[str], start_marker: str, end_markers: list[str]) -
 
 
 def parse_flight_block(lines: list[str]) -> list[dict]:
-    """Reconnaît des triplets/paires (ville, date+heure, compagnie[+statut])
-    dans une liste de lignes de texte."""
+    """Reconnaît des groupes de 5 lignes dans la liste de lignes de texte :
+
+        VILLE
+        JJ/MM
+        HH:MM
+        COMPAGNIE
+        N°VOL [STATUT optionnel, déjà fusionné par extract_lines]
+
+    Ce motif a été identifié à partir du HTML réel de la page (voir
+    discussion de debug). Le site duplique parfois la même entrée dans le
+    HTML (probablement un artefact de mise en page desktop/mobile) : on
+    dédoublonne en fin de fonction sur (destination, date, heure, compagnie).
+    """
     flights = []
     i = 0
     n = len(lines)
@@ -132,21 +145,23 @@ def parse_flight_block(lines: list[str]) -> list[dict]:
         city_line = lines[i]
 
         # La ligne "ville" doit ressembler à une destination (majuscules)
-        # et ne pas être elle-même une ligne date/heure.
-        if not CITY_RE.match(city_line) or DATE_TIME_RE.match(city_line):
+        # et ne pas être elle-même une ligne date ou heure.
+        if not CITY_RE.match(city_line) or DATE_RE.match(city_line) or TIME_RE.match(city_line):
             i += 1
             continue
 
-        if i + 1 >= n:
-            break
-        dt_match = DATE_TIME_RE.match(lines[i + 1])
-        if not dt_match:
+        if i + 4 >= n:
             i += 1
             continue
 
-        date_str, time_str = dt_match.groups()
+        date_line = lines[i + 1]
+        time_line = lines[i + 2]
+        airline_line = lines[i + 3]
+        flight_line = lines[i + 4]
 
-        airline_line = lines[i + 2] if i + 2 < n else ""
+        if not DATE_RE.match(date_line) or not TIME_RE.match(time_line):
+            i += 1
+            continue
 
         airline_name = None
         for pattern, display_name in AIRLINE_PATTERNS:
@@ -154,33 +169,42 @@ def parse_flight_block(lines: list[str]) -> list[dict]:
                 airline_name = display_name
                 break
 
-        # Numéro de vol : dernier "mot" alphanumérique de la ligne compagnie,
-        # avant un éventuel statut. On prend le premier token qui ressemble à
-        # un code de vol (lettres+chiffres, 3 à 8 caractères).
+        # Numéro de vol : premier token alphanumérique du type lettres+chiffres
+        # en début de ligne (ex: "V72182", "FR521").
         flight_number = None
-        flight_num_match = re.search(r"\b([A-Z0-9]{2,3}\d{2,5}[A-Z]?)\b", airline_line)
+        flight_num_match = re.match(r"\s*([A-Z0-9]{2,3}\d{2,5}[A-Z]?)\b", flight_line)
         if flight_num_match:
             flight_number = flight_num_match.group(1)
+            # On retire un éventuel suffixe "P" isolé collé au numéro (ex:
+            # "V77784P"), qui correspond à un doublon de rendu plutôt qu'à
+            # un vrai numéro de vol différent. Voir dédoublonnage plus bas.
 
         status_raw = None
         status_code = None
         delayed = False
         early = False
         for keyword, code in STATUS_KEYWORDS.items():
-            if keyword in airline_line.lower():
+            if keyword in flight_line.lower():
                 status_code = code
-                # On récupère la portion de texte à partir du mot-clé
-                idx = airline_line.lower().find(keyword)
-                status_raw = airline_line[idx:].strip()
+                idx = flight_line.lower().find(keyword)
+                status_raw = flight_line[idx:].strip()
                 delayed = code == "retarde"
                 early = code == "avance"
                 break
 
+        # Clé de dédoublonnage : numéro de vol sans un éventuel "P" isolé en
+        # toute fin (artefact de duplication constaté sur le site).
+        dedupe_flight_number = flight_number
+        if dedupe_flight_number and dedupe_flight_number.endswith("P") and len(dedupe_flight_number) > 1:
+            without_p = dedupe_flight_number[:-1]
+            if re.match(r"^[A-Z0-9]{2,3}\d{2,5}$", without_p):
+                dedupe_flight_number = without_p
+
         flights.append(
             {
                 "destination": city_line.strip(),
-                "date": date_str,
-                "time": time_str,
+                "date": date_line,
+                "time": time_line,
                 "airline": airline_name,
                 "airline_raw": airline_line,
                 "flight_number": flight_number,
@@ -188,11 +212,22 @@ def parse_flight_block(lines: list[str]) -> list[dict]:
                 "status_raw": status_raw,
                 "delayed": delayed,
                 "early": early,
+                "_dedupe_key": (city_line.strip(), date_line, time_line, airline_name, dedupe_flight_number),
             }
         )
-        i += 3
+        i += 5
 
-    return flights
+    # Dédoublonnage : on garde une seule entrée par clé, en préférant celle
+    # qui porte un statut (plus d'information) si les autres n'en ont pas.
+    deduped: dict[tuple, dict] = {}
+    for f in flights:
+        key = f.pop("_dedupe_key")
+        if key not in deduped:
+            deduped[key] = f
+        elif not deduped[key].get("status_raw") and f.get("status_raw"):
+            deduped[key] = f
+
+    return list(deduped.values())
 
 
 def build_payload(html: str) -> dict:
