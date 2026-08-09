@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f1b2d">
+<title>LDE Vols — Infos taxis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0f1b2d;
+    --ink-2:#16263d;
+    --paper:#f6f1e4;
+    --paper-dim:#e9e0c9;
+    --line:#3a4a63;
+    --line-soft:#c9bf9f;
+    --rust:#b8541f;
+    --pine:#2f6f62;
+    --gold:#e0a94b;
+    --ryanair:#0a3d91;
+    --ryanair-accent:#f4c430;
+    --volotea:#b0206e;
+    --text-hi:#f6f1e4;
+    --text-lo:#aeb9c9;
+    --radius:14px;
+  }
+  *{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
+  html,body{margin:0; padding:0; height:100%;}
+  body{
+    background:var(--ink);
+    background-image:
+      radial-gradient(ellipse at 50% -10%, #1c3050 0%, var(--ink) 55%);
+    color:var(--text-hi);
+    font-family:'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing:antialiased;
+    min-height:100vh;
+    padding-bottom:40px;
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky; top:0; z-index:20;
+    background:linear-gradient(180deg, var(--ink) 70%, rgba(15,27,45,0.94));
+    backdrop-filter:blur(6px);
+    padding:14px 16px 0;
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .mountains{
+    position:absolute; inset:0; z-index:-1;
+    opacity:0.35;
+    pointer-events:none;
+  }
+  .top-row{display:flex; align-items:baseline; justify-content:space-between;}
+  .brand{display:flex; align-items:baseline; gap:8px;}
+  .brand .code{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:700; font-size:22px; letter-spacing:0.5px;
+  }
+  .brand .sub{
+    font-size:11px; text-transform:uppercase; letter-spacing:1.4px;
+    color:var(--text-lo);
+  }
+  .clock{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:15px; font-weight:600; color:var(--gold);
+    text-align:right;
+  }
+  .updated-row{
+    display:flex; align-items:center; gap:6px;
+    font-size:11.5px; color:var(--text-lo);
+    padding:6px 0 10px;
+  }
+  .dot{width:7px; height:7px; border-radius:50%; background:var(--pine); flex:none;}
+  .dot.stale{background:var(--rust);}
+  #refreshBtn{
+    margin-left:auto;
+    background:none; border:1px solid rgba(255,255,255,0.18);
+    color:var(--text-hi); font-size:11.5px; padding:5px 10px;
+    border-radius:999px; font-family:'Inter'; cursor:pointer;
+  }
+  #refreshBtn:active{background:rgba(255,255,255,0.1);}
+
+  /* ---------- Tabs (Départs / Arrivées) ---------- */
+  .tabs{display:flex; gap:8px; padding:2px 0 12px;}
+  .tab{
+    flex:1; text-align:center;
+    padding:10px 0; font-weight:600; font-size:14.5px;
+    border-radius:10px 10px 0 0;
+    color:var(--text-lo); background:transparent;
+    border:none; font-family:'Inter'; cursor:pointer;
+    border-bottom:3px solid transparent;
+  }
+  .tab.active{color:var(--text-hi); border-bottom-color:var(--gold);}
+
+  /* ---------- Filter chips ---------- */
+  .filters{
+    display:flex; gap:8px; padding:12px 16px 4px;
+    overflow-x:auto; scrollbar-width:none;
+  }
+  .filters::-webkit-scrollbar{display:none;}
+  .chip{
+    flex:none;
+    padding:8px 14px;
+    border-radius:999px;
+    font-size:13px; font-weight:600;
+    background:var(--ink-2); color:var(--text-lo);
+    border:1px solid rgba(255,255,255,0.1);
+    font-family:'Inter'; cursor:pointer;
+    display:flex; align-items:center; gap:6px;
+  }
+  .chip .swatch{width:8px; height:8px; border-radius:2px;}
+  .chip.active{
+    background:var(--paper); color:var(--ink); border-color:var(--paper);
+  }
+
+  /* ---------- Flight list ---------- */
+  main{padding:14px 16px 8px;}
+  .empty{
+    text-align:center; color:var(--text-lo); padding:60px 20px;
+    font-size:14px; line-height:1.6;
+  }
+  .card{
+    position:relative;
+    background:var(--paper);
+    color:var(--ink);
+    border-radius:var(--radius);
+    padding:14px 16px 14px 18px;
+    margin-bottom:10px;
+    display:flex; align-items:center; gap:14px;
+    border-left:5px solid var(--pine);
+    box-shadow:0 2px 10px rgba(0,0,0,0.25);
+  }
+  .card.delayed{border-left-color:var(--rust);}
+  .card.cancelled{border-left-color:#7a1f1f; opacity:0.75;}
+  .card .time-block{
+    font-family:'IBM Plex Mono', monospace;
+    text-align:center; flex:none; width:64px;
+  }
+  .card .time-block .time{font-size:19px; font-weight:600; line-height:1.1;}
+  .card .time-block .date{font-size:10.5px; color:#6b6250; margin-top:2px;}
+  .card .sep{width:1px; align-self:stretch; background:var(--line-soft); flex:none;}
+  .card .details{flex:1; min-width:0;}
+  .card .dest{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:700; font-size:16px;
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  }
+  .card .meta{
+    display:flex; align-items:center; gap:6px; flex-wrap:wrap;
+    margin-top:5px;
+  }
+  .tag{
+    font-size:10.5px; font-weight:700; letter-spacing:0.3px;
+    padding:2px 7px; border-radius:5px; color:#fff;
+    text-transform:uppercase;
+  }
+  .tag.ryanair{background:var(--ryanair); color:var(--ryanair-accent);}
+  .tag.volotea{background:var(--volotea);}
+  .tag.other{background:#5a5240; color:#f0e9d4;}
+  .flightno{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px; color:#5c5442;
+  }
+  .status{
+    font-size:11.5px; font-weight:700;
+    color:var(--pine);
+  }
+  .status.delayed{color:var(--rust);}
+  .status.cancelled{color:#7a1f1f;}
+
+  footer{
+    text-align:center; color:var(--text-lo); font-size:11px;
+    padding:18px 20px 4px; line-height:1.6;
+  }
+  footer a{color:var(--text-lo);}
+</style>
+</head>
+<body>
+
+<header>
+  <svg class="mountains" viewBox="0 0 400 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,90 L40,40 L70,62 L110,20 L150,58 L190,32 L230,66 L270,28 L310,54 L340,18 L400,90 Z" fill="#1c3050"/>
+  </svg>
+  <div class="top-row">
+    <div class="brand">
+      <span class="code">LDE</span>
+      <span class="sub">Tarbes · Lourdes · Pyrénées</span>
+    </div>
+    <div class="clock" id="clock">--:--</div>
+  </div>
+  <div class="updated-row">
+    <span class="dot" id="statusDot"></span>
+    <span id="updatedLabel">Chargement…</span>
+    <button id="refreshBtn">Actualiser</button>
+  </div>
+  <div class="tabs">
+    <button class="tab active" data-tab="arrivals">Arrivées</button>
+    <button class="tab" data-tab="departures">Départs</button>
+  </div>
+  <div class="filters" id="filters">
+    <button class="chip active" data-airline="all">Toutes</button>
+    <button class="chip" data-airline="Ryanair"><span class="swatch" style="background:var(--ryanair-accent)"></span>Ryanair</button>
+    <button class="chip" data-airline="Volotea"><span class="swatch" style="background:var(--volotea)"></span>Volotea</button>
+    <button class="chip" data-airline="other"><span class="swatch" style="background:#8a8163"></span>Autres</button>
+  </div>
+</header>
+
+<main id="main">
+  <div class="empty">Chargement des vols…</div>
+</main>
+
+<footer>
+  Données extraites automatiquement de la page « Infos vols du jour » de
+  l'Aéroport Tarbes-Lourdes-Pyrénées. Vérifier les horaires en cas de doute.
+</footer>
+
+<script>
+const DATA_URL = 'data/flights.json';
+let flightsData = null;
+let currentTab = 'arrivals';
+let currentAirline = 'all';
+
+function updateClock(){
+  const now = new Date();
+  document.getElementById('clock').textContent =
+    now.toLocaleTimeString('fr-FR', {hour:'2-digit', minute:'2-digit'});
+}
+setInterval(updateClock, 1000);
+updateClock();
+
+function airlineTagClass(airline){
+  if(airline === 'Ryanair') return 'ryanair';
+  if(airline === 'Volotea') return 'volotea';
+  return 'other';
+}
+
+function matchesFilter(flight){
+  if(currentAirline === 'all') return true;
+  if(currentAirline === 'other') return flight.airline !== 'Ryanair' && flight.airline !== 'Volotea';
+  return flight.airline === currentAirline;
+}
+
+function statusLabel(flight){
+  if(!flight.status_code) return null;
+  const map = {
+    decolle: {text: flight.status_raw, cls: ''},
+    atterri: {text: flight.status_raw, cls: ''},
+    prevu:   {text: flight.status_raw, cls: ''},
+    retarde: {text: flight.status_raw || 'Retardé', cls: 'delayed'},
+    annule:  {text: flight.status_raw || 'Annulé', cls: 'cancelled'},
+    embarquement: {text: flight.status_raw, cls: ''}
+  };
+  return map[flight.status_code] || {text: flight.status_raw, cls: ''};
+}
+
+function renderList(){
+  const main = document.getElementById('main');
+  if(!flightsData){
+    main.innerHTML = '<div class="empty">Chargement des vols…</div>';
+    return;
+  }
+  const list = (currentTab === 'arrivals' ? flightsData.arrivals : flightsData.departures)
+    .filter(matchesFilter);
+
+  if(list.length === 0){
+    main.innerHTML = '<div class="empty">Aucun vol pour ce filtre.</div>';
+    return;
+  }
+
+  main.innerHTML = list.map(f => {
+    const status = statusLabel(f);
+    const cardClass = status && status.cls === 'delayed' ? 'card delayed'
+                      : status && status.cls === 'cancelled' ? 'card cancelled'
+                      : 'card';
+    const tagCls = airlineTagClass(f.airline);
+    const airlineLabel = f.airline || 'Autre';
+    return `
+      <div class="${cardClass}">
+        <div class="time-block">
+          <div class="time">${f.time}</div>
+          <div class="date">${f.date}</div>
+        </div>
+        <div class="sep"></div>
+        <div class="details">
+          <div class="dest">${f.destination}</div>
+          <div class="meta">
+            <span class="tag ${tagCls}">${airlineLabel}</span>
+            ${f.flight_number ? `<span class="flightno">${f.flight_number}</span>` : ''}
+            ${status ? `<span class="status ${status.cls}">${status.text}</span>` : ''}
+          </div>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+function formatUpdated(iso){
+  try{
+    const d = new Date(iso);
+    return 'MAJ ' + d.toLocaleTimeString('fr-FR', {hour:'2-digit', minute:'2-digit'});
+  }catch(e){
+    return 'MAJ inconnue';
+  }
+}
+
+async function loadData(){
+  const dot = document.getElementById('statusDot');
+  const label = document.getElementById('updatedLabel');
+  try{
+    const res = await fetch(DATA_URL + '?t=' + Date.now(), {cache:'no-store'});
+    if(!res.ok) throw new Error('HTTP ' + res.status);
+    flightsData = await res.json();
+
+    const scrapedAt = new Date(flightsData.scraped_at);
+    const ageMinutes = (Date.now() - scrapedAt.getTime()) / 60000;
+    if(ageMinutes > 20){
+      dot.classList.add('stale');
+      label.textContent = formatUpdated(flightsData.scraped_at) + ' (données anciennes)';
+    } else {
+      dot.classList.remove('stale');
+      label.textContent = formatUpdated(flightsData.scraped_at);
+    }
+    renderList();
+  }catch(err){
+    dot.classList.add('stale');
+    label.textContent = 'Erreur de chargement des données';
+    if(!flightsData){
+      document.getElementById('main').innerHTML =
+        '<div class="empty">Impossible de charger les vols.<br>Vérifiez la connexion et réessayez.</div>';
+    }
+    console.error(err);
+  }
+}
+
+document.querySelectorAll('.tab').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentTab = btn.dataset.tab;
+    renderList();
+  });
+});
+
+document.querySelectorAll('.chip').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.chip').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentAirline = btn.dataset.airline;
+    renderList();
+  });
+});
+
+document.getElementById('refreshBtn').addEventListener('click', loadData);
+
+loadData();
+setInterval(loadData, 60000); // ré-interroge le JSON toutes les 60s
+</script>
+</body>
+</html>
