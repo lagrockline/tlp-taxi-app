@@ -1,0 +1,37 @@
+name: Mise à jour des vols
+
+on:
+  schedule:
+    # Toutes les 5 minutes. GitHub peut retarder légèrement l'exécution
+    # en période de forte charge sur ses runners.
+    - cron: '*/5 * * * *'
+  workflow_dispatch: {}  # permet de déclencher manuellement depuis l'onglet Actions
+
+permissions:
+  contents: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout du dépôt
+        uses: actions/checkout@v4
+
+      - name: Installer Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Installer les dépendances
+        run: pip install requests beautifulsoup4
+
+      - name: Lancer le scraper
+        run: python scripts/scrape.py
+
+      - name: Commit et push si changement
+        run: |
+          git config user.name "tlp-taxi-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/flights.json
+          git diff --cached --quiet || git commit -m "Mise à jour des vols $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+          git push
