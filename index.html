@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0f1b2d">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.png">
 <title>LDE Vols — Infos taxis</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -74,12 +76,53 @@
   .dot{width:7px; height:7px; border-radius:50%; background:var(--pine); flex:none;}
   .dot.stale{background:var(--rust);}
   #refreshBtn{
-    margin-left:auto;
     background:none; border:1px solid rgba(255,255,255,0.18);
     color:var(--text-hi); font-size:11.5px; padding:5px 10px;
     border-radius:999px; font-family:'Inter'; cursor:pointer;
   }
   #refreshBtn:active{background:rgba(255,255,255,0.1);}
+
+  #soundBtn, #pushBtn{
+    background:none; border:1px solid rgba(255,255,255,0.18);
+    color:var(--text-lo); font-size:14px; padding:5px 9px;
+    border-radius:999px; font-family:'Inter'; cursor:pointer;
+    display:flex; align-items:center; gap:5px;
+  }
+  #soundBtn{margin-left:auto;}
+  #soundBtn.on, #pushBtn.on{color:var(--gold); border-color:var(--gold);}
+  #pushBtn:disabled{opacity:0.4; cursor:not-allowed;}
+
+  /* ---------- Alert toast ---------- */
+  #alertStack{
+    position:fixed; top:8px; left:8px; right:8px; z-index:100;
+    display:flex; flex-direction:column; gap:8px;
+    pointer-events:none;
+  }
+  .toast{
+    pointer-events:auto;
+    background:var(--rust);
+    color:#fff5ea;
+    border-radius:12px;
+    padding:12px 14px;
+    box-shadow:0 6px 20px rgba(0,0,0,0.4);
+    display:flex; align-items:center; gap:10px;
+    animation:slideIn 0.25s ease-out, fadeOut 0.4s ease-in 5.6s forwards;
+    border:1px solid rgba(255,255,255,0.25);
+  }
+  .toast.early{background:var(--pine);}
+  .toast .icon{font-size:20px; flex:none;}
+  .toast .body{flex:1; min-width:0;}
+  .toast .headline{font-weight:700; font-size:13.5px;}
+  .toast .sub{font-size:12px; opacity:0.9; margin-top:1px;}
+  @keyframes slideIn{from{transform:translateY(-14px); opacity:0;} to{transform:translateY(0); opacity:1;}}
+  @keyframes fadeOut{to{opacity:0; transform:translateY(-8px);}}
+
+  @keyframes pulseRing{
+    0%{box-shadow:0 0 0 0 rgba(184,84,31,0.55);}
+    70%{box-shadow:0 0 0 10px rgba(184,84,31,0);}
+    100%{box-shadow:0 0 0 0 rgba(184,84,31,0);}
+  }
+  .card.just-changed{animation:pulseRing 1.4s ease-out 3;}
 
   /* ---------- Tabs (Départs / Arrivées) ---------- */
   .tabs{display:flex; gap:8px; padding:2px 0 12px;}
@@ -178,6 +221,8 @@
 </head>
 <body>
 
+<div id="alertStack"></div>
+
 <header>
   <svg class="mountains" viewBox="0 0 400 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M0,90 L40,40 L70,62 L110,20 L150,58 L190,32 L230,66 L270,28 L310,54 L340,18 L400,90 Z" fill="#1c3050"/>
@@ -193,6 +238,11 @@
     <span class="dot" id="statusDot"></span>
     <span id="updatedLabel">Chargement…</span>
     <button id="refreshBtn">Actualiser</button>
+    <button id="soundBtn" title="Activer les alertes sonores">🔕 <span id="soundLabel">Son off</span></button>
+  </div>
+  <div class="updated-row" id="pushRow" style="padding-top:0;">
+    <button id="pushBtn" title="Activer les notifications, même app fermée">🔕 <span id="pushLabel">Notifs off</span></button>
+    <span id="pushHint" style="font-size:11px; color:var(--text-lo); margin-left:8px;"></span>
   </div>
   <div class="tabs">
     <button class="tab active" data-tab="arrivals">Arrivées</button>
@@ -217,9 +267,135 @@
 
 <script>
 const DATA_URL = 'data/flights.json';
+
+// ---------- Configuration des notifications push ----------
+// À REMPLIR après avoir généré vos clés VAPID et déployé le Worker
+// Cloudflare (voir README.md). Tant que ces valeurs sont vides, le bouton
+// "Notifications" reste désactivé avec un message explicatif.
+const PUSH_CONFIG = {
+  vapidPublicKey: '', // ex: 'BN4Gv...longue_chaine_urlsafe_base64'
+  workerSubscribeUrl: '', // ex: 'https://tlp-taxi-push.<compte>.workers.dev/subscribe'
+};
+
 let flightsData = null;
+let previousFlightsData = null;
 let currentTab = 'arrivals';
 let currentAirline = 'all';
+let soundEnabled = false;
+let audioCtx = null;
+let justChangedKeys = new Set();
+
+// ---------- Son (généré en JS, pas de fichier externe) ----------
+function ensureAudioContext(){
+  if(!audioCtx){
+    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  }
+  if(audioCtx.state === 'suspended'){
+    audioCtx.resume();
+  }
+}
+
+function playAlertTone(kind){
+  if(!soundEnabled || !audioCtx) return;
+  const now = audioCtx.currentTime;
+  // Retard : deux bips graves et insistants. Avance : deux bips clairs et courts.
+  const freqs = kind === 'early' ? [880, 1046] : [523, 392];
+  freqs.forEach((freq, i) => {
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    osc.type = 'sine';
+    osc.frequency.value = freq;
+    const start = now + i * 0.22;
+    gain.gain.setValueAtTime(0, start);
+    gain.gain.linearRampToValueAtTime(0.35, start + 0.02);
+    gain.gain.linearRampToValueAtTime(0, start + 0.18);
+    osc.connect(gain).connect(audioCtx.destination);
+    osc.start(start);
+    osc.stop(start + 0.2);
+  });
+}
+
+document.getElementById('soundBtn').addEventListener('click', () => {
+  soundEnabled = !soundEnabled;
+  const btn = document.getElementById('soundBtn');
+  const label = document.getElementById('soundLabel');
+  if(soundEnabled){
+    ensureAudioContext();
+    btn.classList.add('on');
+    btn.firstChild.textContent = '🔔 ';
+    label.textContent = 'Son on';
+    playAlertTone('early'); // petit bip de confirmation
+  } else {
+    btn.classList.remove('on');
+    btn.firstChild.textContent = '🔕 ';
+    label.textContent = 'Son off';
+  }
+});
+
+// ---------- Détection des changements de statut ----------
+function flightKey(type, f){
+  return `${type}-${f.destination}-${f.date}-${f.time}-${f.flight_number || ''}`;
+}
+
+function showToast(kind, headline, sub){
+  const stack = document.getElementById('alertStack');
+  const toast = document.createElement('div');
+  toast.className = 'toast' + (kind === 'early' ? ' early' : '');
+  toast.innerHTML = `
+    <div class="icon">${kind === 'early' ? '⏱️' : '⚠️'}</div>
+    <div class="body">
+      <div class="headline">${headline}</div>
+      <div class="sub">${sub}</div>
+    </div>
+  `;
+  stack.appendChild(toast);
+  setTimeout(() => toast.remove(), 6200);
+}
+
+function detectChangesAndAlert(oldData, newData){
+  if(!oldData) return; // pas d'alerte au tout premier chargement
+
+  const oldMap = new Map();
+  ['departures', 'arrivals'].forEach(type => {
+    (oldData[type] || []).forEach(f => oldMap.set(flightKey(type, f), f));
+  });
+
+  justChangedKeys = new Set();
+
+  ['departures', 'arrivals'].forEach(type => {
+    (newData[type] || []).forEach(f => {
+      const key = flightKey(type, f);
+      const prev = oldMap.get(key);
+      const wasDelayed = prev && prev.status_code === 'retarde';
+      const wasEarly = prev && prev.status_code === 'avance';
+      const nowDelayed = f.status_code === 'retarde';
+      const nowEarly = f.status_code === 'avance';
+
+      if(nowDelayed && !wasDelayed){
+        justChangedKeys.add(key);
+        const label = type === 'departures' ? 'Départ' : 'Arrivée';
+        showToast('delayed', `${label} retardé — ${f.destination}`,
+          `${f.airline || ''} ${f.flight_number || ''} · ${f.time} · ${f.status_raw || 'Retardé'}`.trim());
+        playAlertTone('delayed');
+        if(navigator.vibrate) navigator.vibrate([250, 100, 250, 100, 250]);
+      } else if(nowEarly && !wasEarly){
+        justChangedKeys.add(key);
+        const label = type === 'departures' ? 'Départ' : 'Arrivée';
+        showToast('early', `${label} en avance — ${f.destination}`,
+          `${f.airline || ''} ${f.flight_number || ''} · ${f.time} · ${f.status_raw || 'En avance'}`.trim());
+        playAlertTone('early');
+        if(navigator.vibrate) navigator.vibrate([150, 80, 150]);
+      }
+    });
+  });
+
+  if(justChangedKeys.size > 0){
+    setTimeout(() => {
+      justChangedKeys = new Set();
+      renderList();
+    }, 15000);
+  }
+}
 
 function updateClock(){
   const now = new Date();
@@ -248,6 +424,7 @@ function statusLabel(flight){
     atterri: {text: flight.status_raw, cls: ''},
     prevu:   {text: flight.status_raw, cls: ''},
     retarde: {text: flight.status_raw || 'Retardé', cls: 'delayed'},
+    avance:  {text: flight.status_raw || 'En avance', cls: 'early'},
     annule:  {text: flight.status_raw || 'Annulé', cls: 'cancelled'},
     embarquement: {text: flight.status_raw, cls: ''}
   };
@@ -270,9 +447,11 @@ function renderList(){
 
   main.innerHTML = list.map(f => {
     const status = statusLabel(f);
-    const cardClass = status && status.cls === 'delayed' ? 'card delayed'
+    let cardClass = status && status.cls === 'delayed' ? 'card delayed'
                       : status && status.cls === 'cancelled' ? 'card cancelled'
                       : 'card';
+    const key = flightKey(currentTab, f);
+    if(justChangedKeys.has(key)) cardClass += ' just-changed';
     const tagCls = airlineTagClass(f.airline);
     const airlineLabel = f.airline || 'Autre';
     return `
@@ -310,7 +489,17 @@ async function loadData(){
   try{
     const res = await fetch(DATA_URL + '?t=' + Date.now(), {cache:'no-store'});
     if(!res.ok) throw new Error('HTTP ' + res.status);
-    flightsData = await res.json();
+    const newData = await res.json();
+
+    // On ne compare que si la donnée a réellement changé (nouvel horodatage),
+    // pour ne pas re-déclencher d'alerte sur un fetch qui renvoie le même JSON.
+    if(!flightsData || newData.scraped_at !== flightsData.scraped_at){
+      detectChangesAndAlert(flightsData, newData);
+      previousFlightsData = flightsData;
+    } else {
+      justChangedKeys = new Set();
+    }
+    flightsData = newData;
 
     const scrapedAt = new Date(flightsData.scraped_at);
     const ageMinutes = (Date.now() - scrapedAt.getTime()) / 60000;
@@ -355,6 +544,105 @@ document.getElementById('refreshBtn').addEventListener('click', loadData);
 
 loadData();
 setInterval(loadData, 60000); // ré-interroge le JSON toutes les 60s
+
+// ---------- Notifications push (fonctionnent même app fermée / téléphone verrouillé) ----------
+function urlBase64ToUint8Array(base64String){
+  const padding = '='.repeat((4 - base64String.length % 4) % 4);
+  const base64 = (base64String + padding).replace(/-/g, '+').replace(/_/g, '/');
+  const rawData = atob(base64);
+  return Uint8Array.from([...rawData].map(c => c.charCodeAt(0)));
+}
+
+const pushBtn = document.getElementById('pushBtn');
+const pushLabel = document.getElementById('pushLabel');
+const pushHint = document.getElementById('pushHint');
+
+function setPushUI(state, hint){
+  // state: 'unsupported' | 'unconfigured' | 'off' | 'on' | 'pending' | 'denied'
+  pushHint.textContent = hint || '';
+  if(state === 'on'){
+    pushBtn.classList.add('on');
+    pushBtn.firstChild.textContent = '🔔 ';
+    pushLabel.textContent = 'Notifs on';
+    pushBtn.disabled = false;
+  } else if(state === 'pending'){
+    pushBtn.classList.remove('on');
+    pushBtn.firstChild.textContent = '⏳ ';
+    pushLabel.textContent = '...';
+    pushBtn.disabled = true;
+  } else {
+    pushBtn.classList.remove('on');
+    pushBtn.firstChild.textContent = '🔕 ';
+    pushLabel.textContent = 'Notifs off';
+    pushBtn.disabled = (state === 'unsupported' || state === 'unconfigured' || state === 'denied');
+  }
+}
+
+async function initPush(){
+  if(!('serviceWorker' in navigator) || !('PushManager' in window)){
+    setPushUI('unsupported', 'Non supporté par ce navigateur');
+    return;
+  }
+  if(!PUSH_CONFIG.vapidPublicKey || !PUSH_CONFIG.workerSubscribeUrl){
+    setPushUI('unconfigured', 'Notifications pas encore configurées');
+    return;
+  }
+
+  const registration = await navigator.serviceWorker.register('sw.js');
+  const existing = await registration.pushManager.getSubscription();
+
+  if(existing){
+    setPushUI('on');
+    return;
+  }
+
+  if(Notification.permission === 'denied'){
+    setPushUI('denied', 'Bloqué dans les réglages du téléphone');
+    return;
+  }
+
+  setPushUI('off');
+}
+
+async function subscribeToPush(){
+  setPushUI('pending');
+  try{
+    const permission = await Notification.requestPermission();
+    if(permission !== 'granted'){
+      setPushUI('denied', 'Autorisation refusée');
+      return;
+    }
+
+    const registration = await navigator.serviceWorker.ready;
+    const subscription = await registration.pushManager.subscribe({
+      userVisibleOnly: true,
+      applicationServerKey: urlBase64ToUint8Array(PUSH_CONFIG.vapidPublicKey),
+    });
+
+    const res = await fetch(PUSH_CONFIG.workerSubscribeUrl, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(subscription),
+    });
+    if(!res.ok) throw new Error('HTTP ' + res.status);
+
+    setPushUI('on');
+  }catch(err){
+    console.error('Échec abonnement push', err);
+    setPushUI('off', "Échec de l'activation, réessayez");
+  }
+}
+
+pushBtn.addEventListener('click', () => {
+  if(pushBtn.classList.contains('on')){
+    // Déjà activé : rien à faire ici (désabonnement possible via les
+    // réglages de notifications du téléphone).
+    return;
+  }
+  subscribeToPush();
+});
+
+initPush();
 </script>
 </body>
 </html>

@@ -64,6 +64,8 @@ STATUS_KEYWORDS = {
     "atterri": "atterri",
     "prévu": "prevu",
     "retardé": "retarde",
+    "en avance": "avance",
+    "avancé": "avance",
     "annulé": "annule",
     "embarquement": "embarquement",
 }
@@ -163,6 +165,7 @@ def parse_flight_block(lines: list[str]) -> list[dict]:
         status_raw = None
         status_code = None
         delayed = False
+        early = False
         for keyword, code in STATUS_KEYWORDS.items():
             if keyword in airline_line.lower():
                 status_code = code
@@ -170,6 +173,7 @@ def parse_flight_block(lines: list[str]) -> list[dict]:
                 idx = airline_line.lower().find(keyword)
                 status_raw = airline_line[idx:].strip()
                 delayed = code == "retarde"
+                early = code == "avance"
                 break
 
         flights.append(
@@ -183,6 +187,7 @@ def parse_flight_block(lines: list[str]) -> list[dict]:
                 "status_code": status_code,
                 "status_raw": status_raw,
                 "delayed": delayed,
+                "early": early,
             }
         )
         i += 3
@@ -215,6 +220,44 @@ def build_payload(html: str) -> dict:
     }
 
 
+def flight_key(flight_type: str, flight: dict) -> str:
+    return "|".join(
+        [
+            flight_type,
+            flight.get("destination", ""),
+            flight.get("date", ""),
+            flight.get("time", ""),
+            flight.get("flight_number") or "",
+        ]
+    )
+
+
+def compute_alerts(old_payload: dict | None, new_payload: dict) -> list[dict]:
+    """Compare l'ancien et le nouveau relevé de vols et retourne la liste des
+    vols qui viennent de passer en retard ou en avance (nouveau changement,
+    pas déjà signalé au tour précédent)."""
+    if not old_payload:
+        return []
+
+    old_status = {}
+    for flight_type in ("departures", "arrivals"):
+        for f in old_payload.get(flight_type, []):
+            old_status[flight_key(flight_type, f)] = f.get("status_code")
+
+    alerts = []
+    for flight_type in ("departures", "arrivals"):
+        for f in new_payload.get(flight_type, []):
+            key = flight_key(flight_type, f)
+            prev_status = old_status.get(key)
+            new_status = f.get("status_code")
+            if new_status == "retarde" and prev_status != "retarde":
+                alerts.append({"type": flight_type, "kind": "retarde", "flight": f})
+            elif new_status == "avance" and prev_status != "avance":
+                alerts.append({"type": flight_type, "kind": "avance", "flight": f})
+
+    return alerts
+
+
 def main() -> int:
     try:
         html = fetch_html(SOURCE_URL)
@@ -234,11 +277,27 @@ def main() -> int:
         )
         return 2
 
+    old_payload = None
+    if OUTPUT_PATH.exists():
+        try:
+            old_payload = json.loads(OUTPUT_PATH.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            old_payload = None
+
+    alerts = compute_alerts(old_payload, payload)
+
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT_PATH.write_text(
         json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8"
     )
+
+    # Fichier éphémère (non commité) utilisé par send_push.py dans la même
+    # exécution du workflow, pour savoir quelles notifications envoyer.
+    alerts_path = OUTPUT_PATH.parent / "_pending_alerts.json"
+    alerts_path.write_text(json.dumps(alerts, ensure_ascii=False, indent=2), encoding="utf-8")
+
     print(f"OK: {len(payload['departures'])} départs, {len(payload['arrivals'])} arrivées écrits dans {OUTPUT_PATH}")
+    print(f"Alertes détectées : {len(alerts)}")
     return 0
 
 

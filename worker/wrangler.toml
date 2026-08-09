@@ -1,0 +1,13 @@
+name = "tlp-taxi-push"
+main = "subscribe-worker.js"
+compatibility_date = "2024-01-01"
+
+# Créez le namespace KV puis remplacez "id" ci-dessous :
+#   npx wrangler kv namespace create SUBSCRIPTIONS_KV
+[[kv_namespaces]]
+binding = "SUBSCRIPTIONS_KV"
+id = "REMPLACER_PAR_ID_KV_NAMESPACE"
+
+# La clé secrète ADMIN_KEY ne va PAS ici (elle serait visible dans le repo).
+# Définissez-la après déploiement avec :
+#   npx wrangler secret put ADMIN_KEY
