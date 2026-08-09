@@ -288,11 +288,38 @@ def main() -> int:
         for l in lines_debug[:40]:
             print(f"  {l!r}", file=sys.stderr)
         print("--- Fin des lignes ---", file=sys.stderr)
-        print(
-            "'Prochains départs' trouvé dans le texte : "
-            f"{'Prochains départs' in lines_debug}",
-            file=sys.stderr,
-        )
+
+        found_marker = "Prochains départs" in lines_debug
+        print(f"'Prochains départs' trouvé dans le texte : {found_marker}", file=sys.stderr)
+
+        if found_marker:
+            idx = lines_debug.index("Prochains départs")
+            print("--- 40 lignes autour du marqueur 'Prochains départs' ---", file=sys.stderr)
+            for l in lines_debug[max(0, idx - 5):idx + 40]:
+                print(f"  {l!r}", file=sys.stderr)
+            print("--- Fin du contexte ---", file=sys.stderr)
+
+        # Recherche d'indices d'un chargement AJAX (appel API séparé) dans le
+        # HTML brut : URLs contenant "api", "vol", "flight", ou appels
+        # fetch/ajax/axios visibles dans les <script> inline.
+        print("--- Recherche d'indices d'appel AJAX/API dans le HTML brut ---", file=sys.stderr)
+        candidate_patterns = [
+            r'["\']([^"\']*(?:api|flight|vols?|json)[^"\']*)["\']',
+        ]
+        seen = set()
+        for pattern in candidate_patterns:
+            for m in re.finditer(pattern, html, re.IGNORECASE):
+                val = m.group(1)
+                if (
+                    val not in seen
+                    and 3 < len(val) < 150
+                    and not val.startswith("data:")
+                    and any(c.isalpha() for c in val)
+                ):
+                    seen.add(val)
+        for val in sorted(seen)[:60]:
+            print(f"  {val!r}", file=sys.stderr)
+        print(f"--- Fin ({len(seen)} correspondances au total) ---", file=sys.stderr)
 
         return 2
 
