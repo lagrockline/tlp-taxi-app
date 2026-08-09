@@ -1,129 +1,92 @@
 {
-  "scraped_at": "2026-08-09T14:09:29.065532+02:00",
+  "scraped_at": "2026-08-09T20:18:19.953606+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
-    {
-      "destination": "LONDRES STANSTED",
-      "date": "09/08",
-      "time": "11:20",
-      "airline": "Ryanair",
-      "airline_raw": "RYANAIR IRLANDE FR521 Décollé 11h41",
-      "flight_number": "FR521",
-      "status_code": "decolle",
-      "status_raw": "Décollé 11h41",
-      "delayed": false
-    },
-    {
-      "destination": "NANTES",
-      "date": "09/08",
-      "time": "14:35",
-      "airline": "Volotea",
-      "airline_raw": "VOLOTEA V77782P",
-      "flight_number": "V77782P",
-      "status_code": null,
-      "status_raw": null,
-      "delayed": false
-    },
-    {
-      "destination": "PARIS ORLY",
-      "date": "09/08",
-      "time": "15:30",
-      "airline": "Volotea",
-      "airline_raw": "VOLOTEA V72180",
-      "flight_number": "V72180",
-      "status_code": null,
-      "status_raw": null,
-      "delayed": false
-    },
     {
       "destination": "PARIS ORLY",
       "date": "09/08",
       "time": "19:30",
       "airline": "Volotea",
-      "airline_raw": "VOLOTEA V72182",
+      "airline_raw": "VOLOTEA",
       "flight_number": "V72182",
-      "status_code": null,
-      "status_raw": null,
-      "delayed": false
+      "status_code": "decolle",
+      "status_raw": "Décollé 19h36",
+      "delayed": false,
+      "early": false
     },
     {
       "destination": "MILAN MALPENSA",
       "date": "09/08",
       "time": "21:40",
       "airline": "Volotea",
-      "airline_raw": "VOLOTEA V77784",
+      "airline_raw": "VOLOTEA",
       "flight_number": "V77784",
       "status_code": null,
       "status_raw": null,
-      "delayed": false
+      "delayed": false,
+      "early": false
     },
     {
       "destination": "VERONE VILLAFRANCA",
       "date": "09/08",
       "time": "23:30",
       "airline": "Volotea",
-      "airline_raw": "VOLOTEA V7917",
+      "airline_raw": "VOLOTEA",
       "flight_number": "V7917",
       "status_code": null,
       "status_raw": null,
-      "delayed": false
+      "delayed": false,
+      "early": false
     }
   ],
   "arrivals": [
-    {
-      "destination": "PALERME",
-      "date": "09/08",
-      "time": "14:10",
-      "airline": "Volotea",
-      "airline_raw": "VOLOTEA V72187 Prévu 14h45",
-      "flight_number": "V72187",
-      "status_code": "prevu",
-      "status_raw": "Prévu 14h45",
-      "delayed": false
-    },
     {
       "destination": "PARIS ORLY",
       "date": "09/08",
       "time": "18:55",
       "airline": "Volotea",
-      "airline_raw": "VOLOTEA V72181",
+      "airline_raw": "VOLOTEA",
       "flight_number": "V72181",
-      "status_code": null,
-      "status_raw": null,
-      "delayed": false
+      "status_code": "atterri",
+      "status_raw": "Arrivé 18h52",
+      "delayed": false,
+      "early": false
     },
     {
       "destination": "NAPLES",
       "date": "09/08",
       "time": "21:10",
       "airline": "Volotea",
-      "airline_raw": "VOLOTEA V72189 Retardé",
+      "airline_raw": "VOLOTEA",
       "flight_number": "V72189",
       "status_code": "retarde",
       "status_raw": "Retardé",
-      "delayed": true
+      "delayed": true,
+      "early": false
     },
     {
       "destination": "PARIS ORLY",
       "date": "09/08",
       "time": "23:00",
       "airline": "Volotea",
-      "airline_raw": "VOLOTEA V72183",
+      "airline_raw": "VOLOTEA",
       "flight_number": "V72183",
       "status_code": null,
       "status_raw": null,
-      "delayed": false
+      "delayed": false,
+      "early": false
     },
     {
       "destination": "NANTES",
       "date": "09/08",
       "time": "23:00",
       "airline": "Volotea",
-      "airline_raw": "VOLOTEA V7914",
+      "airline_raw": "VOLOTEA",
       "flight_number": "V7914",
       "status_code": null,
       "status_raw": null,
-      "delayed": false
+      "delayed": false,
+      "early": false
     }
   ]
 }
