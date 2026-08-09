@@ -269,12 +269,31 @@ def main() -> int:
 
     if not payload["departures"] and not payload["arrivals"]:
         # On évite d'écraser un JSON valide précédent avec un résultat vide,
-        # ce qui indiquerait probablement que la page a changé de structure.
+        # ce qui indiquerait probablement que la page a changé de structure
+        # — ou que son contenu est chargé en JavaScript après coup (dans ce
+        # cas, `requests` ne voit qu'une coquille HTML vide).
         print(
             "ATTENTION: aucun vol détecté — la structure de la page a peut-être "
-            "changé. Le fichier existant n'est pas modifié.",
+            "changé, ou son contenu est chargé dynamiquement en JavaScript.",
             file=sys.stderr,
         )
+        print(f"Taille du HTML récupéré : {len(html)} caractères", file=sys.stderr)
+        print("--- Premiers 1000 caractères du HTML reçu ---", file=sys.stderr)
+        print(html[:1000], file=sys.stderr)
+        print("--- Fin de l'extrait ---", file=sys.stderr)
+
+        lines_debug = extract_lines(html)
+        print(f"Nombre de lignes de texte extraites : {len(lines_debug)}", file=sys.stderr)
+        print("--- Premières 40 lignes de texte extraites ---", file=sys.stderr)
+        for l in lines_debug[:40]:
+            print(f"  {l!r}", file=sys.stderr)
+        print("--- Fin des lignes ---", file=sys.stderr)
+        print(
+            "'Prochains départs' trouvé dans le texte : "
+            f"{'Prochains départs' in lines_debug}",
+            file=sys.stderr,
+        )
+
         return 2
 
     old_payload = None
