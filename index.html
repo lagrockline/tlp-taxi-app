@@ -281,7 +281,7 @@ let flightsData = null;
 let previousFlightsData = null;
 let currentTab = 'arrivals';
 let currentAirline = 'all';
-let soundEnabled = false;
+let soundEnabled = localStorage.getItem('lde_sound_enabled') === 'true';
 let audioCtx = null;
 let justChangedKeys = new Set();
 
@@ -317,6 +317,7 @@ function playAlertTone(kind){
 
 document.getElementById('soundBtn').addEventListener('click', () => {
   soundEnabled = !soundEnabled;
+  localStorage.setItem('lde_sound_enabled', soundEnabled ? 'true' : 'false');
   const btn = document.getElementById('soundBtn');
   const label = document.getElementById('soundLabel');
   if(soundEnabled){
@@ -331,6 +332,29 @@ document.getElementById('soundBtn').addEventListener('click', () => {
     label.textContent = 'Son off';
   }
 });
+
+// Applique l'état sauvegardé au chargement de la page (bouton visuel).
+// Le son lui-même a besoin d'une interaction pour être "débloqué" par le
+// navigateur (règle standard sur mobile) : on écoute donc la toute première
+// interaction de l'utilisateur avec la page pour réactiver l'audio sans
+// qu'il ait besoin de re-cliquer sur le bouton.
+(function applyStoredSoundPreference(){
+  const btn = document.getElementById('soundBtn');
+  const label = document.getElementById('soundLabel');
+  if(soundEnabled){
+    btn.classList.add('on');
+    btn.firstChild.textContent = '🔔 ';
+    label.textContent = 'Son on';
+
+    const resumeOnce = () => {
+      ensureAudioContext();
+      document.removeEventListener('click', resumeOnce);
+      document.removeEventListener('touchstart', resumeOnce);
+    };
+    document.addEventListener('click', resumeOnce, {once: true});
+    document.addEventListener('touchstart', resumeOnce, {once: true});
+  }
+})();
 
 // ---------- Détection des changements de statut ----------
 function flightKey(type, f){
