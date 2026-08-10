@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-10T19:39:15.019378+02:00",
+  "scraped_at": "2026-08-10T20:31:53.204433+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -21,8 +21,8 @@
       "airline": null,
       "airline_raw": "ALBASTAR SPAIN",
       "flight_number": "AP7504",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "decolle",
+      "status_raw": "Décollé 19h47",
       "delayed": false,
       "early": false
     },
