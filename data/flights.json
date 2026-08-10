@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-10T16:54:56.077310+02:00",
+  "scraped_at": "2026-08-10T17:54:27.259422+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -71,8 +71,8 @@
       "airline": null,
       "airline_raw": "ALBASTAR SPAIN",
       "flight_number": "AP7485",
-      "status_code": "prevu",
-      "status_raw": "Prévu 17h40",
+      "status_code": "atterri",
+      "status_raw": "Arrivé 17h40",
       "delayed": false,
       "early": false
     },
