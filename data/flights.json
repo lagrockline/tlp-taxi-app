@@ -1,19 +1,7 @@
 {
-  "scraped_at": "2026-08-10T22:19:01.396477+02:00",
+  "scraped_at": "2026-08-10T23:05:52.999373+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
-    {
-      "destination": "CORK",
-      "date": "10/08",
-      "time": "19:40",
-      "airline": null,
-      "airline_raw": "ALBASTAR SPAIN",
-      "flight_number": "AP7504",
-      "status_code": "decolle",
-      "status_raw": "Décollé 19h47",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "CRACOVIE",
       "date": "10/08",
@@ -21,8 +9,8 @@
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR2371",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "decolle",
+      "status_raw": "Décollé 22h37",
       "delayed": false,
       "early": false
     },
@@ -71,9 +59,9 @@
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR5108",
-      "status_code": "retarde",
-      "status_raw": "Retardé",
-      "delayed": true,
+      "status_code": "prevu",
+      "status_raw": "Prévu 23h30",
+      "delayed": false,
       "early": false
     }
   ]
