@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-10T18:45:22.892436+02:00",
+  "scraped_at": "2026-08-10T19:39:15.019378+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -52,18 +52,6 @@
     }
   ],
   "arrivals": [
-    {
-      "destination": "ROME FIUMICINO",
-      "date": "10/08",
-      "time": "16:00",
-      "airline": "Volotea",
-      "airline_raw": "VOLOTEA",
-      "flight_number": "V72197",
-      "status_code": "atterri",
-      "status_raw": "Arrivé 16h00",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "BELFAST",
       "date": "10/08",
