@@ -1,19 +1,7 @@
 {
-  "scraped_at": "2026-08-10T21:34:56.469043+02:00",
+  "scraped_at": "2026-08-10T22:19:01.396477+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
-    {
-      "destination": "PARIS ORLY",
-      "date": "10/08",
-      "time": "18:35",
-      "airline": "Volotea",
-      "airline_raw": "VOLOTEA",
-      "flight_number": "V72182",
-      "status_code": "decolle",
-      "status_raw": "Décollé 18h41",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "CORK",
       "date": "10/08",
@@ -71,8 +59,8 @@
       "airline": "Volotea",
       "airline_raw": "VOLOTEA",
       "flight_number": "V72183",
-      "status_code": "prevu",
-      "status_raw": "Prévu 22h00",
+      "status_code": "atterri",
+      "status_raw": "Arrivé 22h05",
       "delayed": false,
       "early": false
     },
@@ -83,9 +71,9 @@
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR5108",
-      "status_code": null,
-      "status_raw": null,
-      "delayed": false,
+      "status_code": "retarde",
+      "status_raw": "Retardé",
+      "delayed": true,
       "early": false
     }
   ]
