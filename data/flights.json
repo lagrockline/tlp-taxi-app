@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-10T12:42:31.822165+02:00",
+  "scraped_at": "2026-08-10T13:34:15.908690+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -76,30 +76,6 @@
     }
   ],
   "arrivals": [
-    {
-      "destination": "DUBLIN",
-      "date": "10/08",
-      "time": "09:45",
-      "airline": "Ryanair",
-      "airline_raw": "RYANAIR IRLANDE",
-      "flight_number": "FR5079",
-      "status_code": "atterri",
-      "status_raw": "Arrivé 09h50",
-      "delayed": false,
-      "early": false
-    },
-    {
-      "destination": "PARIS ORLY",
-      "date": "10/08",
-      "time": "10:10",
-      "airline": "Volotea",
-      "airline_raw": "VOLOTEA",
-      "flight_number": "V72181",
-      "status_code": "atterri",
-      "status_raw": "Arrivé 10h25",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "ROME FIUMICINO",
       "date": "10/08",
