@@ -1,0 +1,24 @@
+name = "tlp-taxi-push"
+main = "subscribe-worker.js"
+compatibility_date = "2024-01-01"
+
+# Créez le namespace KV puis remplacez "id" ci-dessous :
+#   npx wrangler kv namespace create SUBSCRIPTIONS_KV
+[[kv_namespaces]]
+binding = "SUBSCRIPTIONS_KV"
+id = "REMPLACER_PAR_ID_KV_NAMESPACE"
+
+# Horloge fiable qui remplace le "schedule:" peu précis de GitHub Actions.
+# Cloudflare exécute scheduled() dans subscribe-worker.js à cette fréquence.
+[triggers]
+crons = ["*/5 * * * *"]
+
+# Variables non sensibles (identité du dépôt à déclencher) :
+[vars]
+GITHUB_OWNER = "lagrockline"
+GITHUB_REPO = "tlp-taxi-app"
+GITHUB_WORKFLOW_FILE = "update-flights.yml"
+
+# Secrets à définir après déploiement (jamais dans ce fichier) :
+#   npx wrangler secret put ADMIN_KEY
+#   npx wrangler secret put GITHUB_DISPATCH_TOKEN

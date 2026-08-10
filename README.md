@@ -49,12 +49,76 @@ gratuites GitHub Actions + Pages + Cloudflare Workers.
 
 3. **Vérifier le scraping.**
    Onglet *Actions* → job « Mise à jour des vols » → bouton *Run workflow*
-   pour un premier test manuel. Il tourne ensuite automatiquement toutes les
-   5 minutes.
+   pour un premier test manuel.
+
+⚠️ **Le déclenchement automatique toutes les 5 minutes (`schedule:` dans le
+workflow) n'est PAS fiable à cette fréquence chez GitHub** — c'est documenté
+par GitHub lui-même, et constaté en usage réel : les écarts entre deux
+exécutions automatiques peuvent aller de 20 minutes à plus de 2 heures selon
+la charge de leurs serveurs partagés gratuits. Voir la section suivante pour
+la corriger.
 
 À ce stade, l'app fonctionne déjà avec les alertes visuelles/sonores tant
-qu'elle reste ouverte à l'écran (voir plus haut dans la conversation). La
-suite active les vraies notifications push.
+qu'elle reste ouverte à l'écran (voir plus haut dans la conversation), mais
+les données ne se rafraîchiront pas de façon fiable tant que la section
+suivante n'est pas mise en place.
+
+## Installation — partie 1bis : fiabiliser le rafraîchissement toutes les 5 minutes
+
+Le `schedule:` de GitHub Actions étant peu fiable à haute fréquence, on
+utilise à la place les **Cron Triggers de Cloudflare Workers** (beaucoup plus
+précis) comme horloge externe : toutes les 5 minutes, le Worker appelle
+l'API GitHub pour déclencher le workflow — lequel s'exécute alors
+quasi instantanément, comme on l'a constaté avec les déclenchements manuels.
+
+C'est le même Worker Cloudflare que celui utilisé plus bas pour les
+notifications push (dossier `worker/`) — vous pouvez faire cette partie
+**sans** activer les notifications push, les deux fonctionnalités sont
+indépendantes.
+
+### Étape A — Créer un token GitHub pour déclencher le workflow
+
+1. github.com → photo de profil (en haut à droite) → **Settings** →
+   tout en bas du menu de gauche, **Developer settings**.
+2. **Personal access tokens** → **Fine-grained tokens** → **Generate new
+   token**.
+3. Donnez-lui un nom (ex. `tlp-taxi-cron-trigger`), une expiration (1 an par
+   exemple), et sous **Repository access**, choisissez **Only select
+   repositories** → sélectionnez votre dépôt `tlp-taxi-app`.
+4. Sous **Permissions** → **Repository permissions** → réglez **Actions**
+   sur **Read and write**.
+5. **Generate token**, puis copiez-le immédiatement (il ne sera plus
+   affiché ensuite).
+
+### Étape B — Déployer (ou mettre à jour) le Worker Cloudflare
+
+Si vous n'avez pas encore de compte Cloudflare / Worker déployé, suivez les
+étapes A à B de la section suivante (notifications push) pour la création du
+compte, l'installation de `wrangler` et la création du namespace KV — c'est
+la même base technique. Une fois cette base en place (ou si elle existe
+déjà) :
+
+```bash
+cd worker
+npx wrangler secret put GITHUB_DISPATCH_TOKEN
+# collez le token généré à l'étape A quand demandé
+
+npx wrangler deploy
+```
+
+Le fichier `wrangler.toml` contient déjà `GITHUB_OWNER`, `GITHUB_REPO` et le
+Cron Trigger toutes les 5 minutes — rien d'autre à configurer.
+
+### Étape C — Vérifier que ça tourne
+
+Dans le tableau de bord Cloudflare → Workers & Pages → `tlp-taxi-push` →
+onglet **Triggers**, vous devez voir le cron listé et actif. Après 5-10
+minutes, retournez dans l'onglet *Actions* de votre dépôt GitHub : de
+nouvelles exécutions "Scheduled" doivent apparaître à intervalles réguliers
+et rapprochés (proches de 5 minutes, avec une petite marge).
+
+Le `schedule:` resté dans le workflow GitHub sert désormais de filet de
+sécurité en cas d'indisponibilité du Worker — inutile de le retirer.
 
 ## Installation — partie 2 : les notifications push
 

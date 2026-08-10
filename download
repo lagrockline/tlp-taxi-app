@@ -1,0 +1,4 @@
+data/_pending_alerts.json
+__pycache__/
+*.pyc
+node_modules/
