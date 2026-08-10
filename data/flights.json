@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-10T09:58:05.793494+02:00",
+  "scraped_at": "2026-08-10T11:25:33.910350+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -21,8 +21,8 @@
       "airline": null,
       "airline_raw": "ALBASTAR SPAIN",
       "flight_number": "AP7502",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "decolle",
+      "status_raw": "Décollé 09h53",
       "delayed": false,
       "early": false
     },
@@ -33,8 +33,8 @@
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR5078",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "decolle",
+      "status_raw": "Décollé 11h12",
       "delayed": false,
       "early": false
     },
@@ -101,38 +101,14 @@
   ],
   "arrivals": [
     {
-      "destination": "PALMA DE MAJORQUE",
-      "date": "10/08",
-      "time": "08:00",
-      "airline": null,
-      "airline_raw": "ALBASTAR SPAIN",
-      "flight_number": "AP922P",
-      "status_code": "prevu",
-      "status_raw": "Prévu 07h50",
-      "delayed": false,
-      "early": false
-    },
-    {
-      "destination": "ROME CIAMPINO",
-      "date": "10/08",
-      "time": "08:25",
-      "airline": "Ryanair",
-      "airline_raw": "RYANAIR IRLANDE",
-      "flight_number": "FR4573",
-      "status_code": "atterri",
-      "status_raw": "Arrivé 08h15",
-      "delayed": false,
-      "early": false
-    },
-    {
       "destination": "DUBLIN",
       "date": "10/08",
       "time": "09:45",
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR5079",
-      "status_code": "prevu",
-      "status_raw": "Prévu 09h45",
+      "status_code": "atterri",
+      "status_raw": "Arrivé 09h50",
       "delayed": false,
       "early": false
     },
@@ -143,8 +119,8 @@
       "airline": "Volotea",
       "airline_raw": "VOLOTEA",
       "flight_number": "V72181",
-      "status_code": "prevu",
-      "status_raw": "Prévu 10h20",
+      "status_code": "atterri",
+      "status_raw": "Arrivé 10h20",
       "delayed": false,
       "early": false
     },
