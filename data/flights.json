@@ -1,31 +1,7 @@
 {
-  "scraped_at": "2026-08-10T13:34:15.908690+02:00",
+  "scraped_at": "2026-08-10T14:27:19.669903+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
-    {
-      "destination": "DUBLIN",
-      "date": "10/08",
-      "time": "10:50",
-      "airline": "Ryanair",
-      "airline_raw": "RYANAIR IRLANDE",
-      "flight_number": "FR5078",
-      "status_code": "decolle",
-      "status_raw": "Décollé 11h12",
-      "delayed": false,
-      "early": false
-    },
-    {
-      "destination": "ROME FIUMICINO",
-      "date": "10/08",
-      "time": "11:00",
-      "airline": "Volotea",
-      "airline_raw": "VOLOTEA",
-      "flight_number": "V72196",
-      "status_code": "decolle",
-      "status_raw": "Décollé 11h19",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "PARIS ORLY",
       "date": "10/08",
@@ -83,8 +59,8 @@
       "airline": "Volotea",
       "airline_raw": "VOLOTEA",
       "flight_number": "V72197",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "prevu",
+      "status_raw": "Prévu 16h00",
       "delayed": false,
       "early": false
     },
