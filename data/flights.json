@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-10T06:40:20.637725+02:00",
+  "scraped_at": "2026-08-10T08:01:50.763080+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -9,8 +9,8 @@
       "airline": "Volotea",
       "airline_raw": "VOLOTEA",
       "flight_number": "V72180",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "decolle",
+      "status_raw": "Décollé 06h51",
       "delayed": false,
       "early": false
     },
@@ -119,8 +119,8 @@
       "airline": null,
       "airline_raw": "ALBASTAR SPAIN",
       "flight_number": "AP922P",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "prevu",
+      "status_raw": "Prévu 07h50",
       "delayed": false,
       "early": false
     },
@@ -131,8 +131,8 @@
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR4573",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "prevu",
+      "status_raw": "Prévu 08h15",
       "delayed": false,
       "early": false
     },
