@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-11T08:09:08.580055+02:00",
+  "scraped_at": "2026-08-11T09:34:02.754138+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -27,7 +27,7 @@
       "early": false
     },
     {
-      "destination": "CATANE",
+      "destination": "COMISO",
       "date": "11/08",
       "time": "11:50",
       "airline": "Volotea",
@@ -71,8 +71,8 @@
       "airline": null,
       "airline_raw": "ALBASTAR SPAIN",
       "flight_number": "AP950P",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "prevu",
+      "status_raw": "Prévu 09h40",
       "delayed": false,
       "early": false
     },
@@ -83,8 +83,8 @@
       "airline": null,
       "airline_raw": "TRADE AIR",
       "flight_number": "C3120P",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "prevu",
+      "status_raw": "Prévu 09h45",
       "delayed": false,
       "early": false
     },
@@ -101,7 +101,7 @@
       "early": false
     },
     {
-      "destination": "CATANE",
+      "destination": "COMISO",
       "date": "11/08",
       "time": "17:40",
       "airline": "Volotea",
