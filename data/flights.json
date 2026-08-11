@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-11T12:29:13.814099+02:00",
+  "scraped_at": "2026-08-11T13:22:23.088354+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -9,8 +9,8 @@
       "airline": null,
       "airline_raw": "ALBASTAR SPAIN",
       "flight_number": "AP7250",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "decolle",
+      "status_raw": "Décollé 11h20",
       "delayed": false,
       "early": false
     },
@@ -21,8 +21,8 @@
       "airline": null,
       "airline_raw": "TRADE AIR",
       "flight_number": "C31211",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "decolle",
+      "status_raw": "Décollé 11h52",
       "delayed": false,
       "early": false
     },
@@ -64,30 +64,6 @@
     }
   ],
   "arrivals": [
-    {
-      "destination": "CORK",
-      "date": "11/08",
-      "time": "09:30",
-      "airline": null,
-      "airline_raw": "ALBASTAR SPAIN",
-      "flight_number": "AP950P",
-      "status_code": "atterri",
-      "status_raw": "Arrivé 09h55",
-      "delayed": false,
-      "early": false
-    },
-    {
-      "destination": "MILAN BERGAME",
-      "date": "11/08",
-      "time": "10:00",
-      "airline": null,
-      "airline_raw": "TRADE AIR",
-      "flight_number": "C3120P",
-      "status_code": "atterri",
-      "status_raw": "Arrivé 09h56",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "LONDRES STANSTED",
       "date": "11/08",
