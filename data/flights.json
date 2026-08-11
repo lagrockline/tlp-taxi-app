@@ -1,17 +1,126 @@
 {
-  "scraped_at": "2026-08-11T23:09:28.961940+02:00",
+  "scraped_at": "2026-08-12T00:02:52.104810+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
-  "departures": [],
-  "arrivals": [
+  "departures": [
+    {
+      "destination": "PALERME",
+      "date": "12/08",
+      "time": "12:30",
+      "airline": "Volotea",
+      "airline_raw": "VOLOTEA",
+      "flight_number": "V72186",
+      "status_code": null,
+      "status_raw": null,
+      "delayed": false,
+      "early": false
+    },
+    {
+      "destination": "LONDRES STANSTED",
+      "date": "12/08",
+      "time": "12:55",
+      "airline": "Ryanair",
+      "airline_raw": "RYANAIR IRLANDE",
+      "flight_number": "FR521",
+      "status_code": null,
+      "status_raw": null,
+      "delayed": false,
+      "early": false
+    },
+    {
+      "destination": "ORLEANS",
+      "date": "12/08",
+      "time": "15:00",
+      "airline": null,
+      "airline_raw": "COTAM",
+      "flight_number": "1210",
+      "status_code": null,
+      "status_raw": null,
+      "delayed": false,
+      "early": false
+    },
     {
       "destination": "PARIS ORLY",
-      "date": "11/08",
+      "date": "12/08",
+      "time": "18:35",
+      "airline": "Volotea",
+      "airline_raw": "VOLOTEA",
+      "flight_number": "V72182",
+      "status_code": null,
+      "status_raw": null,
+      "delayed": false,
+      "early": false
+    },
+    {
+      "destination": "MALTE",
+      "date": "12/08",
+      "time": "22:30",
+      "airline": "Ryanair",
+      "airline_raw": "RYANAIR IRLANDE",
+      "flight_number": "FR9245",
+      "status_code": null,
+      "status_raw": null,
+      "delayed": false,
+      "early": false
+    }
+  ],
+  "arrivals": [
+    {
+      "destination": "BERGERAC",
+      "date": "12/08",
+      "time": "11:30",
+      "airline": null,
+      "airline_raw": "COTAM",
+      "flight_number": "1210",
+      "status_code": null,
+      "status_raw": null,
+      "delayed": false,
+      "early": false
+    },
+    {
+      "destination": "LONDRES STANSTED",
+      "date": "12/08",
+      "time": "12:30",
+      "airline": "Ryanair",
+      "airline_raw": "RYANAIR IRLANDE",
+      "flight_number": "FR522",
+      "status_code": null,
+      "status_raw": null,
+      "delayed": false,
+      "early": false
+    },
+    {
+      "destination": "PALERME",
+      "date": "12/08",
+      "time": "17:45",
+      "airline": "Volotea",
+      "airline_raw": "VOLOTEA",
+      "flight_number": "V72187",
+      "status_code": null,
+      "status_raw": null,
+      "delayed": false,
+      "early": false
+    },
+    {
+      "destination": "MALTE",
+      "date": "12/08",
+      "time": "22:00",
+      "airline": "Ryanair",
+      "airline_raw": "RYANAIR IRLANDE",
+      "flight_number": "FR9246",
+      "status_code": null,
+      "status_raw": null,
+      "delayed": false,
+      "early": false
+    },
+    {
+      "destination": "PARIS ORLY",
+      "date": "12/08",
       "time": "22:00",
       "airline": "Volotea",
       "airline_raw": "VOLOTEA",
       "flight_number": "V72183",
-      "status_code": "atterri",
-      "status_raw": "Arrivé 21h42",
+      "status_code": null,
+      "status_raw": null,
       "delayed": false,
       "early": false
     }
