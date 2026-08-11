@@ -1,19 +1,7 @@
 {
-  "scraped_at": "2026-08-11T14:03:13.424968+02:00",
+  "scraped_at": "2026-08-11T15:34:44.675325+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
-    {
-      "destination": "COMISO",
-      "date": "11/08",
-      "time": "11:50",
-      "airline": "Volotea",
-      "airline_raw": "VOLOTEA",
-      "flight_number": "V72198",
-      "status_code": "decolle",
-      "status_raw": "Décollé 12h09",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "LONDRES STANSTED",
       "date": "11/08",
@@ -33,9 +21,9 @@
       "airline": "Volotea",
       "airline_raw": "VOLOTEA",
       "flight_number": "V72182",
-      "status_code": null,
-      "status_raw": null,
-      "delayed": false,
+      "status_code": "retarde",
+      "status_raw": "Retardé",
+      "delayed": true,
       "early": false
     }
   ],
@@ -47,8 +35,8 @@
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR522",
-      "status_code": "prevu",
-      "status_raw": "Prévu 14h55",
+      "status_code": "atterri",
+      "status_raw": "Arrivé 14h51",
       "delayed": false,
       "early": false
     },
@@ -59,9 +47,9 @@
       "airline": "Volotea",
       "airline_raw": "VOLOTEA",
       "flight_number": "V72199",
-      "status_code": null,
-      "status_raw": null,
-      "delayed": false,
+      "status_code": "retarde",
+      "status_raw": "Retardé",
+      "delayed": true,
       "early": false
     },
     {
