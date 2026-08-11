@@ -1,31 +1,7 @@
 {
-  "scraped_at": "2026-08-11T13:22:23.088354+02:00",
+  "scraped_at": "2026-08-11T14:03:13.424968+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
-    {
-      "destination": "BARI",
-      "date": "11/08",
-      "time": "11:00",
-      "airline": null,
-      "airline_raw": "ALBASTAR SPAIN",
-      "flight_number": "AP7250",
-      "status_code": "decolle",
-      "status_raw": "Décollé 11h20",
-      "delayed": false,
-      "early": false
-    },
-    {
-      "destination": "BARI",
-      "date": "11/08",
-      "time": "11:00",
-      "airline": null,
-      "airline_raw": "TRADE AIR",
-      "flight_number": "C31211",
-      "status_code": "decolle",
-      "status_raw": "Décollé 11h52",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "COMISO",
       "date": "11/08",
@@ -71,8 +47,8 @@
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR522",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "prevu",
+      "status_raw": "Prévu 14h55",
       "delayed": false,
       "early": false
     },
