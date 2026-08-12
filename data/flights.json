@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-12T16:35:21.046091+02:00",
+  "scraped_at": "2026-08-12T17:32:19.463363+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -9,8 +9,8 @@
       "airline": null,
       "airline_raw": "COTAM",
       "flight_number": "1210",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "decolle",
+      "status_raw": "Décollé 15h10",
       "delayed": false,
       "early": false
     },
@@ -47,8 +47,8 @@
       "airline": "Volotea",
       "airline_raw": "VOLOTEA",
       "flight_number": "V72187",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "prevu",
+      "status_raw": "Prévu 18h25",
       "delayed": false,
       "early": false
     },
