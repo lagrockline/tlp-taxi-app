@@ -1,7 +1,19 @@
 {
-  "scraped_at": "2026-08-13T00:00:24.340402+02:00",
+  "scraped_at": "2026-08-13T00:51:42.723485+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
+    {
+      "destination": "PARIS ORLY",
+      "date": "13/08",
+      "time": "06:45",
+      "airline": "Volotea",
+      "airline_raw": "VOLOTEA",
+      "flight_number": "V72180",
+      "status_code": null,
+      "status_raw": null,
+      "delayed": false,
+      "early": false
+    },
     {
       "destination": "CRACOVIE",
       "date": "13/08",
@@ -9,6 +21,18 @@
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR2371",
+      "status_code": null,
+      "status_raw": null,
+      "delayed": false,
+      "early": false
+    },
+    {
+      "destination": "NAPLES",
+      "date": "13/08",
+      "time": "12:40",
+      "airline": "Volotea",
+      "airline_raw": "VOLOTEA",
+      "flight_number": "V72188",
       "status_code": null,
       "status_raw": null,
       "delayed": false,
@@ -33,6 +57,18 @@
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR521",
+      "status_code": null,
+      "status_raw": null,
+      "delayed": false,
+      "early": false
+    },
+    {
+      "destination": "PARIS ORLY",
+      "date": "13/08",
+      "time": "18:35",
+      "airline": "Volotea",
+      "airline_raw": "VOLOTEA",
+      "flight_number": "V72182",
       "status_code": null,
       "status_raw": null,
       "delayed": false,
@@ -65,6 +101,30 @@
   ],
   "arrivals": [
     {
+      "destination": "MADRID",
+      "date": "13/08",
+      "time": "09:30",
+      "airline": null,
+      "airline_raw": "IBERIA",
+      "flight_number": "IB2104",
+      "status_code": null,
+      "status_raw": null,
+      "delayed": false,
+      "early": false
+    },
+    {
+      "destination": "PARIS ORLY",
+      "date": "13/08",
+      "time": "10:10",
+      "airline": "Volotea",
+      "airline_raw": "VOLOTEA",
+      "flight_number": "V72181",
+      "status_code": null,
+      "status_raw": null,
+      "delayed": false,
+      "early": false
+    },
+    {
       "destination": "GENEVE",
       "date": "13/08",
       "time": "10:20",
@@ -89,12 +149,36 @@
       "early": false
     },
     {
+      "destination": "VARSOVIE",
+      "date": "13/08",
+      "time": "13:00",
+      "airline": null,
+      "airline_raw": "TARMAC",
+      "flight_number": null,
+      "status_code": null,
+      "status_raw": null,
+      "delayed": false,
+      "early": false
+    },
+    {
       "destination": "LONDRES STANSTED",
       "date": "13/08",
       "time": "15:35",
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR522",
+      "status_code": null,
+      "status_raw": null,
+      "delayed": false,
+      "early": false
+    },
+    {
+      "destination": "NAPLES",
+      "date": "13/08",
+      "time": "17:45",
+      "airline": "Volotea",
+      "airline_raw": "VOLOTEA",
+      "flight_number": "V72189",
       "status_code": null,
       "status_raw": null,
       "delayed": false,
@@ -119,6 +203,18 @@
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR6096",
+      "status_code": null,
+      "status_raw": null,
+      "delayed": false,
+      "early": false
+    },
+    {
+      "destination": "PARIS ORLY",
+      "date": "13/08",
+      "time": "22:00",
+      "airline": "Volotea",
+      "airline_raw": "VOLOTEA",
+      "flight_number": "V72183",
       "status_code": null,
       "status_raw": null,
       "delayed": false,
