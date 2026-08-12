@@ -1,19 +1,7 @@
 {
-  "scraped_at": "2026-08-12T17:32:19.463363+02:00",
+  "scraped_at": "2026-08-12T18:29:40.900445+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
-    {
-      "destination": "ORLEANS",
-      "date": "12/08",
-      "time": "15:00",
-      "airline": null,
-      "airline_raw": "COTAM",
-      "flight_number": "1210",
-      "status_code": "decolle",
-      "status_raw": "Décollé 15h10",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "PARIS ORLY",
       "date": "12/08",
@@ -47,8 +35,8 @@
       "airline": "Volotea",
       "airline_raw": "VOLOTEA",
       "flight_number": "V72187",
-      "status_code": "prevu",
-      "status_raw": "Prévu 18h25",
+      "status_code": "atterri",
+      "status_raw": "Arrivé 18h23",
       "delayed": false,
       "early": false
     },
