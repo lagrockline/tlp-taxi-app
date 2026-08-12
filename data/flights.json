@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-12T12:18:55.042504+02:00",
+  "scraped_at": "2026-08-12T13:13:03.358317+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -72,7 +72,7 @@
       "airline_raw": "COTAM",
       "flight_number": "1210",
       "status_code": "atterri",
-      "status_raw": "Atterri 12h00",
+      "status_raw": "Arrivé 12h10",
       "delayed": false,
       "early": false
     },
@@ -83,8 +83,8 @@
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR522",
-      "status_code": "prevu",
-      "status_raw": "Prévu 12h30",
+      "status_code": "atterri",
+      "status_raw": "Atterri 12h28",
       "delayed": false,
       "early": false
     },
