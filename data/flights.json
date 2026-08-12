@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-12T13:59:48.638154+02:00",
+  "scraped_at": "2026-08-12T15:25:19.184588+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -64,18 +64,6 @@
     }
   ],
   "arrivals": [
-    {
-      "destination": "BERGERAC",
-      "date": "12/08",
-      "time": "11:30",
-      "airline": null,
-      "airline_raw": "COTAM",
-      "flight_number": "1210",
-      "status_code": "atterri",
-      "status_raw": "Arrivé 12h10",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "LONDRES STANSTED",
       "date": "12/08",
