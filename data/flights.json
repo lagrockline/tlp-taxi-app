@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-13T21:36:14.366887+02:00",
+  "scraped_at": "2026-08-13T22:08:54.923399+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -29,18 +29,6 @@
   ],
   "arrivals": [
     {
-      "destination": "MILAN BERGAME",
-      "date": "13/08",
-      "time": "18:45",
-      "airline": "Ryanair",
-      "airline_raw": "RYANAIR IRLANDE",
-      "flight_number": "FR5108",
-      "status_code": "atterri",
-      "status_raw": "Arrivé 19h50",
-      "delayed": false,
-      "early": false
-    },
-    {
       "destination": "BRUXELLES-CHARLEROI",
       "date": "13/08",
       "time": "20:20",
@@ -59,8 +47,8 @@
       "airline": "Volotea",
       "airline_raw": "VOLOTEA",
       "flight_number": "V72183",
-      "status_code": "prevu",
-      "status_raw": "Prévu 21h50",
+      "status_code": "atterri",
+      "status_raw": "Arrivé 21h52",
       "delayed": false,
       "early": false
     }
