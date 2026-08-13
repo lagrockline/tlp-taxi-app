@@ -1,33 +1,8 @@
 {
-  "scraped_at": "2026-08-13T23:00:49.591339+02:00",
+  "scraped_at": "2026-08-13T23:55:31.432533+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
-  "departures": [
-    {
-      "destination": "BRUXELLES-CHARLEROI",
-      "date": "13/08",
-      "time": "20:45",
-      "airline": "Ryanair",
-      "airline_raw": "RYANAIR IRLANDE",
-      "flight_number": "FR6097",
-      "status_code": "decolle",
-      "status_raw": "Décollé 21h06",
-      "delayed": false,
-      "early": false
-    }
-  ],
+  "departures": [],
   "arrivals": [
-    {
-      "destination": "BRUXELLES-CHARLEROI",
-      "date": "13/08",
-      "time": "20:20",
-      "airline": "Ryanair",
-      "airline_raw": "RYANAIR IRLANDE",
-      "flight_number": "FR6096",
-      "status_code": "atterri",
-      "status_raw": "Arrivé 20h10",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "PARIS ORLY",
       "date": "13/08",
