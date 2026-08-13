@@ -1,19 +1,7 @@
 {
-  "scraped_at": "2026-08-13T22:08:54.923399+02:00",
+  "scraped_at": "2026-08-13T23:00:49.591339+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
-    {
-      "destination": "MILAN BERGAME",
-      "date": "13/08",
-      "time": "19:15",
-      "airline": "Ryanair",
-      "airline_raw": "RYANAIR IRLANDE",
-      "flight_number": "FR5109",
-      "status_code": "decolle",
-      "status_raw": "Décollé 21h04",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "BRUXELLES-CHARLEROI",
       "date": "13/08",
