@@ -1,19 +1,7 @@
 {
-  "scraped_at": "2026-08-13T13:56:57.074042+02:00",
+  "scraped_at": "2026-08-13T15:08:34.666112+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
-    {
-      "destination": "CRACOVIE",
-      "date": "13/08",
-      "time": "11:45",
-      "airline": "Ryanair",
-      "airline_raw": "RYANAIR IRLANDE",
-      "flight_number": "FR2371",
-      "status_code": "decolle",
-      "status_raw": "Décollé 11h46",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "NAPLES",
       "date": "13/08",
@@ -89,26 +77,14 @@
   ],
   "arrivals": [
     {
-      "destination": "CRACOVIE",
-      "date": "13/08",
-      "time": "11:10",
-      "airline": "Ryanair",
-      "airline_raw": "RYANAIR IRLANDE",
-      "flight_number": "FR2370",
-      "status_code": "atterri",
-      "status_raw": "Arrivé 10h58",
-      "delayed": false,
-      "early": false
-    },
-    {
       "destination": "VARSOVIE",
       "date": "13/08",
       "time": "13:00",
       "airline": null,
       "airline_raw": "TARMAC",
       "flight_number": null,
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "atterri",
+      "status_raw": "Arrivé 12h45",
       "delayed": false,
       "early": false
     },
@@ -119,8 +95,8 @@
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR522",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "prevu",
+      "status_raw": "Prévu 15h40",
       "delayed": false,
       "early": false
     },
