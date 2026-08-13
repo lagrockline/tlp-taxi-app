@@ -1,19 +1,7 @@
 {
-  "scraped_at": "2026-08-13T20:29:26.637899+02:00",
+  "scraped_at": "2026-08-13T21:36:14.366887+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
-    {
-      "destination": "PARIS ORLY",
-      "date": "13/08",
-      "time": "18:35",
-      "airline": "Volotea",
-      "airline_raw": "VOLOTEA",
-      "flight_number": "V72182",
-      "status_code": "decolle",
-      "status_raw": "Décollé 18h31",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "MILAN BERGAME",
       "date": "13/08",
@@ -21,8 +9,8 @@
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR5109",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "decolle",
+      "status_raw": "Décollé 21h04",
       "delayed": false,
       "early": false
     },
@@ -33,25 +21,13 @@
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR6097",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "decolle",
+      "status_raw": "Décollé 21h06",
       "delayed": false,
       "early": false
     }
   ],
   "arrivals": [
-    {
-      "destination": "NAPLES",
-      "date": "13/08",
-      "time": "17:45",
-      "airline": "Volotea",
-      "airline_raw": "VOLOTEA",
-      "flight_number": "V72189",
-      "status_code": "atterri",
-      "status_raw": "Arrivé 17h45",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "MILAN BERGAME",
       "date": "13/08",
@@ -72,7 +48,7 @@
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR6096",
       "status_code": "atterri",
-      "status_raw": "Arrivé 20h02",
+      "status_raw": "Arrivé 20h10",
       "delayed": false,
       "early": false
     },
@@ -83,8 +59,8 @@
       "airline": "Volotea",
       "airline_raw": "VOLOTEA",
       "flight_number": "V72183",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "prevu",
+      "status_raw": "Prévu 21h50",
       "delayed": false,
       "early": false
     }
