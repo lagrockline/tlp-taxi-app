@@ -1,19 +1,7 @@
 {
-  "scraped_at": "2026-08-13T08:00:58.388044+02:00",
+  "scraped_at": "2026-08-13T09:46:18.550487+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
-    {
-      "destination": "PARIS ORLY",
-      "date": "13/08",
-      "time": "06:45",
-      "airline": "Volotea",
-      "airline_raw": "VOLOTEA",
-      "flight_number": "V72180",
-      "status_code": "decolle",
-      "status_raw": "Décollé 07h09",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "CRACOVIE",
       "date": "13/08",
@@ -107,8 +95,8 @@
       "airline": null,
       "airline_raw": "IBERIA",
       "flight_number": "IB2104",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "atterri",
+      "status_raw": "Atterri 09h20",
       "delayed": false,
       "early": false
     },
@@ -119,8 +107,8 @@
       "airline": "Volotea",
       "airline_raw": "VOLOTEA",
       "flight_number": "V72181",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "prevu",
+      "status_raw": "Prévu 10h15",
       "delayed": false,
       "early": false
     },
@@ -131,8 +119,8 @@
       "airline": null,
       "airline_raw": "NETJETS",
       "flight_number": null,
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "prevu",
+      "status_raw": "Prévu 09h55",
       "delayed": false,
       "early": false
     },
@@ -143,8 +131,8 @@
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR2370",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "prevu",
+      "status_raw": "Prévu 10h55",
       "delayed": false,
       "early": false
     },
