@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-14T13:27:16.750931+02:00",
+  "scraped_at": "2026-08-14T14:08:33.635509+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -21,8 +21,8 @@
       "airline": "Volotea",
       "airline_raw": "VOLOTEA",
       "flight_number": "V72196",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "decolle",
+      "status_raw": "Décollé 12h43",
       "delayed": false,
       "early": false
     },
@@ -53,18 +53,6 @@
   ],
   "arrivals": [
     {
-      "destination": "LONDRES STANSTED",
-      "date": "14/08",
-      "time": "10:50",
-      "airline": "Ryanair",
-      "airline_raw": "RYANAIR IRLANDE",
-      "flight_number": "FR522",
-      "status_code": "atterri",
-      "status_raw": "Arrivé 10h56",
-      "delayed": false,
-      "early": false
-    },
-    {
       "destination": "PRESTWICK",
       "date": "14/08",
       "time": "12:00",
@@ -83,8 +71,8 @@
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR5079",
-      "status_code": "prevu",
-      "status_raw": "Prévu 13h30",
+      "status_code": "atterri",
+      "status_raw": "Arrivé 13h23",
       "delayed": false,
       "early": false
     },
@@ -95,8 +83,8 @@
       "airline": null,
       "airline_raw": "NETJETS",
       "flight_number": null,
-      "status_code": "prevu",
-      "status_raw": "Prévu 13h50",
+      "status_code": "atterri",
+      "status_raw": "Atterri 13h53",
       "delayed": false,
       "early": false
     },
