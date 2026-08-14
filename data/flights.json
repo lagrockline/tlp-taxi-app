@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-14T10:38:46.554896+02:00",
+  "scraped_at": "2026-08-14T11:42:29.107224+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -51,7 +51,7 @@
       "early": false
     },
     {
-      "destination": "LE BOURGET",
+      "destination": "IBIZA",
       "date": "14/08",
       "time": "16:10",
       "airline": null,
@@ -95,8 +95,8 @@
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR522",
-      "status_code": "prevu",
-      "status_raw": "Prévu 10h55",
+      "status_code": "atterri",
+      "status_raw": "Arrivé 10h56",
       "delayed": false,
       "early": false
     },
