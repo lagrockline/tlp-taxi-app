@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-14T04:37:54.484787+02:00",
+  "scraped_at": "2026-08-14T06:26:17.669269+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -65,7 +65,7 @@
     {
       "destination": "LE BOURGET",
       "date": "14/08",
-      "time": "16:00",
+      "time": "16:10",
       "airline": null,
       "airline_raw": "NETJETS",
       "flight_number": null,
