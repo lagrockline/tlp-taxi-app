@@ -1,20 +1,7 @@
 {
-  "scraped_at": "2026-08-14T18:23:25.092677+02:00",
+  "scraped_at": "2026-08-14T19:23:30.885910+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
-  "departures": [
-    {
-      "destination": "IBIZA",
-      "date": "14/08",
-      "time": "16:10",
-      "airline": null,
-      "airline_raw": "NETJETS",
-      "flight_number": null,
-      "status_code": "decolle",
-      "status_raw": "Décollé 16h20",
-      "delayed": false,
-      "early": false
-    }
-  ],
+  "departures": [],
   "arrivals": [
     {
       "destination": "ROME FIUMICINO",
