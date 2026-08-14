@@ -1,19 +1,7 @@
 {
-  "scraped_at": "2026-08-14T09:14:15.574372+02:00",
+  "scraped_at": "2026-08-14T10:38:46.554896+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
-    {
-      "destination": "PARIS ORLY",
-      "date": "14/08",
-      "time": "06:45",
-      "airline": "Volotea",
-      "airline_raw": "VOLOTEA",
-      "flight_number": "V72180",
-      "status_code": "decolle",
-      "status_raw": "Décollé 06h50",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "ROME CIAMPINO",
       "date": "14/08",
@@ -21,8 +9,8 @@
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR4574",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "decolle",
+      "status_raw": "Décollé 09h31",
       "delayed": false,
       "early": false
     },
@@ -84,7 +72,7 @@
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR4573",
       "status_code": "atterri",
-      "status_raw": "Arrivé 08h33",
+      "status_raw": "Arrivé 08h40",
       "delayed": false,
       "early": false
     },
@@ -95,8 +83,8 @@
       "airline": "Volotea",
       "airline_raw": "VOLOTEA",
       "flight_number": "V72181",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "atterri",
+      "status_raw": "Arrivé 09h56",
       "delayed": false,
       "early": false
     },
@@ -107,8 +95,8 @@
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR522",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "prevu",
+      "status_raw": "Prévu 10h55",
       "delayed": false,
       "early": false
     },
