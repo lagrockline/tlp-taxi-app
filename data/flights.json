@@ -1,19 +1,7 @@
 {
-  "scraped_at": "2026-08-14T16:36:09.438212+02:00",
+  "scraped_at": "2026-08-14T17:26:59.731138+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
-    {
-      "destination": "DUBLIN",
-      "date": "14/08",
-      "time": "14:20",
-      "airline": "Ryanair",
-      "airline_raw": "RYANAIR IRLANDE",
-      "flight_number": "FR5078",
-      "status_code": "decolle",
-      "status_raw": "Décollé 14h25",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "IBIZA",
       "date": "14/08",
@@ -21,25 +9,13 @@
       "airline": null,
       "airline_raw": "NETJETS",
       "flight_number": null,
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "decolle",
+      "status_raw": "Décollé 16h20",
       "delayed": false,
       "early": false
     }
   ],
   "arrivals": [
-    {
-      "destination": "KEMBLE",
-      "date": "14/08",
-      "time": "13:40",
-      "airline": null,
-      "airline_raw": "NETJETS",
-      "flight_number": null,
-      "status_code": "atterri",
-      "status_raw": "Arrivé 14h00",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "ROME FIUMICINO",
       "date": "14/08",
