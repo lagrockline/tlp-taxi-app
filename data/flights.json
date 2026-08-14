@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-14T07:54:36.732788+02:00",
+  "scraped_at": "2026-08-14T09:14:15.574372+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -83,8 +83,8 @@
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR4573",
-      "status_code": "prevu",
-      "status_raw": "Prévu 08h35",
+      "status_code": "atterri",
+      "status_raw": "Arrivé 08h33",
       "delayed": false,
       "early": false
     },
