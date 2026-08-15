@@ -1,19 +1,7 @@
 {
-  "scraped_at": "2026-08-15T19:13:43.092068+02:00",
+  "scraped_at": "2026-08-15T19:35:44.514364+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
-    {
-      "destination": "PARIS ORLY",
-      "date": "15/08",
-      "time": "16:20",
-      "airline": "Volotea",
-      "airline_raw": "VOLOTEA",
-      "flight_number": "V72182",
-      "status_code": "decolle",
-      "status_raw": "Décollé 17h29",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "MALTE",
       "date": "15/08",
@@ -33,9 +21,9 @@
       "airline": null,
       "airline_raw": "ALBASTAR SPAIN",
       "flight_number": "AP7463",
-      "status_code": "retarde",
-      "status_raw": "Retardé",
-      "delayed": true,
+      "status_code": "decolle",
+      "status_raw": "Décollé 19h13",
+      "delayed": false,
       "early": false
     },
     {
@@ -52,18 +40,6 @@
     }
   ],
   "arrivals": [
-    {
-      "destination": "PALMA DE MAJORQUE",
-      "date": "15/08",
-      "time": "16:20",
-      "airline": null,
-      "airline_raw": "ALBASTAR SPAIN",
-      "flight_number": "AP920P",
-      "status_code": "atterri",
-      "status_raw": "Arrivé 18h05",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "MALTE",
       "date": "15/08",
