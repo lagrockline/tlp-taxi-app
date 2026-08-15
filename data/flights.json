@@ -1,9 +1,9 @@
 {
-  "scraped_at": "2026-08-15T07:53:58.090128+02:00",
+  "scraped_at": "2026-08-15T08:22:00.473992+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
-      "destination": "CATANE",
+      "destination": "PALERME",
       "date": "15/08",
       "time": "10:05",
       "airline": "Volotea",
@@ -101,7 +101,7 @@
       "early": false
     },
     {
-      "destination": "CATANE",
+      "destination": "PALERME",
       "date": "15/08",
       "time": "15:30",
       "airline": "Volotea",
