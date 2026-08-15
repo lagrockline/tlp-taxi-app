@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-15T18:00:07.980306+02:00",
+  "scraped_at": "2026-08-15T18:33:20.792440+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -65,18 +65,6 @@
   ],
   "arrivals": [
     {
-      "destination": "PALERME",
-      "date": "15/08",
-      "time": "15:30",
-      "airline": "Volotea",
-      "airline_raw": "VOLOTEA",
-      "flight_number": "V72199",
-      "status_code": "atterri",
-      "status_raw": "Arrivé 16h27",
-      "delayed": false,
-      "early": false
-    },
-    {
       "destination": "LONDRES STANSTED",
       "date": "15/08",
       "time": "15:40",
@@ -96,7 +84,7 @@
       "airline_raw": "ALBASTAR SPAIN",
       "flight_number": "AP920P",
       "status_code": "atterri",
-      "status_raw": "Atterri 17h57",
+      "status_raw": "Arrivé 18h05",
       "delayed": false,
       "early": false
     },
