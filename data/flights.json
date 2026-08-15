@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-15T19:35:44.514364+02:00",
+  "scraped_at": "2026-08-15T19:53:44.744348+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -9,8 +9,8 @@
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR9245",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "decolle",
+      "status_raw": "Décollé 19h47",
       "delayed": false,
       "early": false
     },
