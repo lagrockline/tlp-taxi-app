@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-15T11:51:21.175668+02:00",
+  "scraped_at": "2026-08-15T12:08:41.553491+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -95,8 +95,8 @@
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR5108",
-      "status_code": "prevu",
-      "status_raw": "Prévu 12h00",
+      "status_code": "atterri",
+      "status_raw": "Arrivé 12h01",
       "delayed": false,
       "early": false
     },
@@ -107,9 +107,9 @@
       "airline": "Volotea",
       "airline_raw": "VOLOTEA",
       "flight_number": "V72199",
-      "status_code": null,
-      "status_raw": null,
-      "delayed": false,
+      "status_code": "retarde",
+      "status_raw": "Retardé",
+      "delayed": true,
       "early": false
     },
     {
