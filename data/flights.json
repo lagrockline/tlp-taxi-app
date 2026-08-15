@@ -1,19 +1,7 @@
 {
-  "scraped_at": "2026-08-15T20:14:22.097247+02:00",
+  "scraped_at": "2026-08-15T20:48:55.189264+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
-    {
-      "destination": "MALTE",
-      "date": "15/08",
-      "time": "17:45",
-      "airline": "Ryanair",
-      "airline_raw": "RYANAIR IRLANDE",
-      "flight_number": "FR9245",
-      "status_code": "decolle",
-      "status_raw": "Décollé 19h47",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "BELFAST",
       "date": "15/08",
@@ -40,18 +28,6 @@
     }
   ],
   "arrivals": [
-    {
-      "destination": "MALTE",
-      "date": "15/08",
-      "time": "17:15",
-      "airline": "Ryanair",
-      "airline_raw": "RYANAIR IRLANDE",
-      "flight_number": "FR9246",
-      "status_code": "atterri",
-      "status_raw": "Arrivé 17h03",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "PARIS ORLY",
       "date": "15/08",
