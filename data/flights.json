@@ -1,19 +1,7 @@
 {
-  "scraped_at": "2026-08-15T12:54:51.386907+02:00",
+  "scraped_at": "2026-08-15T13:14:04.826583+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
-    {
-      "destination": "PALERME",
-      "date": "15/08",
-      "time": "10:05",
-      "airline": "Volotea",
-      "airline_raw": "VOLOTEA",
-      "flight_number": "V72198",
-      "status_code": "decolle",
-      "status_raw": "Décollé 10h59",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "MILAN BERGAME",
       "date": "15/08",
