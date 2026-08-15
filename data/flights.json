@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-15T11:28:26.747869+02:00",
+  "scraped_at": "2026-08-15T11:51:21.175668+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -96,7 +96,7 @@
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR5108",
       "status_code": "prevu",
-      "status_raw": "Prévu 12h05",
+      "status_raw": "Prévu 12h00",
       "delayed": false,
       "early": false
     },
