@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-16T20:00:22.029759+02:00",
+  "scraped_at": "2026-08-16T20:39:09.371693+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -9,8 +9,8 @@
       "airline": "Volotea",
       "airline_raw": "VOLOTEA",
       "flight_number": "V72182",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "decolle",
+      "status_raw": "Décollé 20h28",
       "delayed": false,
       "early": false
     }
