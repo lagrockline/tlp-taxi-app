@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-17T21:45:43.060228+02:00",
+  "scraped_at": "2026-08-17T22:02:50.363705+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -36,7 +36,7 @@
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR2370",
       "status_code": "atterri",
-      "status_raw": "Arrivé 21h10",
+      "status_raw": "Arrivé 21h17",
       "delayed": false,
       "early": false
     },
@@ -48,7 +48,7 @@
       "airline_raw": "VOLOTEA",
       "flight_number": "V72183",
       "status_code": "prevu",
-      "status_raw": "Prévu 22h05",
+      "status_raw": "Prévu 22h00",
       "delayed": false,
       "early": false
     },
@@ -60,7 +60,7 @@
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR5108",
       "status_code": "prevu",
-      "status_raw": "Prévu 22h30",
+      "status_raw": "Prévu 22h25",
       "delayed": false,
       "early": false
     }
