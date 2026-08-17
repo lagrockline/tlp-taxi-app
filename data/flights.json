@@ -1,19 +1,7 @@
 {
-  "scraped_at": "2026-08-17T13:55:15.589583+02:00",
+  "scraped_at": "2026-08-17T14:33:25.666988+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
-    {
-      "destination": "ROME FIUMICINO",
-      "date": "17/08",
-      "time": "11:00",
-      "airline": "Volotea",
-      "airline_raw": "VOLOTEA",
-      "flight_number": "V72196",
-      "status_code": "decolle",
-      "status_raw": "Décollé 11h00",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "PARIS ORLY",
       "date": "17/08",
