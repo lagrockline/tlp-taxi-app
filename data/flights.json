@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-17T19:34:59.086089+02:00",
+  "scraped_at": "2026-08-17T19:59:18.989483+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -60,7 +60,7 @@
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR2370",
       "status_code": "prevu",
-      "status_raw": "Prévu 21h00",
+      "status_raw": "Prévu 21h10",
       "delayed": false,
       "early": false
     },
