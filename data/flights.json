@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-17T14:33:25.666988+02:00",
+  "scraped_at": "2026-08-17T15:23:59.801809+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -9,8 +9,8 @@
       "airline": "Volotea",
       "airline_raw": "VOLOTEA",
       "flight_number": "V72182",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "prevu",
+      "status_raw": "Prévu 18h35",
       "delayed": false,
       "early": false
     },
@@ -41,27 +41,15 @@
   ],
   "arrivals": [
     {
-      "destination": "LINZ",
-      "date": "17/08",
-      "time": "12:00",
-      "airline": null,
-      "airline_raw": "AUSTRIAN AIR FORCE",
-      "flight_number": null,
-      "status_code": "atterri",
-      "status_raw": "Arrivé 12h15",
-      "delayed": false,
-      "early": false
-    },
-    {
       "destination": "ROME FIUMICINO",
       "date": "17/08",
       "time": "16:00",
       "airline": "Volotea",
       "airline_raw": "VOLOTEA",
       "flight_number": "V72197",
-      "status_code": null,
-      "status_raw": null,
-      "delayed": false,
+      "status_code": "retarde",
+      "status_raw": "Retardé",
+      "delayed": true,
       "early": false
     },
     {
