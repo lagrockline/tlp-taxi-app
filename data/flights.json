@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-17T19:59:18.989483+02:00",
+  "scraped_at": "2026-08-17T20:47:38.371745+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -40,18 +40,6 @@
     }
   ],
   "arrivals": [
-    {
-      "destination": "LEEDS BRADFORD",
-      "date": "17/08",
-      "time": "17:00",
-      "airline": null,
-      "airline_raw": "APEX GLOBAL INVESTMENTS",
-      "flight_number": null,
-      "status_code": "atterri",
-      "status_raw": "Arrivé 17h05",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "CRACOVIE",
       "date": "17/08",
