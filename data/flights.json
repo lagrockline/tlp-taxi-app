@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-17T17:24:04.822149+02:00",
+  "scraped_at": "2026-08-17T17:47:12.671379+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -60,7 +60,7 @@
       "airline_raw": "APEX GLOBAL INVESTMENTS",
       "flight_number": null,
       "status_code": "atterri",
-      "status_raw": "Atterri 16h58",
+      "status_raw": "Arrivé 17h05",
       "delayed": false,
       "early": false
     },
