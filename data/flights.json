@@ -1,19 +1,7 @@
 {
-  "scraped_at": "2026-08-17T13:35:23.613617+02:00",
+  "scraped_at": "2026-08-17T13:55:15.589583+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
-    {
-      "destination": "DUBLIN",
-      "date": "17/08",
-      "time": "10:50",
-      "airline": "Ryanair",
-      "airline_raw": "RYANAIR IRLANDE",
-      "flight_number": "FR5078",
-      "status_code": "decolle",
-      "status_raw": "Décollé 11h26",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "ROME FIUMICINO",
       "date": "17/08",
