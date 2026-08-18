@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-18T17:24:41.665420+02:00",
+  "scraped_at": "2026-08-18T17:55:19.622507+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -41,18 +41,6 @@
   ],
   "arrivals": [
     {
-      "destination": "LONDRES STANSTED",
-      "date": "18/08",
-      "time": "14:45",
-      "airline": "Ryanair",
-      "airline_raw": "RYANAIR IRLANDE",
-      "flight_number": "FR522",
-      "status_code": "atterri",
-      "status_raw": "Arrivé 14h52",
-      "delayed": false,
-      "early": false
-    },
-    {
       "destination": "TARBES LOURDES PYREN",
       "date": "18/08",
       "time": "17:00",
@@ -72,7 +60,7 @@
       "airline_raw": "VOLOTEA",
       "flight_number": "V72199",
       "status_code": "atterri",
-      "status_raw": "Arrivé 17h12",
+      "status_raw": "Arrivé 17h18",
       "delayed": false,
       "early": false
     },
