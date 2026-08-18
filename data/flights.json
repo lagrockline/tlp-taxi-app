@@ -1,20 +1,7 @@
 {
-  "scraped_at": "2026-08-18T21:07:33.068981+02:00",
+  "scraped_at": "2026-08-18T21:36:40.861266+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
-  "departures": [
-    {
-      "destination": "PARIS ORLY",
-      "date": "18/08",
-      "time": "18:35",
-      "airline": "Volotea",
-      "airline_raw": "VOLOTEA",
-      "flight_number": "V72182",
-      "status_code": "decolle",
-      "status_raw": "Décollé 18h43",
-      "delayed": false,
-      "early": false
-    }
-  ],
+  "departures": [],
   "arrivals": [
     {
       "destination": "PARIS ORLY",
