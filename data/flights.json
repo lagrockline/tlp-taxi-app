@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-18T12:47:50.585990+02:00",
+  "scraped_at": "2026-08-18T13:10:32.696473+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -11,6 +11,18 @@
       "flight_number": "V72198",
       "status_code": "decolle",
       "status_raw": "Décollé 12h00",
+      "delayed": false,
+      "early": false
+    },
+    {
+      "destination": "CAZAUX",
+      "date": "18/08",
+      "time": "15:00",
+      "airline": null,
+      "airline_raw": "FLYOPS COMPTA",
+      "flight_number": null,
+      "status_code": null,
+      "status_raw": null,
       "delayed": false,
       "early": false
     },
@@ -40,6 +52,18 @@
     }
   ],
   "arrivals": [
+    {
+      "destination": "CAZAUX",
+      "date": "18/08",
+      "time": "11:45",
+      "airline": null,
+      "airline_raw": "FLYOPS COMPTA",
+      "flight_number": null,
+      "status_code": "atterri",
+      "status_raw": "Arrivé 11h40",
+      "delayed": false,
+      "early": false
+    },
     {
       "destination": "LONDRES STANSTED",
       "date": "18/08",
