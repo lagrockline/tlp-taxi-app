@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-18T19:54:47.605630+02:00",
+  "scraped_at": "2026-08-18T20:28:02.241161+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -16,18 +16,6 @@
     }
   ],
   "arrivals": [
-    {
-      "destination": "TARBES LOURDES PYREN",
-      "date": "18/08",
-      "time": "17:00",
-      "airline": null,
-      "airline_raw": "AUSTRIAN AIR FORCE",
-      "flight_number": null,
-      "status_code": "atterri",
-      "status_raw": "Arrivé 18h05",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "CATANE",
       "date": "18/08",
