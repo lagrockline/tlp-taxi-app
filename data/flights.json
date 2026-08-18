@@ -1,19 +1,7 @@
 {
-  "scraped_at": "2026-08-18T17:55:19.622507+02:00",
+  "scraped_at": "2026-08-18T18:24:48.661075+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
-    {
-      "destination": "CAZAUX",
-      "date": "18/08",
-      "time": "15:00",
-      "airline": null,
-      "airline_raw": "FLYOPS COMPTA",
-      "flight_number": null,
-      "status_code": "decolle",
-      "status_raw": "Décollé 13h40",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "LONDRES STANSTED",
       "date": "18/08",
