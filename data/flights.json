@@ -1,19 +1,7 @@
 {
-  "scraped_at": "2026-08-18T18:24:48.661075+02:00",
+  "scraped_at": "2026-08-18T18:57:11.885129+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
-    {
-      "destination": "LONDRES STANSTED",
-      "date": "18/08",
-      "time": "15:25",
-      "airline": "Ryanair",
-      "airline_raw": "RYANAIR IRLANDE",
-      "flight_number": "FR521",
-      "status_code": "decolle",
-      "status_raw": "Décollé 15h47",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "PARIS ORLY",
       "date": "18/08",
@@ -21,8 +9,8 @@
       "airline": "Volotea",
       "airline_raw": "VOLOTEA",
       "flight_number": "V72182",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "decolle",
+      "status_raw": "Décollé 18h43",
       "delayed": false,
       "early": false
     }
