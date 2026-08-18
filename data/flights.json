@@ -1,19 +1,7 @@
 {
-  "scraped_at": "2026-08-18T13:58:56.986332+02:00",
+  "scraped_at": "2026-08-18T14:55:14.566846+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
-    {
-      "destination": "CATANE",
-      "date": "18/08",
-      "time": "11:50",
-      "airline": "Volotea",
-      "airline_raw": "VOLOTEA",
-      "flight_number": "V72198",
-      "status_code": "decolle",
-      "status_raw": "Décollé 12h00",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "CAZAUX",
       "date": "18/08",
@@ -53,26 +41,14 @@
   ],
   "arrivals": [
     {
-      "destination": "CAZAUX",
-      "date": "18/08",
-      "time": "11:45",
-      "airline": null,
-      "airline_raw": "FLYOPS COMPTA",
-      "flight_number": null,
-      "status_code": "atterri",
-      "status_raw": "Arrivé 11h40",
-      "delayed": false,
-      "early": false
-    },
-    {
       "destination": "LONDRES STANSTED",
       "date": "18/08",
       "time": "14:45",
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR522",
-      "status_code": "prevu",
-      "status_raw": "Prévu 14h50",
+      "status_code": "atterri",
+      "status_raw": "Arrivé 12h43",
       "delayed": false,
       "early": false
     },
