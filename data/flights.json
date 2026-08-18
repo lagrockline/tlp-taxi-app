@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-18T08:30:51.461742+02:00",
+  "scraped_at": "2026-08-18T09:21:37.789041+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -9,8 +9,8 @@
       "airline": null,
       "airline_raw": "AUSTRIAN AIR FORCE",
       "flight_number": null,
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "decolle",
+      "status_raw": "Décollé 08h46",
       "delayed": false,
       "early": false
     },
