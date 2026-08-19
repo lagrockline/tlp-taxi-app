@@ -1,19 +1,7 @@
 {
-  "scraped_at": "2026-08-19T10:24:57.151461+02:00",
+  "scraped_at": "2026-08-19T11:03:05.679488+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
-    {
-      "destination": "TARBES LOURDES PYREN",
-      "date": "19/08",
-      "time": "08:00",
-      "airline": null,
-      "airline_raw": "AUSTRIAN AIR FORCE",
-      "flight_number": null,
-      "status_code": "decolle",
-      "status_raw": "Décollé 09h08",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "PALERME",
       "date": "19/08",
