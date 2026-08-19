@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-19T12:04:42.671407+02:00",
+  "scraped_at": "2026-08-19T12:40:30.036675+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -59,8 +59,8 @@
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR522",
-      "status_code": "prevu",
-      "status_raw": "Prévu 12h15",
+      "status_code": "atterri",
+      "status_raw": "Atterri 12h15",
       "delayed": false,
       "early": false
     },
