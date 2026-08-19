@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-19T19:40:12.547729+02:00",
+  "scraped_at": "2026-08-19T19:58:11.365072+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -59,8 +59,8 @@
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR9246",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "prevu",
+      "status_raw": "Prévu 21h45",
       "delayed": false,
       "early": false
     },
