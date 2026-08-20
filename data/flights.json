@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-20T19:50:14.903602+02:00",
+  "scraped_at": "2026-08-20T20:16:46.793974+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -41,18 +41,6 @@
   ],
   "arrivals": [
     {
-      "destination": "TARBES LOURDES PYREN",
-      "date": "20/08",
-      "time": "17:00",
-      "airline": null,
-      "airline_raw": "AUSTRIAN AIR FORCE",
-      "flight_number": null,
-      "status_code": "atterri",
-      "status_raw": "Arrivé 16h05",
-      "delayed": false,
-      "early": false
-    },
-    {
       "destination": "NAPLES",
       "date": "20/08",
       "time": "17:45",
@@ -72,7 +60,7 @@
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR5108",
       "status_code": "prevu",
-      "status_raw": "Prévu 19h45",
+      "status_raw": "Prévu 20h15",
       "delayed": false,
       "early": false
     },
