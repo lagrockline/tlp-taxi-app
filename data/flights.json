@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-20T11:48:13.786522+02:00",
+  "scraped_at": "2026-08-20T12:14:33.296031+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -9,8 +9,8 @@
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR2371",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "decolle",
+      "status_raw": "Décollé 12h04",
       "delayed": false,
       "early": false
     },
@@ -96,7 +96,7 @@
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR2370",
       "status_code": "atterri",
-      "status_raw": "Arrivé 11h06",
+      "status_raw": "Arrivé 11h12",
       "delayed": false,
       "early": false
     },
