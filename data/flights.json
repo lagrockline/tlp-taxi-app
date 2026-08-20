@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-20T18:15:04.724680+02:00",
+  "scraped_at": "2026-08-20T18:53:02.789091+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -53,18 +53,6 @@
   ],
   "arrivals": [
     {
-      "destination": "LONDRES STANSTED",
-      "date": "20/08",
-      "time": "15:35",
-      "airline": "Ryanair",
-      "airline_raw": "RYANAIR IRLANDE",
-      "flight_number": "FR522",
-      "status_code": "atterri",
-      "status_raw": "Arrivé 15h33",
-      "delayed": false,
-      "early": false
-    },
-    {
       "destination": "TARBES LOURDES PYREN",
       "date": "20/08",
       "time": "17:00",
@@ -95,9 +83,9 @@
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR5108",
-      "status_code": "retarde",
-      "status_raw": "Retardé",
-      "delayed": true,
+      "status_code": "prevu",
+      "status_raw": "Prévu 19h45",
+      "delayed": false,
       "early": false
     },
     {
