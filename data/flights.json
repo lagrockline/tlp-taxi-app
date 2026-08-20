@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-20T17:07:10.800005+02:00",
+  "scraped_at": "2026-08-20T17:46:22.117391+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -71,8 +71,8 @@
       "airline": null,
       "airline_raw": "AUSTRIAN AIR FORCE",
       "flight_number": null,
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "atterri",
+      "status_raw": "Arrivé 16h05",
       "delayed": false,
       "early": false
     },
@@ -83,9 +83,9 @@
       "airline": "Volotea",
       "airline_raw": "VOLOTEA",
       "flight_number": "V72189",
-      "status_code": "retarde",
-      "status_raw": "Retardé",
-      "delayed": true,
+      "status_code": "prevu",
+      "status_raw": "Prévu 19h20",
+      "delayed": false,
       "early": false
     },
     {
