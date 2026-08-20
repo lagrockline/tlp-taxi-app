@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-20T17:46:22.117391+02:00",
+  "scraped_at": "2026-08-20T18:15:04.724680+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -33,9 +33,9 @@
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR5109",
-      "status_code": "retarde",
-      "status_raw": "Retardé",
-      "delayed": true,
+      "status_code": null,
+      "status_raw": null,
+      "delayed": false,
       "early": false
     },
     {
