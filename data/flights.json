@@ -1,19 +1,7 @@
 {
-  "scraped_at": "2026-08-20T15:05:09.488489+02:00",
+  "scraped_at": "2026-08-20T15:55:13.483803+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
-    {
-      "destination": "NAPLES",
-      "date": "20/08",
-      "time": "12:40",
-      "airline": "Volotea",
-      "airline_raw": "VOLOTEA",
-      "flight_number": "V72188",
-      "status_code": "decolle",
-      "status_raw": "Décollé 12h46",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "LONDRES STANSTED",
       "date": "20/08",
@@ -71,8 +59,8 @@
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR522",
-      "status_code": "prevu",
-      "status_raw": "Prévu 15h30",
+      "status_code": "atterri",
+      "status_raw": "Arrivé 15h25",
       "delayed": false,
       "early": false
     },
