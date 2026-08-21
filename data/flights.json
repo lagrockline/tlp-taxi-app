@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-21T13:51:28.059378+02:00",
+  "scraped_at": "2026-08-21T14:18:00.644416+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -108,7 +108,7 @@
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR5079",
       "status_code": "atterri",
-      "status_raw": "Arrivé 13h20",
+      "status_raw": "Arrivé 13h28",
       "delayed": false,
       "early": false
     },
@@ -120,7 +120,7 @@
       "airline_raw": "AIRBUS INDUSTRIE",
       "flight_number": null,
       "status_code": "prevu",
-      "status_raw": "Prévu 14h05",
+      "status_raw": "Prévu 14h30",
       "delayed": false,
       "early": false
     },
