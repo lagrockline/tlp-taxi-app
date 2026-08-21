@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-21T19:51:27.945245+02:00",
+  "scraped_at": "2026-08-21T20:16:25.682232+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -28,18 +28,6 @@
     }
   ],
   "arrivals": [
-    {
-      "destination": "IBIZA",
-      "date": "21/08",
-      "time": "17:05",
-      "airline": null,
-      "airline_raw": "FLYING SERVICE ANTWERP",
-      "flight_number": null,
-      "status_code": "atterri",
-      "status_raw": "Arrivé 17h40",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "ROME FIUMICINO",
       "date": "21/08",
