@@ -1,19 +1,7 @@
 {
-  "scraped_at": "2026-08-21T20:16:25.682232+02:00",
+  "scraped_at": "2026-08-21T20:59:55.436081+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
-    {
-      "destination": "PALMA DE MAJORQUE",
-      "date": "21/08",
-      "time": "17:30",
-      "airline": null,
-      "airline_raw": "APEX GLOBAL INVESTMENTS",
-      "flight_number": null,
-      "status_code": "decolle",
-      "status_raw": "Décollé 17h40",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "LONDRES STANSTED",
       "date": "21/08",
@@ -21,25 +9,13 @@
       "airline": null,
       "airline_raw": "TITAN AIRWAYS",
       "flight_number": "ZT020P",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "decolle",
+      "status_raw": "Décollé 20h33",
       "delayed": false,
       "early": false
     }
   ],
   "arrivals": [
-    {
-      "destination": "ROME FIUMICINO",
-      "date": "21/08",
-      "time": "17:50",
-      "airline": "Volotea",
-      "airline_raw": "VOLOTEA",
-      "flight_number": "V72197",
-      "status_code": "atterri",
-      "status_raw": "Arrivé 18h29",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "BIRMINGHAM",
       "date": "21/08",
@@ -48,7 +24,7 @@
       "airline_raw": "TITAN AIRWAYS",
       "flight_number": "ZT201",
       "status_code": "atterri",
-      "status_raw": "Arrivé 19h15",
+      "status_raw": "Arrivé 19h20",
       "delayed": false,
       "early": false
     }
