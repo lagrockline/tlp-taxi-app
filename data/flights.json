@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-21T21:50:28.289595+02:00",
+  "scraped_at": "2026-08-21T22:09:16.155029+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -15,18 +15,5 @@
       "early": false
     }
   ],
-  "arrivals": [
-    {
-      "destination": "BIRMINGHAM",
-      "date": "21/08",
-      "time": "19:00",
-      "airline": null,
-      "airline_raw": "TITAN AIRWAYS",
-      "flight_number": "ZT201",
-      "status_code": "atterri",
-      "status_raw": "Arrivé 19h20",
-      "delayed": false,
-      "early": false
-    }
-  ]
+  "arrivals": []
 }
