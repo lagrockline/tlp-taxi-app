@@ -1,19 +1,7 @@
 {
-  "scraped_at": "2026-08-21T11:55:59.138745+02:00",
+  "scraped_at": "2026-08-21T12:26:15.407925+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
-    {
-      "destination": "ROME CIAMPINO",
-      "date": "21/08",
-      "time": "09:20",
-      "airline": "Ryanair",
-      "airline_raw": "RYANAIR IRLANDE",
-      "flight_number": "FR4574",
-      "status_code": "decolle",
-      "status_raw": "Décollé 09h38",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "MILAN BERGAME",
       "date": "21/08",
@@ -143,8 +131,8 @@
       "airline": null,
       "airline_raw": "TITAN AIRWAYS",
       "flight_number": "ZT101",
-      "status_code": "prevu",
-      "status_raw": "Prévu 11h55",
+      "status_code": "atterri",
+      "status_raw": "Arrivé 11h58",
       "delayed": false,
       "early": false
     },
