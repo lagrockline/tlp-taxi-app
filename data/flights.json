@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-21T05:13:24.819943+02:00",
+  "scraped_at": "2026-08-21T06:02:54.967318+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -197,24 +197,24 @@
       "early": false
     },
     {
-      "destination": "IBIZA",
-      "date": "21/08",
-      "time": "15:15",
-      "airline": null,
-      "airline_raw": "FLYING SERVICE ANTWERP",
-      "flight_number": null,
-      "status_code": null,
-      "status_raw": null,
-      "delayed": false,
-      "early": false
-    },
-    {
       "destination": "AMSTERDAM",
       "date": "21/08",
       "time": "16:00",
       "airline": null,
       "airline_raw": "FLYAMELIA",
       "flight_number": "NL256P",
+      "status_code": null,
+      "status_raw": null,
+      "delayed": false,
+      "early": false
+    },
+    {
+      "destination": "IBIZA",
+      "date": "21/08",
+      "time": "17:05",
+      "airline": null,
+      "airline_raw": "FLYING SERVICE ANTWERP",
+      "flight_number": null,
       "status_code": null,
       "status_raw": null,
       "delayed": false,
