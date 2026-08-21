@@ -1,19 +1,7 @@
 {
-  "scraped_at": "2026-08-21T15:15:36.397393+02:00",
+  "scraped_at": "2026-08-21T16:00:09.332215+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
-    {
-      "destination": "ROME FIUMICINO",
-      "date": "21/08",
-      "time": "12:45",
-      "airline": "Volotea",
-      "airline_raw": "VOLOTEA",
-      "flight_number": "V72196",
-      "status_code": "decolle",
-      "status_raw": "Décollé 13h00",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "LINZ",
       "date": "21/08",
