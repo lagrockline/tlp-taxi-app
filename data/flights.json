@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-21T12:26:15.407925+02:00",
+  "scraped_at": "2026-08-21T12:57:07.274712+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -108,7 +108,7 @@
       "airline_raw": "VOLOTEA",
       "flight_number": "V72181",
       "status_code": "atterri",
-      "status_raw": "Arrivé 10h30",
+      "status_raw": "Arrivé 10h35",
       "delayed": false,
       "early": false
     },
@@ -143,8 +143,8 @@
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR5079",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "prevu",
+      "status_raw": "Prévu 13h25",
       "delayed": false,
       "early": false
     },
