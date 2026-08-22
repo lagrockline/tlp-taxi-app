@@ -1,19 +1,7 @@
 {
-  "scraped_at": "2026-08-22T20:18:48.202137+02:00",
+  "scraped_at": "2026-08-22T20:52:30.070905+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
-    {
-      "destination": "MALTE",
-      "date": "22/08",
-      "time": "17:45",
-      "airline": "Ryanair",
-      "airline_raw": "RYANAIR IRLANDE",
-      "flight_number": "FR9245",
-      "status_code": "decolle",
-      "status_raw": "Décollé 17h56",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "PALERME",
       "date": "22/08",
