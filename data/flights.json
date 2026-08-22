@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-22T08:53:46.315687+02:00",
+  "scraped_at": "2026-08-22T09:23:55.455868+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -21,6 +21,18 @@
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR5109",
+      "status_code": null,
+      "status_raw": null,
+      "delayed": false,
+      "early": false
+    },
+    {
+      "destination": "LUGANO",
+      "date": "22/08",
+      "time": "13:45",
+      "airline": null,
+      "airline_raw": "SWISS AIR AMBULANCE",
+      "flight_number": null,
       "status_code": null,
       "status_raw": null,
       "delayed": false,
@@ -83,6 +95,18 @@
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR5108",
+      "status_code": null,
+      "status_raw": null,
+      "delayed": false,
+      "early": false
+    },
+    {
+      "destination": "ZURICH",
+      "date": "22/08",
+      "time": "13:15",
+      "airline": null,
+      "airline_raw": "SWISS AIR AMBULANCE",
+      "flight_number": null,
       "status_code": null,
       "status_raw": null,
       "delayed": false,
