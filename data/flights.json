@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-22T13:10:00.620296+02:00",
+  "scraped_at": "2026-08-22T13:33:50.575466+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -95,8 +95,8 @@
       "airline": null,
       "airline_raw": "SWISS AIR AMBULANCE",
       "flight_number": null,
-      "status_code": "prevu",
-      "status_raw": "Prévu 13h15",
+      "status_code": "atterri",
+      "status_raw": "Arrivé 13h20",
       "delayed": false,
       "early": false
     },
