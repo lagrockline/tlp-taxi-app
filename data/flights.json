@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-22T13:52:36.159117+02:00",
+  "scraped_at": "2026-08-22T14:14:16.292728+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -9,8 +9,8 @@
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR5109",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "decolle",
+      "status_raw": "Décollé 13h41",
       "delayed": false,
       "early": false
     },
@@ -21,8 +21,8 @@
       "airline": null,
       "airline_raw": "SWISS AIR AMBULANCE",
       "flight_number": null,
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "decolle",
+      "status_raw": "Décollé 13h49",
       "delayed": false,
       "early": false
     },
@@ -107,8 +107,8 @@
       "airline": "Volotea",
       "airline_raw": "VOLOTEA",
       "flight_number": "V72199",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "prevu",
+      "status_raw": "Prévu 15h10",
       "delayed": false,
       "early": false
     },
