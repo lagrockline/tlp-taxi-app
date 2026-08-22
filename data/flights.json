@@ -1,19 +1,7 @@
 {
-  "scraped_at": "2026-08-22T19:13:01.404415+02:00",
+  "scraped_at": "2026-08-22T19:36:20.977643+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
-    {
-      "destination": "PARIS ORLY",
-      "date": "22/08",
-      "time": "16:20",
-      "airline": "Volotea",
-      "airline_raw": "VOLOTEA",
-      "flight_number": "V72182",
-      "status_code": "decolle",
-      "status_raw": "Décollé 16h30",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "MALTE",
       "date": "22/08",
