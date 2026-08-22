@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-22T15:57:03.805541+02:00",
+  "scraped_at": "2026-08-22T16:20:52.302763+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -65,26 +65,14 @@
   ],
   "arrivals": [
     {
-      "destination": "ZURICH",
-      "date": "22/08",
-      "time": "13:15",
-      "airline": null,
-      "airline_raw": "SWISS AIR AMBULANCE",
-      "flight_number": null,
-      "status_code": "atterri",
-      "status_raw": "Arrivé 13h20",
-      "delayed": false,
-      "early": false
-    },
-    {
       "destination": "CATANE",
       "date": "22/08",
       "time": "15:30",
       "airline": "Volotea",
       "airline_raw": "VOLOTEA",
       "flight_number": "V72199",
-      "status_code": "prevu",
-      "status_raw": "Prévu 15h10",
+      "status_code": "atterri",
+      "status_raw": "Arrivé 15h12",
       "delayed": false,
       "early": false
     },
