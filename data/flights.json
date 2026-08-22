@@ -1,19 +1,128 @@
 {
-  "scraped_at": "2026-08-22T22:56:52.521749+02:00",
+  "scraped_at": "2026-08-23T00:22:48.741347+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
-      "destination": "PALERME",
-      "date": "22/08",
-      "time": "20:15",
+      "destination": "NAPLES",
+      "date": "23/08",
+      "time": "06:00",
       "airline": "Volotea",
       "airline_raw": "VOLOTEA",
-      "flight_number": "V72186",
-      "status_code": "decolle",
-      "status_raw": "Décollé 20h49",
+      "flight_number": "V72188",
+      "status_code": null,
+      "status_raw": null,
+      "delayed": false,
+      "early": false
+    },
+    {
+      "destination": "BRUXELLES-CHARLEROI",
+      "date": "23/08",
+      "time": "09:35",
+      "airline": "Ryanair",
+      "airline_raw": "RYANAIR IRLANDE",
+      "flight_number": "FR6097",
+      "status_code": null,
+      "status_raw": null,
+      "delayed": false,
+      "early": false
+    },
+    {
+      "destination": "LONDRES STANSTED",
+      "date": "23/08",
+      "time": "11:20",
+      "airline": "Ryanair",
+      "airline_raw": "RYANAIR IRLANDE",
+      "flight_number": "FR521",
+      "status_code": null,
+      "status_raw": null,
+      "delayed": false,
+      "early": false
+    },
+    {
+      "destination": "FARNBOROUGH",
+      "date": "23/08",
+      "time": "13:00",
+      "airline": null,
+      "airline_raw": "FLYING SERVICE ANTWERP",
+      "flight_number": null,
+      "status_code": null,
+      "status_raw": null,
+      "delayed": false,
+      "early": false
+    },
+    {
+      "destination": "PARIS ORLY",
+      "date": "23/08",
+      "time": "15:30",
+      "airline": "Volotea",
+      "airline_raw": "VOLOTEA",
+      "flight_number": "V72180",
+      "status_code": null,
+      "status_raw": null,
       "delayed": false,
       "early": false
     }
   ],
-  "arrivals": []
+  "arrivals": [
+    {
+      "destination": "PALERME",
+      "date": "23/08",
+      "time": "01:10",
+      "airline": "Volotea",
+      "airline_raw": "VOLOTEA",
+      "flight_number": "V72187",
+      "status_code": "prevu",
+      "status_raw": "Prévu 01h31",
+      "delayed": false,
+      "early": false
+    },
+    {
+      "destination": "BRUXELLES-CHARLEROI",
+      "date": "23/08",
+      "time": "09:10",
+      "airline": "Ryanair",
+      "airline_raw": "RYANAIR IRLANDE",
+      "flight_number": "FR6096",
+      "status_code": null,
+      "status_raw": null,
+      "delayed": false,
+      "early": false
+    },
+    {
+      "destination": "LONDRES STANSTED",
+      "date": "23/08",
+      "time": "10:50",
+      "airline": "Ryanair",
+      "airline_raw": "RYANAIR IRLANDE",
+      "flight_number": "FR522",
+      "status_code": null,
+      "status_raw": null,
+      "delayed": false,
+      "early": false
+    },
+    {
+      "destination": "NAPLES",
+      "date": "23/08",
+      "time": "13:50",
+      "airline": "Volotea",
+      "airline_raw": "VOLOTEA",
+      "flight_number": "V72189",
+      "status_code": null,
+      "status_raw": null,
+      "delayed": false,
+      "early": false
+    },
+    {
+      "destination": "PARIS ORLY",
+      "date": "23/08",
+      "time": "18:55",
+      "airline": "Volotea",
+      "airline_raw": "VOLOTEA",
+      "flight_number": "V72181",
+      "status_code": null,
+      "status_raw": null,
+      "delayed": false,
+      "early": false
+    }
+  ]
 }
