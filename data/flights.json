@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-23T09:17:46.161658+02:00",
+  "scraped_at": "2026-08-23T09:50:44.248695+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -9,8 +9,8 @@
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR6097",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "decolle",
+      "status_raw": "Décollé 09h40",
       "delayed": false,
       "early": false
     },
@@ -60,7 +60,7 @@
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR6096",
       "status_code": "atterri",
-      "status_raw": "Arrivé 08h45",
+      "status_raw": "Arrivé 08h55",
       "delayed": false,
       "early": false
     },
@@ -71,8 +71,8 @@
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR522",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "prevu",
+      "status_raw": "Prévu 10h40",
       "delayed": false,
       "early": false
     },
