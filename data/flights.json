@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-23T17:54:27.001128+02:00",
+  "scraped_at": "2026-08-23T18:16:19.088565+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -23,8 +23,8 @@
       "airline": "Volotea",
       "airline_raw": "VOLOTEA",
       "flight_number": "V72181",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "prevu",
+      "status_raw": "Prévu 18h55",
       "delayed": false,
       "early": false
     }
