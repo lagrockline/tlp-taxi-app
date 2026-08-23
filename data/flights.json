@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-23T13:12:25.823172+02:00",
+  "scraped_at": "2026-08-23T13:34:35.363407+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -21,8 +21,8 @@
       "airline": null,
       "airline_raw": "FLYING SERVICE ANTWERP",
       "flight_number": null,
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "decolle",
+      "status_raw": "Décollé 13h00",
       "delayed": false,
       "early": false
     },
