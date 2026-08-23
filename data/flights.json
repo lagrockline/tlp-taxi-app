@@ -1,19 +1,7 @@
 {
-  "scraped_at": "2026-08-23T15:59:53.591107+02:00",
+  "scraped_at": "2026-08-23T16:30:35.165179+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
-    {
-      "destination": "FARNBOROUGH",
-      "date": "23/08",
-      "time": "13:00",
-      "airline": null,
-      "airline_raw": "FLYING SERVICE ANTWERP",
-      "flight_number": null,
-      "status_code": "decolle",
-      "status_raw": "Décollé 13h00",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "PARIS ORLY",
       "date": "23/08",
