@@ -1,19 +1,7 @@
 {
-  "scraped_at": "2026-08-23T08:33:06.144149+02:00",
+  "scraped_at": "2026-08-23T09:17:46.161658+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
-    {
-      "destination": "NAPLES",
-      "date": "23/08",
-      "time": "06:00",
-      "airline": "Volotea",
-      "airline_raw": "VOLOTEA",
-      "flight_number": "V72188",
-      "status_code": "decolle",
-      "status_raw": "Décollé 06h09",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "BRUXELLES-CHARLEROI",
       "date": "23/08",
@@ -71,8 +59,8 @@
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR6096",
-      "status_code": "prevu",
-      "status_raw": "Prévu 09h00",
+      "status_code": "atterri",
+      "status_raw": "Arrivé 08h45",
       "delayed": false,
       "early": false
     },
