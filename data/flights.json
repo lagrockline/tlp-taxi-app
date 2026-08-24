@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-24T10:25:03.816371+02:00",
+  "scraped_at": "2026-08-24T11:12:08.713870+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -179,9 +179,9 @@
       "airline": null,
       "airline_raw": "ALBASTAR SPAIN",
       "flight_number": "AP7255",
-      "status_code": "retarde",
-      "status_raw": "Retardé",
-      "delayed": true,
+      "status_code": "prevu",
+      "status_raw": "Prévu 12h30",
+      "delayed": false,
       "early": false
     },
     {
