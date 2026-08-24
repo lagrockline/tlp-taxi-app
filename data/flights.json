@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-24T16:54:43.526575+02:00",
+  "scraped_at": "2026-08-24T17:32:49.495408+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -33,9 +33,9 @@
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR2371",
-      "status_code": null,
-      "status_raw": null,
-      "delayed": false,
+      "status_code": "retarde",
+      "status_raw": "Retardé",
+      "delayed": true,
       "early": false
     },
     {
@@ -71,9 +71,9 @@
       "airline": null,
       "airline_raw": "ALBASTAR SPAIN",
       "flight_number": "AP7261",
-      "status_code": null,
-      "status_raw": null,
-      "delayed": false,
+      "status_code": "retarde",
+      "status_raw": "Retardé",
+      "delayed": true,
       "early": false
     },
     {
@@ -83,9 +83,9 @@
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR2370",
-      "status_code": null,
-      "status_raw": null,
-      "delayed": false,
+      "status_code": "retarde",
+      "status_raw": "Retardé",
+      "delayed": true,
       "early": false
     },
     {
