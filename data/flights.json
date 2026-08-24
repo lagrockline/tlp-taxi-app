@@ -1,31 +1,7 @@
 {
-  "scraped_at": "2026-08-24T21:05:30.619633+02:00",
+  "scraped_at": "2026-08-24T21:38:45.961273+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
-    {
-      "destination": "NICE",
-      "date": "24/08",
-      "time": "18:30",
-      "airline": null,
-      "airline_raw": "THALAIR",
-      "flight_number": null,
-      "status_code": "decolle",
-      "status_raw": "Décollé 18h55",
-      "delayed": false,
-      "early": false
-    },
-    {
-      "destination": "PARIS ORLY",
-      "date": "24/08",
-      "time": "18:35",
-      "airline": "Volotea",
-      "airline_raw": "VOLOTEA",
-      "flight_number": "V72182",
-      "status_code": "decolle",
-      "status_raw": "Décollé 19h35",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "CRACOVIE",
       "date": "24/08",
@@ -53,26 +29,14 @@
   ],
   "arrivals": [
     {
-      "destination": "BOLOGNE",
-      "date": "24/08",
-      "time": "18:10",
-      "airline": null,
-      "airline_raw": "ALBASTAR SPAIN",
-      "flight_number": "AP7261",
-      "status_code": "atterri",
-      "status_raw": "Arrivé 19h30",
-      "delayed": false,
-      "early": false
-    },
-    {
       "destination": "CRACOVIE",
       "date": "24/08",
       "time": "20:35",
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR2370",
-      "status_code": "prevu",
-      "status_raw": "Prévu 21h25",
+      "status_code": "atterri",
+      "status_raw": "Arrivé 21h16",
       "delayed": false,
       "early": false
     },
