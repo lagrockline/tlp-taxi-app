@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-24T17:32:49.495408+02:00",
+  "scraped_at": "2026-08-24T18:06:21.935748+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -72,7 +72,7 @@
       "airline_raw": "ALBASTAR SPAIN",
       "flight_number": "AP7261",
       "status_code": "retarde",
-      "status_raw": "Retardé",
+      "status_raw": "Retardé 19h30",
       "delayed": true,
       "early": false
     },
