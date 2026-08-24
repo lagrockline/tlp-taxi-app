@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-24T07:10:04.582047+02:00",
+  "scraped_at": "2026-08-24T07:52:06.540311+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -75,6 +75,18 @@
       "early": false
     },
     {
+      "destination": "NICE",
+      "date": "24/08",
+      "time": "18:30",
+      "airline": null,
+      "airline_raw": "THALAIR",
+      "flight_number": null,
+      "status_code": null,
+      "status_raw": null,
+      "delayed": false,
+      "early": false
+    },
+    {
       "destination": "PARIS ORLY",
       "date": "24/08",
       "time": "18:35",
@@ -120,7 +132,19 @@
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR4573",
       "status_code": "prevu",
-      "status_raw": "Prévu 08h05",
+      "status_raw": "Prévu 08h10",
+      "delayed": false,
+      "early": false
+    },
+    {
+      "destination": "NICE",
+      "date": "24/08",
+      "time": "09:20",
+      "airline": null,
+      "airline_raw": "THALAIR",
+      "flight_number": null,
+      "status_code": null,
+      "status_raw": null,
       "delayed": false,
       "early": false
     },
