@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-24T14:15:41.445990+02:00",
+  "scraped_at": "2026-08-24T15:16:29.628249+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -64,18 +64,6 @@
     }
   ],
   "arrivals": [
-    {
-      "destination": "FORLI",
-      "date": "24/08",
-      "time": "11:45",
-      "airline": null,
-      "airline_raw": "ALBASTAR SPAIN",
-      "flight_number": "AP7255",
-      "status_code": "atterri",
-      "status_raw": "Arrivé 12h30",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "ROME FIUMICINO",
       "date": "24/08",
