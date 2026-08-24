@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-24T19:19:33.413756+02:00",
+  "scraped_at": "2026-08-24T19:51:34.843823+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -21,8 +21,8 @@
       "airline": "Volotea",
       "airline_raw": "VOLOTEA",
       "flight_number": "V72182",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "decolle",
+      "status_raw": "Décollé 19h35",
       "delayed": false,
       "early": false
     },
@@ -59,8 +59,8 @@
       "airline": null,
       "airline_raw": "ALBASTAR SPAIN",
       "flight_number": "AP7261",
-      "status_code": "prevu",
-      "status_raw": "Prévu 19h20",
+      "status_code": "atterri",
+      "status_raw": "Arrivé 19h30",
       "delayed": false,
       "early": false
     },
