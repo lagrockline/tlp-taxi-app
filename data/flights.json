@@ -1,19 +1,7 @@
 {
-  "scraped_at": "2026-08-24T09:39:51.949764+02:00",
+  "scraped_at": "2026-08-24T10:25:03.816371+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
-    {
-      "destination": "PARIS ORLY",
-      "date": "24/08",
-      "time": "06:45",
-      "airline": "Volotea",
-      "airline_raw": "VOLOTEA",
-      "flight_number": "V72180",
-      "status_code": "decolle",
-      "status_raw": "Décollé 06h59",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "ROME CIAMPINO",
       "date": "24/08",
@@ -167,8 +155,8 @@
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR5079",
-      "status_code": "prevu",
-      "status_raw": "Prévu 09h45",
+      "status_code": "atterri",
+      "status_raw": "Arrivé 09h54",
       "delayed": false,
       "early": false
     },
@@ -191,9 +179,9 @@
       "airline": null,
       "airline_raw": "ALBASTAR SPAIN",
       "flight_number": "AP7255",
-      "status_code": null,
-      "status_raw": null,
-      "delayed": false,
+      "status_code": "retarde",
+      "status_raw": "Retardé",
+      "delayed": true,
       "early": false
     },
     {
