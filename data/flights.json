@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-25T17:28:37.996429+02:00",
+  "scraped_at": "2026-08-25T18:09:13.210829+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -28,18 +28,6 @@
     }
   ],
   "arrivals": [
-    {
-      "destination": "LONDRES STANSTED",
-      "date": "25/08",
-      "time": "14:45",
-      "airline": "Ryanair",
-      "airline_raw": "RYANAIR IRLANDE",
-      "flight_number": "FR522",
-      "status_code": "atterri",
-      "status_raw": "Arrivé 14h54",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "CATANE",
       "date": "25/08",
