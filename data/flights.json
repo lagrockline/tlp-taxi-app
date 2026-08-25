@@ -1,19 +1,7 @@
 {
-  "scraped_at": "2026-08-25T16:46:51.542405+02:00",
+  "scraped_at": "2026-08-25T17:28:37.996429+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
-    {
-      "destination": "LIEGE",
-      "date": "25/08",
-      "time": "14:00",
-      "airline": null,
-      "airline_raw": "ALBASTAR SPAIN",
-      "flight_number": "AP961P",
-      "status_code": "decolle",
-      "status_raw": "Décollé 13h51",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "LONDRES STANSTED",
       "date": "25/08",
