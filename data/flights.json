@@ -1,19 +1,7 @@
 {
-  "scraped_at": "2026-08-25T15:57:56.286672+02:00",
+  "scraped_at": "2026-08-25T16:46:51.542405+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
-    {
-      "destination": "PAMPELONNE",
-      "date": "25/08",
-      "time": "13:30",
-      "airline": null,
-      "airline_raw": "FLYAMELIA",
-      "flight_number": "NL247P",
-      "status_code": "decolle",
-      "status_raw": "Décollé 13h30",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "LIEGE",
       "date": "25/08",
