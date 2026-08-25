@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-25T13:05:06.602800+02:00",
+  "scraped_at": "2026-08-25T13:38:07.011697+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -21,8 +21,8 @@
       "airline": null,
       "airline_raw": "FLYAMELIA",
       "flight_number": "NL247P",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "decolle",
+      "status_raw": "Décollé 13h30",
       "delayed": false,
       "early": false
     },
