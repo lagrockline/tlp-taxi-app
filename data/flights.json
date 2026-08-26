@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-26T13:16:08.240880+02:00",
+  "scraped_at": "2026-08-26T13:48:22.314355+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -21,8 +21,8 @@
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR521",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "decolle",
+      "status_raw": "Décollé 13h21",
       "delayed": false,
       "early": false
     },
