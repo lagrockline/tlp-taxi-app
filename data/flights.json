@@ -1,31 +1,7 @@
 {
-  "scraped_at": "2026-08-26T15:28:08.418062+02:00",
+  "scraped_at": "2026-08-26T16:12:10.287197+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
-    {
-      "destination": "PALERME",
-      "date": "26/08",
-      "time": "12:30",
-      "airline": "Volotea",
-      "airline_raw": "VOLOTEA",
-      "flight_number": "V72186",
-      "status_code": "decolle",
-      "status_raw": "Décollé 12h47",
-      "delayed": false,
-      "early": false
-    },
-    {
-      "destination": "LONDRES STANSTED",
-      "date": "26/08",
-      "time": "12:55",
-      "airline": "Ryanair",
-      "airline_raw": "RYANAIR IRLANDE",
-      "flight_number": "FR521",
-      "status_code": "decolle",
-      "status_raw": "Décollé 13h21",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "PARIS ORLY",
       "date": "26/08",
@@ -52,18 +28,6 @@
     }
   ],
   "arrivals": [
-    {
-      "destination": "LONDRES STANSTED",
-      "date": "26/08",
-      "time": "12:30",
-      "airline": "Ryanair",
-      "airline_raw": "RYANAIR IRLANDE",
-      "flight_number": "FR522",
-      "status_code": "atterri",
-      "status_raw": "Arrivé 12h36",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "PALERME",
       "date": "26/08",
