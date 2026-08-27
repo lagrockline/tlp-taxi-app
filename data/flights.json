@@ -1,67 +1,7 @@
 {
-  "scraped_at": "2026-08-27T07:07:21.074330+02:00",
+  "scraped_at": "2026-08-27T18:27:59.084823+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
-    {
-      "destination": "PARIS ORLY",
-      "date": "27/08",
-      "time": "06:45",
-      "airline": "Volotea",
-      "airline_raw": "VOLOTEA",
-      "flight_number": "V72180",
-      "status_code": "decolle",
-      "status_raw": "Décollé 06h43",
-      "delayed": false,
-      "early": false
-    },
-    {
-      "destination": "CRACOVIE",
-      "date": "27/08",
-      "time": "11:45",
-      "airline": "Ryanair",
-      "airline_raw": "RYANAIR IRLANDE",
-      "flight_number": "FR2371",
-      "status_code": null,
-      "status_raw": null,
-      "delayed": false,
-      "early": false
-    },
-    {
-      "destination": "FORLI",
-      "date": "27/08",
-      "time": "12:15",
-      "airline": null,
-      "airline_raw": "ALBASTAR SPAIN",
-      "flight_number": "AP7284",
-      "status_code": null,
-      "status_raw": null,
-      "delayed": false,
-      "early": false
-    },
-    {
-      "destination": "MALTE",
-      "date": "27/08",
-      "time": "12:40",
-      "airline": null,
-      "airline_raw": "KM MALTA AIRLINES",
-      "flight_number": "KM9447P",
-      "status_code": null,
-      "status_raw": null,
-      "delayed": false,
-      "early": false
-    },
-    {
-      "destination": "NAPLES",
-      "date": "27/08",
-      "time": "12:40",
-      "airline": "Volotea",
-      "airline_raw": "VOLOTEA",
-      "flight_number": "V72188",
-      "status_code": null,
-      "status_raw": null,
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "LONDRES STANSTED",
       "date": "27/08",
@@ -69,8 +9,8 @@
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR521",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "decolle",
+      "status_raw": "Décollé 17h47",
       "delayed": false,
       "early": false
     },
@@ -93,9 +33,9 @@
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR5109",
-      "status_code": null,
-      "status_raw": null,
-      "delayed": false,
+      "status_code": "retarde",
+      "status_raw": "Retardé",
+      "delayed": true,
       "early": false
     },
     {
@@ -125,62 +65,14 @@
   ],
   "arrivals": [
     {
-      "destination": "PARIS ORLY",
-      "date": "27/08",
-      "time": "10:10",
-      "airline": "Volotea",
-      "airline_raw": "VOLOTEA",
-      "flight_number": "V72181",
-      "status_code": null,
-      "status_raw": null,
-      "delayed": false,
-      "early": false
-    },
-    {
-      "destination": "NAPLES",
-      "date": "27/08",
-      "time": "10:15",
-      "airline": null,
-      "airline_raw": "ALBASTAR SPAIN",
-      "flight_number": "AP7283",
-      "status_code": null,
-      "status_raw": null,
-      "delayed": false,
-      "early": false
-    },
-    {
-      "destination": "CRACOVIE",
-      "date": "27/08",
-      "time": "11:10",
-      "airline": "Ryanair",
-      "airline_raw": "RYANAIR IRLANDE",
-      "flight_number": "FR2370",
-      "status_code": null,
-      "status_raw": null,
-      "delayed": false,
-      "early": false
-    },
-    {
-      "destination": "MALTE",
-      "date": "27/08",
-      "time": "11:25",
-      "airline": null,
-      "airline_raw": "KM MALTA AIRLINES",
-      "flight_number": "KM7466",
-      "status_code": null,
-      "status_raw": null,
-      "delayed": false,
-      "early": false
-    },
-    {
       "destination": "LONDRES STANSTED",
       "date": "27/08",
       "time": "15:35",
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR522",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "atterri",
+      "status_raw": "Arrivé 16h43",
       "delayed": false,
       "early": false
     },
@@ -191,8 +83,8 @@
       "airline": null,
       "airline_raw": "QATAR AIRWAYS",
       "flight_number": "QR3270",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "atterri",
+      "status_raw": "Arrivé 17h12",
       "delayed": false,
       "early": false
     },
@@ -203,8 +95,8 @@
       "airline": "Volotea",
       "airline_raw": "VOLOTEA",
       "flight_number": "V72189",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "atterri",
+      "status_raw": "Arrivé 17h44",
       "delayed": false,
       "early": false
     },
@@ -215,9 +107,9 @@
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR5108",
-      "status_code": null,
-      "status_raw": null,
-      "delayed": false,
+      "status_code": "retarde",
+      "status_raw": "Retardé",
+      "delayed": true,
       "early": false
     },
     {
@@ -239,9 +131,9 @@
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR6096",
-      "status_code": null,
-      "status_raw": null,
-      "delayed": false,
+      "status_code": "retarde",
+      "status_raw": "Retardé",
+      "delayed": true,
       "early": false
     },
     {
