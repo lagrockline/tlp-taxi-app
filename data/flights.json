@@ -1,19 +1,92 @@
 {
-  "scraped_at": "2026-08-29T23:09:34.996871+02:00",
+  "scraped_at": "2026-08-30T01:16:24.418596+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
-      "destination": "PALERME",
-      "date": "29/08",
-      "time": "20:15",
-      "airline": "Volotea",
-      "airline_raw": "VOLOTEA",
-      "flight_number": "V72186",
-      "status_code": "decolle",
-      "status_raw": "Décollé 21h06",
+      "destination": "BRUXELLES-CHARLEROI",
+      "date": "30/08",
+      "time": "09:35",
+      "airline": "Ryanair",
+      "airline_raw": "RYANAIR IRLANDE",
+      "flight_number": "FR6097",
+      "status_code": null,
+      "status_raw": null,
+      "delayed": false,
+      "early": false
+    },
+    {
+      "destination": "LONDRES STANSTED",
+      "date": "30/08",
+      "time": "11:20",
+      "airline": "Ryanair",
+      "airline_raw": "RYANAIR IRLANDE",
+      "flight_number": "FR521",
+      "status_code": null,
+      "status_raw": null,
+      "delayed": false,
+      "early": false
+    },
+    {
+      "destination": "LONDRES LTN",
+      "date": "30/08",
+      "time": "12:00",
+      "airline": null,
+      "airline_raw": "NETJETS",
+      "flight_number": null,
+      "status_code": null,
+      "status_raw": null,
       "delayed": false,
       "early": false
     }
   ],
-  "arrivals": []
+  "arrivals": [
+    {
+      "destination": "PALERME",
+      "date": "30/08",
+      "time": "01:10",
+      "airline": "Volotea",
+      "airline_raw": "VOLOTEA",
+      "flight_number": "V72187",
+      "status_code": "retarde",
+      "status_raw": "Retardé 01h45",
+      "delayed": true,
+      "early": false
+    },
+    {
+      "destination": "BRUXELLES-CHARLEROI",
+      "date": "30/08",
+      "time": "09:10",
+      "airline": "Ryanair",
+      "airline_raw": "RYANAIR IRLANDE",
+      "flight_number": "FR6096",
+      "status_code": null,
+      "status_raw": null,
+      "delayed": false,
+      "early": false
+    },
+    {
+      "destination": "STUTTGART",
+      "date": "30/08",
+      "time": "09:40",
+      "airline": null,
+      "airline_raw": "NetJets Air Transport UK",
+      "flight_number": null,
+      "status_code": null,
+      "status_raw": null,
+      "delayed": false,
+      "early": false
+    },
+    {
+      "destination": "LONDRES STANSTED",
+      "date": "30/08",
+      "time": "10:50",
+      "airline": "Ryanair",
+      "airline_raw": "RYANAIR IRLANDE",
+      "flight_number": "FR522",
+      "status_code": null,
+      "status_raw": null,
+      "delayed": false,
+      "early": false
+    }
+  ]
 }
