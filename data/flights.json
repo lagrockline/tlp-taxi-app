@@ -1,19 +1,7 @@
 {
-  "scraped_at": "2026-08-29T20:34:24.397363+02:00",
+  "scraped_at": "2026-08-29T23:09:34.996871+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
-    {
-      "destination": "MALTE",
-      "date": "29/08",
-      "time": "17:45",
-      "airline": "Ryanair",
-      "airline_raw": "RYANAIR IRLANDE",
-      "flight_number": "FR9245",
-      "status_code": "decolle",
-      "status_raw": "Décollé 17h55",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "PALERME",
       "date": "29/08",
@@ -21,24 +9,11 @@
       "airline": "Volotea",
       "airline_raw": "VOLOTEA",
       "flight_number": "V72186",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "decolle",
+      "status_raw": "Décollé 21h06",
       "delayed": false,
       "early": false
     }
   ],
-  "arrivals": [
-    {
-      "destination": "PARIS ORLY",
-      "date": "29/08",
-      "time": "19:45",
-      "airline": "Volotea",
-      "airline_raw": "VOLOTEA",
-      "flight_number": "V72183",
-      "status_code": "atterri",
-      "status_raw": "Arrivé 19h53",
-      "delayed": false,
-      "early": false
-    }
-  ]
+  "arrivals": []
 }
