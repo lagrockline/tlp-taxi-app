@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-30T01:16:24.418596+02:00",
+  "scraped_at": "2026-08-30T03:17:51.316982+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -47,9 +47,9 @@
       "airline": "Volotea",
       "airline_raw": "VOLOTEA",
       "flight_number": "V72187",
-      "status_code": "retarde",
-      "status_raw": "Retardé 01h45",
-      "delayed": true,
+      "status_code": "atterri",
+      "status_raw": "Arrivé 01h50",
+      "delayed": false,
       "early": false
     },
     {
