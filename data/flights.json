@@ -1,55 +1,7 @@
 {
-  "scraped_at": "2026-08-31T07:48:11.687605+02:00",
+  "scraped_at": "2026-08-31T13:52:40.787435+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
-    {
-      "destination": "PARIS ORLY",
-      "date": "31/08",
-      "time": "06:45",
-      "airline": "Volotea",
-      "airline_raw": "VOLOTEA",
-      "flight_number": "V72180",
-      "status_code": "decolle",
-      "status_raw": "Décollé 06h53",
-      "delayed": false,
-      "early": false
-    },
-    {
-      "destination": "ROME CIAMPINO",
-      "date": "31/08",
-      "time": "08:55",
-      "airline": "Ryanair",
-      "airline_raw": "RYANAIR IRLANDE",
-      "flight_number": "FR4574",
-      "status_code": null,
-      "status_raw": null,
-      "delayed": false,
-      "early": false
-    },
-    {
-      "destination": "BILBAO",
-      "date": "31/08",
-      "time": "10:30",
-      "airline": null,
-      "airline_raw": "TRADE AIR",
-      "flight_number": "C3121P",
-      "status_code": null,
-      "status_raw": null,
-      "delayed": false,
-      "early": false
-    },
-    {
-      "destination": "DUBLIN",
-      "date": "31/08",
-      "time": "10:50",
-      "airline": "Ryanair",
-      "airline_raw": "RYANAIR IRLANDE",
-      "flight_number": "FR5078",
-      "status_code": null,
-      "status_raw": null,
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "ROME FIUMICINO",
       "date": "31/08",
@@ -57,8 +9,8 @@
       "airline": "Volotea",
       "airline_raw": "VOLOTEA",
       "flight_number": "V72196",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "decolle",
+      "status_raw": "Décollé 11h17",
       "delayed": false,
       "early": false
     },
@@ -136,54 +88,6 @@
     }
   ],
   "arrivals": [
-    {
-      "destination": "ROME CIAMPINO",
-      "date": "31/08",
-      "time": "08:25",
-      "airline": "Ryanair",
-      "airline_raw": "RYANAIR IRLANDE",
-      "flight_number": "FR4573",
-      "status_code": "prevu",
-      "status_raw": "Prévu 08h05",
-      "delayed": false,
-      "early": false
-    },
-    {
-      "destination": "OLBIA",
-      "date": "31/08",
-      "time": "09:30",
-      "airline": null,
-      "airline_raw": "TRADE AIR",
-      "flight_number": "C31210",
-      "status_code": null,
-      "status_raw": null,
-      "delayed": false,
-      "early": false
-    },
-    {
-      "destination": "DUBLIN",
-      "date": "31/08",
-      "time": "09:45",
-      "airline": "Ryanair",
-      "airline_raw": "RYANAIR IRLANDE",
-      "flight_number": "FR5079",
-      "status_code": null,
-      "status_raw": null,
-      "delayed": false,
-      "early": false
-    },
-    {
-      "destination": "PARIS ORLY",
-      "date": "31/08",
-      "time": "10:10",
-      "airline": "Volotea",
-      "airline_raw": "VOLOTEA",
-      "flight_number": "V72181",
-      "status_code": null,
-      "status_raw": null,
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "ROME FIUMICINO",
       "date": "31/08",
