@@ -1,55 +1,7 @@
 {
-  "scraped_at": "2026-09-01T08:43:44.238883+02:00",
+  "scraped_at": "2026-09-01T14:03:12.861584+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
-    {
-      "destination": "PARIS ORLY",
-      "date": "01/09",
-      "time": "06:45",
-      "airline": "Volotea",
-      "airline_raw": "VOLOTEA",
-      "flight_number": "V72180",
-      "status_code": "decolle",
-      "status_raw": "Décollé 06h46",
-      "delayed": false,
-      "early": false
-    },
-    {
-      "destination": "NAPLES",
-      "date": "01/09",
-      "time": "10:00",
-      "airline": null,
-      "airline_raw": "ALBASTAR SPAIN",
-      "flight_number": "AP7284",
-      "status_code": null,
-      "status_raw": null,
-      "delayed": false,
-      "early": false
-    },
-    {
-      "destination": "CATANE",
-      "date": "01/09",
-      "time": "10:50",
-      "airline": "Volotea",
-      "airline_raw": "VOLOTEA",
-      "flight_number": "V72198",
-      "status_code": null,
-      "status_raw": null,
-      "delayed": false,
-      "early": false
-    },
-    {
-      "destination": "DUBLIN",
-      "date": "01/09",
-      "time": "11:00",
-      "airline": null,
-      "airline_raw": "G/OPS",
-      "flight_number": null,
-      "status_code": null,
-      "status_raw": null,
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "AMMAN",
       "date": "01/09",
@@ -89,38 +41,14 @@
   ],
   "arrivals": [
     {
-      "destination": "VENISE",
-      "date": "01/09",
-      "time": "08:35",
-      "airline": null,
-      "airline_raw": "ALBASTAR SPAIN",
-      "flight_number": "AP966P",
-      "status_code": "prevu",
-      "status_raw": "Prévu 08h55",
-      "delayed": false,
-      "early": false
-    },
-    {
-      "destination": "PARIS ORLY",
-      "date": "01/09",
-      "time": "10:10",
-      "airline": "Volotea",
-      "airline_raw": "VOLOTEA",
-      "flight_number": "V72181",
-      "status_code": null,
-      "status_raw": null,
-      "delayed": false,
-      "early": false
-    },
-    {
       "destination": "LONDRES STANSTED",
       "date": "01/09",
       "time": "14:45",
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR522",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "prevu",
+      "status_raw": "Prévu 14h35",
       "delayed": false,
       "early": false
     },
