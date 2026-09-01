@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-09-01T18:31:46.674376+02:00",
+  "scraped_at": "2026-09-01T21:30:29.772254+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -9,25 +9,13 @@
       "airline": "Volotea",
       "airline_raw": "VOLOTEA",
       "flight_number": "V72182",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "decolle",
+      "status_raw": "Décollé 18h46",
       "delayed": false,
       "early": false
     }
   ],
   "arrivals": [
-    {
-      "destination": "CATANE",
-      "date": "01/09",
-      "time": "16:30",
-      "airline": "Volotea",
-      "airline_raw": "VOLOTEA",
-      "flight_number": "V72199",
-      "status_code": "atterri",
-      "status_raw": "Arrivé 16h20",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "BURGAS",
       "date": "01/09",
@@ -35,8 +23,8 @@
       "airline": null,
       "airline_raw": "ALBASTAR SPAIN",
       "flight_number": "AP943P",
-      "status_code": "prevu",
-      "status_raw": "Prévu 19h55",
+      "status_code": "atterri",
+      "status_raw": "Arrivé 19h58",
       "delayed": false,
       "early": false
     },
@@ -47,8 +35,8 @@
       "airline": "Volotea",
       "airline_raw": "VOLOTEA",
       "flight_number": "V72183",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "prevu",
+      "status_raw": "Prévu 22h00",
       "delayed": false,
       "early": false
     }
