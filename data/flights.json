@@ -1,31 +1,7 @@
 {
-  "scraped_at": "2026-09-01T14:03:12.861584+02:00",
+  "scraped_at": "2026-09-01T18:31:46.674376+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
-    {
-      "destination": "AMMAN",
-      "date": "01/09",
-      "time": "14:00",
-      "airline": null,
-      "airline_raw": "TARMAC",
-      "flight_number": null,
-      "status_code": null,
-      "status_raw": null,
-      "delayed": false,
-      "early": false
-    },
-    {
-      "destination": "LONDRES STANSTED",
-      "date": "01/09",
-      "time": "15:25",
-      "airline": "Ryanair",
-      "airline_raw": "RYANAIR IRLANDE",
-      "flight_number": "FR521",
-      "status_code": null,
-      "status_raw": null,
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "PARIS ORLY",
       "date": "01/09",
@@ -41,26 +17,14 @@
   ],
   "arrivals": [
     {
-      "destination": "LONDRES STANSTED",
-      "date": "01/09",
-      "time": "14:45",
-      "airline": "Ryanair",
-      "airline_raw": "RYANAIR IRLANDE",
-      "flight_number": "FR522",
-      "status_code": "prevu",
-      "status_raw": "Prévu 14h35",
-      "delayed": false,
-      "early": false
-    },
-    {
       "destination": "CATANE",
       "date": "01/09",
       "time": "16:30",
       "airline": "Volotea",
       "airline_raw": "VOLOTEA",
       "flight_number": "V72199",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "atterri",
+      "status_raw": "Arrivé 16h20",
       "delayed": false,
       "early": false
     },
@@ -71,8 +35,8 @@
       "airline": null,
       "airline_raw": "ALBASTAR SPAIN",
       "flight_number": "AP943P",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "prevu",
+      "status_raw": "Prévu 19h55",
       "delayed": false,
       "early": false
     },
