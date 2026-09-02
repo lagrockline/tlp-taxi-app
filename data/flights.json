@@ -1,43 +1,7 @@
 {
-  "scraped_at": "2026-09-02T13:22:28.289733+02:00",
+  "scraped_at": "2026-09-02T17:09:30.185048+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
-    {
-      "destination": "PALERME",
-      "date": "02/09",
-      "time": "10:50",
-      "airline": "Volotea",
-      "airline_raw": "VOLOTEA",
-      "flight_number": "V72186",
-      "status_code": "decolle",
-      "status_raw": "Décollé 10h54",
-      "delayed": false,
-      "early": false
-    },
-    {
-      "destination": "LONDRES STANSTED",
-      "date": "02/09",
-      "time": "12:55",
-      "airline": "Ryanair",
-      "airline_raw": "RYANAIR IRLANDE",
-      "flight_number": "FR521",
-      "status_code": null,
-      "status_raw": null,
-      "delayed": false,
-      "early": false
-    },
-    {
-      "destination": "KNOCK",
-      "date": "02/09",
-      "time": "13:15",
-      "airline": null,
-      "airline_raw": "ALBASTAR SPAIN",
-      "flight_number": "AP7509",
-      "status_code": null,
-      "status_raw": null,
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "TOULOUSE-FRANCAZAL",
       "date": "02/09",
@@ -77,26 +41,14 @@
   ],
   "arrivals": [
     {
-      "destination": "LONDRES STANSTED",
-      "date": "02/09",
-      "time": "12:30",
-      "airline": "Ryanair",
-      "airline_raw": "RYANAIR IRLANDE",
-      "flight_number": "FR522",
-      "status_code": "prevu",
-      "status_raw": "Prévu 12h15",
-      "delayed": false,
-      "early": false
-    },
-    {
       "destination": "TARBES LOURDES PYREN",
       "date": "02/09",
       "time": "15:30",
       "airline": null,
       "airline_raw": "COTAM",
       "flight_number": "1481A",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "atterri",
+      "status_raw": "Arrivé 15h35",
       "delayed": false,
       "early": false
     },
@@ -107,8 +59,8 @@
       "airline": "Volotea",
       "airline_raw": "VOLOTEA",
       "flight_number": "V72187",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "atterri",
+      "status_raw": "Arrivé 16h07",
       "delayed": false,
       "early": false
     },
