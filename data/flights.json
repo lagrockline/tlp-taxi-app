@@ -1,31 +1,7 @@
 {
-  "scraped_at": "2026-09-03T20:00:00.475550+02:00",
+  "scraped_at": "2026-09-03T22:53:35.064818+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
-    {
-      "destination": "MILAN BERGAME",
-      "date": "03/09",
-      "time": "19:15",
-      "airline": "Ryanair",
-      "airline_raw": "RYANAIR IRLANDE",
-      "flight_number": "FR5109",
-      "status_code": "decolle",
-      "status_raw": "Décollé 19h23",
-      "delayed": false,
-      "early": false
-    },
-    {
-      "destination": "VALENCIA",
-      "date": "03/09",
-      "time": "19:30",
-      "airline": null,
-      "airline_raw": "ALBASTAR SPAIN",
-      "flight_number": "AP907P",
-      "status_code": null,
-      "status_raw": null,
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "BRUXELLES-CHARLEROI",
       "date": "03/09",
@@ -33,8 +9,8 @@
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR6097",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "decolle",
+      "status_raw": "Décollé 20h55",
       "delayed": false,
       "early": false
     },
@@ -45,61 +21,13 @@
       "airline": null,
       "airline_raw": "ALBASTAR SPAIN",
       "flight_number": "AP931P",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "decolle",
+      "status_raw": "Décollé 21h08",
       "delayed": false,
       "early": false
     }
   ],
   "arrivals": [
-    {
-      "destination": "NAPLES",
-      "date": "03/09",
-      "time": "17:45",
-      "airline": "Volotea",
-      "airline_raw": "VOLOTEA",
-      "flight_number": "V72189",
-      "status_code": "atterri",
-      "status_raw": "Arrivé 17h45",
-      "delayed": false,
-      "early": false
-    },
-    {
-      "destination": "DUBLIN",
-      "date": "03/09",
-      "time": "18:00",
-      "airline": null,
-      "airline_raw": "ALBASTAR SPAIN",
-      "flight_number": "AP7514",
-      "status_code": "atterri",
-      "status_raw": "Arrivé 19h15",
-      "delayed": false,
-      "early": false
-    },
-    {
-      "destination": "MILAN BERGAME",
-      "date": "03/09",
-      "time": "18:45",
-      "airline": "Ryanair",
-      "airline_raw": "RYANAIR IRLANDE",
-      "flight_number": "FR5108",
-      "status_code": "atterri",
-      "status_raw": "Arrivé 18h50",
-      "delayed": false,
-      "early": false
-    },
-    {
-      "destination": "DUBLIN",
-      "date": "03/09",
-      "time": "19:30",
-      "airline": null,
-      "airline_raw": "ALBASTAR SPAIN",
-      "flight_number": "AP7511",
-      "status_code": "atterri",
-      "status_raw": "Arrivé 19h47",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "BRUXELLES-CHARLEROI",
       "date": "03/09",
@@ -107,8 +35,8 @@
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR6096",
-      "status_code": "prevu",
-      "status_raw": "Prévu 20h00",
+      "status_code": "atterri",
+      "status_raw": "Arrivé 20h05",
       "delayed": false,
       "early": false
     }
