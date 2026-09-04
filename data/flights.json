@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-09-04T19:06:13.630590+02:00",
+  "scraped_at": "2026-09-04T21:30:34.506434+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -29,14 +29,14 @@
   ],
   "arrivals": [
     {
-      "destination": "ROME FIUMICINO",
+      "destination": "PARIS ORLY",
       "date": "04/09",
-      "time": "17:50",
+      "time": "22:00",
       "airline": "Volotea",
       "airline_raw": "VOLOTEA",
-      "flight_number": "V72197",
-      "status_code": "atterri",
-      "status_raw": "Arrivé 17h36",
+      "flight_number": "V72183",
+      "status_code": "prevu",
+      "status_raw": "Prévu 21h50",
       "delayed": false,
       "early": false
     }
