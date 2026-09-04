@@ -1,41 +1,17 @@
 {
-  "scraped_at": "2026-09-04T15:42:17.835203+02:00",
+  "scraped_at": "2026-09-04T19:06:13.630590+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
-      "destination": "ROME FIUMICINO",
+      "destination": "PARIS ORLY",
       "date": "04/09",
-      "time": "12:45",
+      "time": "18:35",
       "airline": "Volotea",
       "airline_raw": "VOLOTEA",
-      "flight_number": "V72196",
+      "flight_number": "V72182",
       "status_code": "decolle",
-      "status_raw": "Décollé 12h53",
+      "status_raw": "Décollé 18h32",
       "delayed": false,
-      "early": false
-    },
-    {
-      "destination": "DUBLIN",
-      "date": "04/09",
-      "time": "14:20",
-      "airline": "Ryanair",
-      "airline_raw": "RYANAIR IRLANDE",
-      "flight_number": "FR5078",
-      "status_code": "decolle",
-      "status_raw": "Décollé 14h54",
-      "delayed": false,
-      "early": false
-    },
-    {
-      "destination": "OLBIA",
-      "date": "04/09",
-      "time": "15:30",
-      "airline": null,
-      "airline_raw": "MALTA MEDAIR",
-      "flight_number": "MT1211",
-      "status_code": "retarde",
-      "status_raw": "Retardé",
-      "delayed": true,
       "early": false
     },
     {
@@ -53,26 +29,14 @@
   ],
   "arrivals": [
     {
-      "destination": "DUBLIN",
+      "destination": "ROME FIUMICINO",
       "date": "04/09",
-      "time": "13:35",
-      "airline": "Ryanair",
-      "airline_raw": "RYANAIR IRLANDE",
-      "flight_number": "FR5079",
+      "time": "17:50",
+      "airline": "Volotea",
+      "airline_raw": "VOLOTEA",
+      "flight_number": "V72197",
       "status_code": "atterri",
-      "status_raw": "Arrivé 13h51",
-      "delayed": false,
-      "early": false
-    },
-    {
-      "destination": "BARI",
-      "date": "04/09",
-      "time": "14:35",
-      "airline": null,
-      "airline_raw": "MALTA MEDAIR",
-      "flight_number": "MT1212",
-      "status_code": "prevu",
-      "status_raw": "Prévu 16h10",
+      "status_raw": "Arrivé 17h36",
       "delayed": false,
       "early": false
     }
