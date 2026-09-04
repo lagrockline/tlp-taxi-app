@@ -1,7 +1,19 @@
 {
-  "scraped_at": "2026-09-04T02:31:29.409229+02:00",
+  "scraped_at": "2026-09-04T07:00:31.740333+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
+    {
+      "destination": "PARIS ORLY",
+      "date": "04/09",
+      "time": "06:45",
+      "airline": "Volotea",
+      "airline_raw": "VOLOTEA",
+      "flight_number": "V72180",
+      "status_code": null,
+      "status_raw": null,
+      "delayed": false,
+      "early": false
+    },
     {
       "destination": "ROME CIAMPINO",
       "date": "04/09",
@@ -9,6 +21,18 @@
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR4574",
+      "status_code": null,
+      "status_raw": null,
+      "delayed": false,
+      "early": false
+    },
+    {
+      "destination": "BARCELONE",
+      "date": "04/09",
+      "time": "10:45",
+      "airline": null,
+      "airline_raw": "LOT- POLISH AIRLINES",
+      "flight_number": "LO7113P",
       "status_code": null,
       "status_raw": null,
       "delayed": false,
@@ -59,6 +83,18 @@
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR4573",
+      "status_code": null,
+      "status_raw": null,
+      "delayed": false,
+      "early": false
+    },
+    {
+      "destination": "KATOWICE",
+      "date": "04/09",
+      "time": "10:05",
+      "airline": null,
+      "airline_raw": "LOT- POLISH AIRLINES",
+      "flight_number": "LO7112",
       "status_code": null,
       "status_raw": null,
       "delayed": false,
