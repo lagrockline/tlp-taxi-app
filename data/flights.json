@@ -1,19 +1,7 @@
 {
-  "scraped_at": "2026-09-05T11:22:34.029074+02:00",
+  "scraped_at": "2026-09-05T14:51:56.789994+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
-    {
-      "destination": "CATANE",
-      "date": "05/09",
-      "time": "10:05",
-      "airline": "Volotea",
-      "airline_raw": "VOLOTEA",
-      "flight_number": "V72198",
-      "status_code": "decolle",
-      "status_raw": "Décollé 10h16",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "MILAN BERGAME",
       "date": "05/09",
@@ -21,8 +9,8 @@
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR5109",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "decolle",
+      "status_raw": "Décollé 12h45",
       "delayed": false,
       "early": false
     },
@@ -45,9 +33,9 @@
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR521",
-      "status_code": null,
-      "status_raw": null,
-      "delayed": false,
+      "status_code": "retarde",
+      "status_raw": "Retardé",
+      "delayed": true,
       "early": false
     },
     {
@@ -89,26 +77,14 @@
   ],
   "arrivals": [
     {
-      "destination": "PARIS ORLY",
-      "date": "05/09",
-      "time": "09:40",
-      "airline": "Volotea",
-      "airline_raw": "VOLOTEA",
-      "flight_number": "V72181",
-      "status_code": "atterri",
-      "status_raw": "Arrivé 09h38",
-      "delayed": false,
-      "early": false
-    },
-    {
       "destination": "MILAN BERGAME",
       "date": "05/09",
       "time": "12:10",
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR5108",
-      "status_code": "prevu",
-      "status_raw": "Prévu 11h45",
+      "status_code": "atterri",
+      "status_raw": "Arrivé 11h55",
       "delayed": false,
       "early": false
     },
@@ -119,8 +95,8 @@
       "airline": null,
       "airline_raw": "NETJETS",
       "flight_number": null,
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "atterri",
+      "status_raw": "Atterri 14h40",
       "delayed": false,
       "early": false
     },
@@ -131,8 +107,8 @@
       "airline": "Volotea",
       "airline_raw": "VOLOTEA",
       "flight_number": "V72199",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "prevu",
+      "status_raw": "Prévu 15h35",
       "delayed": false,
       "early": false
     },
@@ -143,9 +119,9 @@
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR522",
-      "status_code": null,
-      "status_raw": null,
-      "delayed": false,
+      "status_code": "retarde",
+      "status_raw": "Retardé",
+      "delayed": true,
       "early": false
     },
     {
