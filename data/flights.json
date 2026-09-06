@@ -1,31 +1,7 @@
 {
-  "scraped_at": "2026-09-06T11:41:19.920237+02:00",
+  "scraped_at": "2026-09-06T15:08:09.311861+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
-    {
-      "destination": "BRUXELLES-CHARLEROI",
-      "date": "06/09",
-      "time": "09:35",
-      "airline": "Ryanair",
-      "airline_raw": "RYANAIR IRLANDE",
-      "flight_number": "FR6097",
-      "status_code": "decolle",
-      "status_raw": "Décollé 09h27",
-      "delayed": false,
-      "early": false
-    },
-    {
-      "destination": "LONDRES STANSTED",
-      "date": "06/09",
-      "time": "11:20",
-      "airline": "Ryanair",
-      "airline_raw": "RYANAIR IRLANDE",
-      "flight_number": "FR521",
-      "status_code": null,
-      "status_raw": null,
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "PARIS ORLY",
       "date": "06/09",
@@ -33,9 +9,21 @@
       "airline": "Volotea",
       "airline_raw": "VOLOTEA",
       "flight_number": "V72180",
-      "status_code": "retarde",
-      "status_raw": "Retardé",
-      "delayed": true,
+      "status_code": null,
+      "status_raw": null,
+      "delayed": false,
+      "early": false
+    },
+    {
+      "destination": "LONDRES STANSTED",
+      "date": "06/09",
+      "time": "16:45",
+      "airline": "Ryanair",
+      "airline_raw": "RYANAIR IRLANDE",
+      "flight_number": null,
+      "status_code": null,
+      "status_raw": null,
+      "delayed": false,
       "early": false
     },
     {
@@ -45,37 +33,13 @@
       "airline": "Volotea",
       "airline_raw": "VOLOTEA",
       "flight_number": "V72182",
-      "status_code": null,
-      "status_raw": null,
-      "delayed": false,
+      "status_code": "retarde",
+      "status_raw": "Retardé",
+      "delayed": true,
       "early": false
     }
   ],
   "arrivals": [
-    {
-      "destination": "BRUXELLES-CHARLEROI",
-      "date": "06/09",
-      "time": "09:10",
-      "airline": "Ryanair",
-      "airline_raw": "RYANAIR IRLANDE",
-      "flight_number": "FR6096",
-      "status_code": "atterri",
-      "status_raw": "Arrivé 08h44",
-      "delayed": false,
-      "early": false
-    },
-    {
-      "destination": "LONDRES STANSTED",
-      "date": "06/09",
-      "time": "10:50",
-      "airline": "Ryanair",
-      "airline_raw": "RYANAIR IRLANDE",
-      "flight_number": "FR522",
-      "status_code": "atterri",
-      "status_raw": "Arrivé 10h34",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "ROME CIAMPINO",
       "date": "06/09",
@@ -83,8 +47,8 @@
       "airline": null,
       "airline_raw": "NETJETS",
       "flight_number": null,
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "annule",
+      "status_raw": "Annulé",
       "delayed": false,
       "early": false
     },
@@ -95,8 +59,8 @@
       "airline": null,
       "airline_raw": "AIR X CHARTER",
       "flight_number": null,
-      "status_code": "prevu",
-      "status_raw": "Prévu 13h50",
+      "status_code": "atterri",
+      "status_raw": "Atterri 14h08",
       "delayed": false,
       "early": false
     },
@@ -107,9 +71,21 @@
       "airline": "Volotea",
       "airline_raw": "VOLOTEA",
       "flight_number": "V72189",
-      "status_code": "retarde",
-      "status_raw": "Retardé",
-      "delayed": true,
+      "status_code": "prevu",
+      "status_raw": "Prévu 15h15",
+      "delayed": false,
+      "early": false
+    },
+    {
+      "destination": "LONDRES STANSTED",
+      "date": "06/09",
+      "time": "14:35",
+      "airline": "Ryanair",
+      "airline_raw": "RYANAIR IRLANDE",
+      "flight_number": null,
+      "status_code": "prevu",
+      "status_raw": "Prévu 15h20",
+      "delayed": false,
       "early": false
     },
     {
@@ -119,9 +95,9 @@
       "airline": "Volotea",
       "airline_raw": "VOLOTEA",
       "flight_number": "V72181",
-      "status_code": null,
-      "status_raw": null,
-      "delayed": false,
+      "status_code": "retarde",
+      "status_raw": "Retardé",
+      "delayed": true,
       "early": false
     },
     {
