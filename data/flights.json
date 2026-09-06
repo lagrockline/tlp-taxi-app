@@ -1,45 +1,8 @@
 {
-  "scraped_at": "2026-09-06T20:18:49.907198+02:00",
+  "scraped_at": "2026-09-06T22:32:39.651283+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
-  "departures": [
-    {
-      "destination": "PARIS ORLY",
-      "date": "06/09",
-      "time": "18:35",
-      "airline": "Volotea",
-      "airline_raw": "VOLOTEA",
-      "flight_number": "V72182",
-      "status_code": "decolle",
-      "status_raw": "Décollé 20h10",
-      "delayed": false,
-      "early": false
-    }
-  ],
+  "departures": [],
   "arrivals": [
-    {
-      "destination": "PARIS ORLY",
-      "date": "06/09",
-      "time": "18:05",
-      "airline": "Volotea",
-      "airline_raw": "VOLOTEA",
-      "flight_number": "V72181",
-      "status_code": "atterri",
-      "status_raw": "Arrivé 19h22",
-      "delayed": false,
-      "early": false
-    },
-    {
-      "destination": "FARNBOROUGH",
-      "date": "06/09",
-      "time": "18:20",
-      "airline": null,
-      "airline_raw": "NETJETS",
-      "flight_number": null,
-      "status_code": null,
-      "status_raw": null,
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "PARIS ORLY",
       "date": "06/09",
@@ -47,9 +10,9 @@
       "airline": "Volotea",
       "airline_raw": "VOLOTEA",
       "flight_number": "V72183",
-      "status_code": "retarde",
-      "status_raw": "Retardé",
-      "delayed": true,
+      "status_code": "prevu",
+      "status_raw": "Prévu 23h00",
+      "delayed": false,
       "early": false
     }
   ]
