@@ -1,19 +1,7 @@
 {
-  "scraped_at": "2026-09-06T15:08:09.311861+02:00",
+  "scraped_at": "2026-09-06T18:13:16.384178+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
-    {
-      "destination": "PARIS ORLY",
-      "date": "06/09",
-      "time": "14:40",
-      "airline": "Volotea",
-      "airline_raw": "VOLOTEA",
-      "flight_number": "V72180",
-      "status_code": null,
-      "status_raw": null,
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "LONDRES STANSTED",
       "date": "06/09",
@@ -33,61 +21,13 @@
       "airline": "Volotea",
       "airline_raw": "VOLOTEA",
       "flight_number": "V72182",
-      "status_code": "retarde",
-      "status_raw": "Retardé",
-      "delayed": true,
+      "status_code": null,
+      "status_raw": null,
+      "delayed": false,
       "early": false
     }
   ],
   "arrivals": [
-    {
-      "destination": "ROME CIAMPINO",
-      "date": "06/09",
-      "time": "12:35",
-      "airline": null,
-      "airline_raw": "NETJETS",
-      "flight_number": null,
-      "status_code": "annule",
-      "status_raw": "Annulé",
-      "delayed": false,
-      "early": false
-    },
-    {
-      "destination": "AL MAKTOUM",
-      "date": "06/09",
-      "time": "13:30",
-      "airline": null,
-      "airline_raw": "AIR X CHARTER",
-      "flight_number": null,
-      "status_code": "atterri",
-      "status_raw": "Atterri 14h08",
-      "delayed": false,
-      "early": false
-    },
-    {
-      "destination": "NAPLES",
-      "date": "06/09",
-      "time": "13:50",
-      "airline": "Volotea",
-      "airline_raw": "VOLOTEA",
-      "flight_number": "V72189",
-      "status_code": "prevu",
-      "status_raw": "Prévu 15h15",
-      "delayed": false,
-      "early": false
-    },
-    {
-      "destination": "LONDRES STANSTED",
-      "date": "06/09",
-      "time": "14:35",
-      "airline": "Ryanair",
-      "airline_raw": "RYANAIR IRLANDE",
-      "flight_number": null,
-      "status_code": "prevu",
-      "status_raw": "Prévu 15h20",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "PARIS ORLY",
       "date": "06/09",
@@ -119,9 +59,9 @@
       "airline": "Volotea",
       "airline_raw": "VOLOTEA",
       "flight_number": "V72183",
-      "status_code": null,
-      "status_raw": null,
-      "delayed": false,
+      "status_code": "retarde",
+      "status_raw": "Retardé",
+      "delayed": true,
       "early": false
     }
   ]
