@@ -1,31 +1,7 @@
 {
-  "scraped_at": "2026-09-07T16:26:09.250890+02:00",
+  "scraped_at": "2026-09-07T20:48:22.593707+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
-    {
-      "destination": "BARI",
-      "date": "07/09",
-      "time": "13:50",
-      "airline": null,
-      "airline_raw": "MALTA MEDAIR",
-      "flight_number": "MT1211",
-      "status_code": "decolle",
-      "status_raw": "Décollé 14h35",
-      "delayed": false,
-      "early": false
-    },
-    {
-      "destination": "VARSOVIE- RADOM",
-      "date": "07/09",
-      "time": "14:45",
-      "airline": null,
-      "airline_raw": "ENTER AIR",
-      "flight_number": "E4511P",
-      "status_code": "decolle",
-      "status_raw": "Décollé 13h31",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "PARIS ORLY",
       "date": "07/09",
@@ -33,8 +9,8 @@
       "airline": "Volotea",
       "airline_raw": "VOLOTEA",
       "flight_number": "V72182",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "decolle",
+      "status_raw": "Décollé 18h40",
       "delayed": false,
       "early": false
     },
@@ -45,8 +21,8 @@
       "airline": null,
       "airline_raw": "ALBASTAR SPAIN",
       "flight_number": "AP7251",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "decolle",
+      "status_raw": "Décollé 18h50",
       "delayed": false,
       "early": false
     },
@@ -89,38 +65,14 @@
   ],
   "arrivals": [
     {
-      "destination": "ROME FIUMICINO",
-      "date": "07/09",
-      "time": "16:00",
-      "airline": "Volotea",
-      "airline_raw": "VOLOTEA",
-      "flight_number": "V72197",
-      "status_code": "prevu",
-      "status_raw": "Prévu 16h45",
-      "delayed": false,
-      "early": false
-    },
-    {
-      "destination": "MILAN MALPENSA",
-      "date": "07/09",
-      "time": "17:30",
-      "airline": null,
-      "airline_raw": "ALBASTAR SPAIN",
-      "flight_number": "AP951P",
-      "status_code": "prevu",
-      "status_raw": "Prévu 17h20",
-      "delayed": false,
-      "early": false
-    },
-    {
       "destination": "BARI",
       "date": "07/09",
       "time": "19:10",
       "airline": null,
       "airline_raw": "MALTA MEDAIR",
       "flight_number": "MT121P",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "atterri",
+      "status_raw": "Arrivé 19h45",
       "delayed": false,
       "early": false
     },
@@ -131,8 +83,8 @@
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR2370",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "atterri",
+      "status_raw": "Arrivé 20h21",
       "delayed": false,
       "early": false
     },
