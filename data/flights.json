@@ -1,43 +1,7 @@
 {
-  "scraped_at": "2026-09-07T20:48:22.593707+02:00",
+  "scraped_at": "2026-09-07T23:48:16.619609+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
-    {
-      "destination": "PARIS ORLY",
-      "date": "07/09",
-      "time": "18:25",
-      "airline": "Volotea",
-      "airline_raw": "VOLOTEA",
-      "flight_number": "V72182",
-      "status_code": "decolle",
-      "status_raw": "Décollé 18h40",
-      "delayed": false,
-      "early": false
-    },
-    {
-      "destination": "TURIN",
-      "date": "07/09",
-      "time": "19:00",
-      "airline": null,
-      "airline_raw": "ALBASTAR SPAIN",
-      "flight_number": "AP7251",
-      "status_code": "decolle",
-      "status_raw": "Décollé 18h50",
-      "delayed": false,
-      "early": false
-    },
-    {
-      "destination": "TURIN",
-      "date": "07/09",
-      "time": "20:00",
-      "airline": null,
-      "airline_raw": "MALTA MEDAIR",
-      "flight_number": "MT1212",
-      "status_code": null,
-      "status_raw": null,
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "CRACOVIE",
       "date": "07/09",
@@ -45,8 +9,8 @@
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR2371",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "decolle",
+      "status_raw": "Décollé 21h17",
       "delayed": false,
       "early": false
     },
@@ -57,37 +21,13 @@
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR5109",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "decolle",
+      "status_raw": "Décollé 23h23",
       "delayed": false,
       "early": false
     }
   ],
   "arrivals": [
-    {
-      "destination": "BARI",
-      "date": "07/09",
-      "time": "19:10",
-      "airline": null,
-      "airline_raw": "MALTA MEDAIR",
-      "flight_number": "MT121P",
-      "status_code": "atterri",
-      "status_raw": "Arrivé 19h45",
-      "delayed": false,
-      "early": false
-    },
-    {
-      "destination": "CRACOVIE",
-      "date": "07/09",
-      "time": "20:35",
-      "airline": "Ryanair",
-      "airline_raw": "RYANAIR IRLANDE",
-      "flight_number": "FR2370",
-      "status_code": "atterri",
-      "status_raw": "Arrivé 20h21",
-      "delayed": false,
-      "early": false
-    },
     {
       "destination": "PARIS ORLY",
       "date": "07/09",
@@ -95,8 +35,8 @@
       "airline": "Volotea",
       "airline_raw": "VOLOTEA",
       "flight_number": "V72183",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "atterri",
+      "status_raw": "Arrivé 22h08",
       "delayed": false,
       "early": false
     },
@@ -107,8 +47,8 @@
       "airline": "Ryanair",
       "airline_raw": "RYANAIR IRLANDE",
       "flight_number": "FR5108",
-      "status_code": null,
-      "status_raw": null,
+      "status_code": "atterri",
+      "status_raw": "Arrivé 22h40",
       "delayed": false,
       "early": false
     }
