@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-09-08T03:28:36.934302+02:00",
+  "scraped_at": "2026-09-08T08:24:05.974668+02:00",
   "source_url": "https://www.tlp.aeroport.fr/page/informations-vols-du-jour",
   "departures": [
     {
@@ -9,6 +9,18 @@
       "airline": "Volotea",
       "airline_raw": "VOLOTEA",
       "flight_number": "V72180",
+      "status_code": "decolle",
+      "status_raw": "Décollé 06h50",
+      "delayed": false,
+      "early": false
+    },
+    {
+      "destination": "DUBLIN",
+      "date": "08/09",
+      "time": "09:30",
+      "airline": null,
+      "airline_raw": "ALBASTAR SPAIN",
+      "flight_number": "AP7518",
       "status_code": null,
       "status_raw": null,
       "delayed": false,
