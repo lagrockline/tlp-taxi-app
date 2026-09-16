@@ -75,7 +75,112 @@ STATUS_KEYWORDS = {
 }
 
 
-async def fetch_html(url: str) -> str:
+# Nouvelles variables JS signalées par le site (identifiées dans les logs CI) :
+# tVolsDep, volsArr, volsDep
+# On les supporte explicitement comme source primaire, car le DOM visible n'est
+# plus toujours aux mêmes emplacements.
+
+
+def normalize_status(raw_value: str | None) -> tuple[str | None, str | None, bool]:
+    if raw_value is None:
+        return None, None, False
+
+    value = str(raw_value).strip().lower()
+    for keyword, code in STATUS_KEYWORDS.items():
+        if keyword in value:
+            return code, raw_value.strip(), code == "retarde"
+    return None, None, False
+
+
+def _first_present(mapping: dict, *keys: str):
+    for key in keys:
+        if key in mapping and mapping[key] not in (None, ""):
+            return mapping[key]
+    for key in keys:
+        if key.lower() in mapping and mapping[key.lower()] not in (None, ""):
+            return mapping[key.lower()]
+    return None
+
+
+def normalize_js_flights(raw_entries, *, kind: str) -> list[dict]:
+    if raw_entries is None:
+        return []
+    if isinstance(raw_entries, dict):
+        for candidate_key in ("items", "flights", "data", "vols", kind):
+            if candidate_key in raw_entries:
+                raw_entries = raw_entries[candidate_key]
+                break
+
+    if not isinstance(raw_entries, list):
+        return []
+
+    normalized = []
+    for entry in raw_entries:
+        if isinstance(entry, dict):
+            flight = {
+                "destination": _first_present(entry, "destination", "ville", "city", "dest", "nom", "airport"),
+                "date": _first_present(entry, "date", "jour", "day", "date_flight"),
+                "time": _first_present(entry, "time", "heure", "horaire", "heure_depart", "heure_arrivee"),
+                "airline": _first_present(entry, "airline", "compagnie", "carrier", "compagnie_nom"),
+                "airline_raw": _first_present(entry, "airline_raw", "compagnie_raw", "compagnie_txt", "airline_name"),
+                "flight_number": _first_present(entry, "flight_number", "numero", "nvol", "flight", "vol"),
+                "status_raw": _first_present(entry, "status_raw", "status", "etat", "state", "info"),
+            }
+            if flight["flight_number"] is None and isinstance(entry.get("numeroVol"), str):
+                flight["flight_number"] = entry.get("numeroVol")
+
+            if flight["airline"] is None and flight["airline_raw"] is not None:
+                flight["airline"] = flight["airline_raw"]
+
+            status_code, status_raw, delayed = normalize_status(flight["status_raw"])
+            flight["status_code"] = status_code
+            flight["status_raw"] = status_raw
+            flight["delayed"] = delayed
+            flight["early"] = False
+
+            raw_destination = flight.get("destination")
+            if isinstance(raw_destination, str):
+                flight["destination"] = raw_destination.strip()
+            if isinstance(flight.get("date"), str):
+                flight["date"] = flight["date"].strip()
+            if isinstance(flight.get("time"), str):
+                flight["time"] = flight["time"].strip()
+            if isinstance(flight.get("flight_number"), str):
+                flight["flight_number"] = flight["flight_number"].strip()
+            if flight.get("airline") is not None and isinstance(flight["airline"], str):
+                flight["airline"] = flight["airline"].strip()
+            if flight.get("airline_raw") is not None and isinstance(flight["airline_raw"], str):
+                flight["airline_raw"] = flight["airline_raw"].strip()
+            normalized.append(flight)
+            continue
+
+        if isinstance(entry, (list, tuple)) and len(entry) >= 4:
+            # Cas de tableaux de valeurs simples: [destination, date, time, airline, flight_number, status]
+            destination = entry[0] if entry[0] not in (None, "") else None
+            date_value = entry[1] if len(entry) > 1 else None
+            time_value = entry[2] if len(entry) > 2 else None
+            airline_value = entry[3] if len(entry) > 3 else None
+            flight_number = entry[4] if len(entry) > 4 else None
+            status_value = entry[5] if len(entry) > 5 else None
+            normalized.append(
+                {
+                    "destination": destination,
+                    "date": date_value,
+                    "time": time_value,
+                    "airline": airline_value,
+                    "airline_raw": airline_value,
+                    "flight_number": flight_number,
+                    "status_code": None,
+                    "status_raw": None,
+                    "delayed": False,
+                    "early": False,
+                }
+            )
+
+    return normalized
+
+
+async def fetch_html(url: str) -> tuple[str, dict]:
     """Fetch HTML using Playwright to execute JavaScript."""
     async with async_playwright() as p:
         browser = await p.chromium.launch()
@@ -87,8 +192,26 @@ async def fetch_html(url: str) -> str:
             print(f"ERREUR: Erreur lors de la navigation vers {url}: {e}", file=sys.stderr)
             await browser.close()
             raise
-        
-        # Wait for flight data to be present - try multiple selectors
+
+        js_payload = await page.evaluate(
+            """
+            () => {
+                const names = ['tVolsDep', 'volsDep', 'volsArr'];
+                const out = {};
+                for (const name of names) {
+                    try {
+                        if (typeof window[name] !== 'undefined') {
+                            out[name] = JSON.parse(JSON.stringify(window[name]));
+                        }
+                    } catch (e) {
+                        out[name] = null;
+                    }
+                }
+                return out;
+            }
+            """
+        )
+
         selector_found = False
         selectors_to_try = [
             "text=Prochains départs",
@@ -96,7 +219,7 @@ async def fetch_html(url: str) -> str:
             "text=Arrivées",
             "text=/.*vol.*",
         ]
-        
+
         for selector in selectors_to_try:
             try:
                 await page.wait_for_selector(selector, timeout=5000)
@@ -105,22 +228,21 @@ async def fetch_html(url: str) -> str:
                 break
             except Exception:
                 continue
-        
+
         if not selector_found:
             print(f"ATTENTION: Aucun des sélecteurs n'a pu être trouvé", file=sys.stderr)
-        
+
         html = await page.content()
-        
-        # Save debug HTML for inspection
+
         try:
             DEBUG_PATH.parent.mkdir(parents=True, exist_ok=True)
             DEBUG_PATH.write_text(html, encoding="utf-8")
             print(f"DEBUG: HTML sauvegardé dans {DEBUG_PATH}", file=sys.stderr)
         except Exception as e:
             print(f"ERREUR: Impossible de sauvegarder le debug HTML: {e}", file=sys.stderr)
-        
+
         await browser.close()
-    return html
+    return html, js_payload
 
 
 def extract_lines(html: str) -> list[str]:
@@ -213,15 +335,10 @@ def parse_flight_block(lines: list[str]) -> list[dict]:
                 airline_name = display_name
                 break
 
-        # Numéro de vol : premier token alphanumérique du type lettres+chiffres
-        # en début de ligne (ex: "V72182", "FR521").
         flight_number = None
         flight_num_match = re.match(r"\s*([A-Z0-9]{2,3}\d{2,5}[A-Z]?)\b", flight_line)
         if flight_num_match:
             flight_number = flight_num_match.group(1)
-            # On retire un éventuel suffixe "P" isolé collé au numéro (ex:
-            # "V77784P"), qui correspond à un doublon de rendu plutôt qu'à
-            # un vrai numéro de vol différent. Voir dédoublonnage plus bas.
 
         status_raw = None
         status_code = None
@@ -236,8 +353,6 @@ def parse_flight_block(lines: list[str]) -> list[dict]:
                 early = code == "avance"
                 break
 
-        # Clé de dédoublonnage : numéro de vol sans un éventuel "P" isolé en
-        # toute fin (artefact de duplication constaté sur le site).
         dedupe_flight_number = flight_number
         if dedupe_flight_number and dedupe_flight_number.endswith("P") and len(dedupe_flight_number) > 1:
             without_p = dedupe_flight_number[:-1]
@@ -261,8 +376,6 @@ def parse_flight_block(lines: list[str]) -> list[dict]:
         )
         i += 5
 
-    # Dédoublonnage : on garde une seule entrée par clé, en préférant celle
-    # qui porte un statut (plus d'information) si les autres n'en ont pas.
     deduped: dict[tuple, dict] = {}
     for f in flights:
         key = f.pop("_dedupe_key")
@@ -274,10 +387,21 @@ def parse_flight_block(lines: list[str]) -> list[dict]:
     return list(deduped.values())
 
 
-def build_payload(html: str) -> dict:
+def build_payload(html: str, js_payload: dict | None = None) -> dict:
+    # Priorité 1 : variables JS globales du site (on a vu tVolsDep / volsDep / volsArr)
+    if js_payload:
+        departures = normalize_js_flights(js_payload.get("volsDep") or js_payload.get("tVolsDep"), kind="departures")
+        arrivals = normalize_js_flights(js_payload.get("volsArr"), kind="arrivals")
+        if departures or arrivals:
+            return {
+                "scraped_at": datetime.now(tz=PARIS_TZ).isoformat(),
+                "source_url": SOURCE_URL,
+                "departures": departures,
+                "arrivals": arrivals,
+            }
+
     lines = extract_lines(html)
-    
-    # Debug: afficher les premières lignes pour diagnostiquer
+
     print(f"DEBUG: Nombre total de lignes extraites: {len(lines)}", file=sys.stderr)
     if lines:
         print(f"DEBUG: Premières 20 lignes:", file=sys.stderr)
@@ -297,14 +421,12 @@ def build_payload(html: str) -> dict:
         start_marker="Prochaines arrivées",
         end_markers=["Rejoignez-nous sur...", "Rejoignez-", "Rejoignez-nous"],
     )
-    
+
     print(f"DEBUG: Lignes de départs trouvées: {len(departures_lines)}", file=sys.stderr)
     print(f"DEBUG: Lignes d'arrivées trouvées: {len(arrivals_lines)}", file=sys.stderr)
-    
+
     if not departures_lines and not arrivals_lines:
         print(f"DEBUG: Cherchant marqueurs alternatifs...", file=sys.stderr)
-        # Chercher d'autres marqueurs si les premiers ne sont pas trouvés
-        print(f"DEBUG: Toutes les lignes contenant 'départ' ou 'arrivée':", file=sys.stderr)
         for i, line in enumerate(lines):
             if 'départ' in line.lower() or 'arrivée' in line.lower() or 'vol' in line.lower():
                 print(f"  {i}: {line}", file=sys.stderr)
@@ -360,27 +482,25 @@ def compute_alerts(old_payload: dict | None, new_payload: dict) -> list[dict]:
 
 async def main() -> int:
     try:
-        html = await fetch_html(SOURCE_URL)
+        html, js_payload = await fetch_html(SOURCE_URL)
     except Exception as exc:
         print(f"ERREUR: impossible de récupérer la page source : {exc}", file=sys.stderr)
         return 1
 
-    payload = build_payload(html)
+    payload = build_payload(html, js_payload)
 
     if not payload["departures"] and not payload["arrivals"]:
-        # Avant de déclarer une erreur complète, vérifier si on a un ancien fichier valide
         print(
             "ATTENTION: aucun vol détecté — la structure de la page a peut-être "
             "changé, ou son contenu n'a pas pu être chargé. Vérifier l'HTML sauvegardé "
             "dans _debug_page.html",
             file=sys.stderr,
         )
-        
-        # Si on a un ancien fichier, le conserver plutôt que l'écraser avec un résultat vide
+
         if OUTPUT_PATH.exists():
             print("INFO: Fichier existant conservé, retour de la dernière donnée valide.", file=sys.stderr)
             return 0
-        
+
         return 2
 
     old_payload = None
@@ -397,8 +517,6 @@ async def main() -> int:
         json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8"
     )
 
-    # Fichier éphémère (non commité) utilisé par send_push.py dans la même
-    # exécution du workflow, pour savoir quelles notifications envoyer.
     alerts_path = OUTPUT_PATH.parent / "_pending_alerts.json"
     alerts_path.write_text(json.dumps(alerts, ensure_ascii=False, indent=2), encoding="utf-8")
 
