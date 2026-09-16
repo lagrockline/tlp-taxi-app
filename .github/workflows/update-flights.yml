@@ -2,13 +2,17 @@ name: Mise à jour des vols
 
 on:
   schedule:
-    # Toutes les 5 minutes. GitHub peut retarder légèrement l'exécution
-    # en période de forte charge sur ses runners.
     - cron: '*/5 * * * *'
-  workflow_dispatch: {}  # permet de déclencher manuellement depuis l'onglet Actions
+  workflow_dispatch: {}
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
 
 jobs:
   scrape:
@@ -23,7 +27,9 @@ jobs:
           python-version: '3.12'
 
       - name: Installer les dépendances
-        run: pip install playwright beautifulsoup4 && playwright install chromium
+        run: |
+          pip install playwright beautifulsoup4
+          playwright install --with-deps chromium
 
       - name: Lancer le scraper
         run: python scripts/scrape.py
@@ -33,5 +39,29 @@ jobs:
           git config user.name "tlp-taxi-bot"
           git config user.email "actions@users.noreply.github.com"
           git add data/flights.json
-          git diff --cached --quiet || git commit -m "Mise à jour des vols $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
-          git push
+          if git diff --cached --quiet; then
+            echo "Aucune modification des vols"
+          else
+            git commit -m "Mise à jour des vols $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+            git push
+          fi
+
+      - name: Configurer GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Publier le site sur GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+  deploy:
+    needs: scrape
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Déployer sur GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
