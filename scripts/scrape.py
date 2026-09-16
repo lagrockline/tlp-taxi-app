@@ -80,9 +80,20 @@ async def fetch_html(url: str) -> str:
         browser = await p.chromium.launch()
         page = await browser.new_page()
         await page.set_extra_http_headers(HEADERS)
-        await page.goto(url, wait_until="networkidle", timeout=30000)
+        try:
+            await page.goto(url, wait_until="networkidle", timeout=30000)
+        except Exception as e:
+            print(f"ERREUR: Erreur lors de la navigation vers {url}: {e}", file=sys.stderr)
+            await browser.close()
+            raise
+        
         # Wait for flight data to be present
-        await page.wait_for_selector("text=Prochains départs", timeout=10000)
+        try:
+            await page.wait_for_selector("text=Prochains départs", timeout=10000)
+        except Exception as e:
+            print(f"ATTENTION: Le sélecteur 'Prochains départs' n'a pas pu être trouvé dans le délai imparti: {e}", file=sys.stderr)
+            # Ne pas lever l'exception ici - on continue pour voir ce qui est chargé
+        
         html = await page.content()
         await browser.close()
     return html
@@ -241,6 +252,11 @@ def parse_flight_block(lines: list[str]) -> list[dict]:
 
 def build_payload(html: str) -> dict:
     lines = extract_lines(html)
+    
+    # Debug: afficher les premières lignes pour diagnostiquer
+    print(f"DEBUG: Nombre total de lignes extraites: {len(lines)}", file=sys.stderr)
+    if lines:
+        print(f"DEBUG: Premières lignes: {lines[:10]}", file=sys.stderr)
 
     departures_lines = slice_section(
         lines,
@@ -252,6 +268,9 @@ def build_payload(html: str) -> dict:
         start_marker="Prochaines arrivées",
         end_markers=["Rejoignez-nous sur...", "Rejoignez-", "Rejoignez-nous"],
     )
+    
+    print(f"DEBUG: Lignes de départs trouvées: {len(departures_lines)}", file=sys.stderr)
+    print(f"DEBUG: Lignes d'arrivées trouvées: {len(arrivals_lines)}", file=sys.stderr)
 
     departures = parse_flight_block(departures_lines)
     arrivals = parse_flight_block(arrivals_lines)
@@ -312,14 +331,19 @@ async def main() -> int:
     payload = build_payload(html)
 
     if not payload["departures"] and not payload["arrivals"]:
-        # On évite d'écraser un JSON valide précédent avec un résultat vide,
-        # ce qui indiquerait probablement que la page a changé de structure
-        # — ou que son contenu n'a pas pu être chargé.
+        # Avant de déclarer une erreur complète, vérifier si on a un ancien fichier valide
         print(
             "ATTENTION: aucun vol détecté — la structure de la page a peut-être "
-            "changé, ou son contenu n'a pas pu être chargé.",
+            "changé, ou son contenu n'a pas pu être chargé. Vérifier que le page source "
+            "est accessible et que la structure HTML n'a pas changé.",
             file=sys.stderr,
         )
+        
+        # Si on a un ancien fichier, le conserver plutôt que l'écraser avec un résultat vide
+        if OUTPUT_PATH.exists():
+            print("INFO: Fichier existant conservé, retour de la dernière donnée valide.", file=sys.stderr)
+            return 0
+        
         return 2
 
     old_payload = None
