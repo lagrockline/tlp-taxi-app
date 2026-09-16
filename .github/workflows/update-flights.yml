@@ -23,7 +23,7 @@ jobs:
           python-version: '3.12'
 
       - name: Installer les dépendances
-        run: pip install requests beautifulsoup4
+        run: pip install playwright beautifulsoup4 && playwright install chromium
 
       - name: Lancer le scraper
         run: python scripts/scrape.py
