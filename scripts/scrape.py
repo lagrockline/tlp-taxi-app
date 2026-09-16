@@ -36,6 +36,7 @@ from bs4 import BeautifulSoup
 
 SOURCE_URL = "https://www.tlp.aeroport.fr/page/informations-vols-du-jour"
 OUTPUT_PATH = Path(__file__).resolve().parent.parent / "data" / "flights.json"
+DEBUG_PATH = Path(__file__).resolve().parent.parent / "data" / "_debug_page.html"
 
 # Paris est en UTC+1 (hiver) / UTC+2 (été) ; on stocke en heure locale Paris approx.
 PARIS_TZ = timezone(timedelta(hours=2))
@@ -87,14 +88,37 @@ async def fetch_html(url: str) -> str:
             await browser.close()
             raise
         
-        # Wait for flight data to be present
-        try:
-            await page.wait_for_selector("text=Prochains départs", timeout=10000)
-        except Exception as e:
-            print(f"ATTENTION: Le sélecteur 'Prochains départs' n'a pas pu être trouvé dans le délai imparti: {e}", file=sys.stderr)
-            # Ne pas lever l'exception ici - on continue pour voir ce qui est chargé
+        # Wait for flight data to be present - try multiple selectors
+        selector_found = False
+        selectors_to_try = [
+            "text=Prochains départs",
+            "text=Départs",
+            "text=Arrivées",
+            "text=/.*vol.*",
+        ]
+        
+        for selector in selectors_to_try:
+            try:
+                await page.wait_for_selector(selector, timeout=5000)
+                print(f"INFO: Sélecteur trouvé: {selector}", file=sys.stderr)
+                selector_found = True
+                break
+            except Exception:
+                continue
+        
+        if not selector_found:
+            print(f"ATTENTION: Aucun des sélecteurs n'a pu être trouvé", file=sys.stderr)
         
         html = await page.content()
+        
+        # Save debug HTML for inspection
+        try:
+            DEBUG_PATH.parent.mkdir(parents=True, exist_ok=True)
+            DEBUG_PATH.write_text(html, encoding="utf-8")
+            print(f"DEBUG: HTML sauvegardé dans {DEBUG_PATH}", file=sys.stderr)
+        except Exception as e:
+            print(f"ERREUR: Impossible de sauvegarder le debug HTML: {e}", file=sys.stderr)
+        
         await browser.close()
     return html
 
@@ -256,7 +280,12 @@ def build_payload(html: str) -> dict:
     # Debug: afficher les premières lignes pour diagnostiquer
     print(f"DEBUG: Nombre total de lignes extraites: {len(lines)}", file=sys.stderr)
     if lines:
-        print(f"DEBUG: Premières lignes: {lines[:10]}", file=sys.stderr)
+        print(f"DEBUG: Premières 20 lignes:", file=sys.stderr)
+        for i, line in enumerate(lines[:20]):
+            print(f"  {i}: {line}", file=sys.stderr)
+        print(f"DEBUG: Dernières 10 lignes:", file=sys.stderr)
+        for i, line in enumerate(lines[-10:], start=len(lines)-10):
+            print(f"  {i}: {line}", file=sys.stderr)
 
     departures_lines = slice_section(
         lines,
@@ -271,6 +300,14 @@ def build_payload(html: str) -> dict:
     
     print(f"DEBUG: Lignes de départs trouvées: {len(departures_lines)}", file=sys.stderr)
     print(f"DEBUG: Lignes d'arrivées trouvées: {len(arrivals_lines)}", file=sys.stderr)
+    
+    if not departures_lines and not arrivals_lines:
+        print(f"DEBUG: Cherchant marqueurs alternatifs...", file=sys.stderr)
+        # Chercher d'autres marqueurs si les premiers ne sont pas trouvés
+        print(f"DEBUG: Toutes les lignes contenant 'départ' ou 'arrivée':", file=sys.stderr)
+        for i, line in enumerate(lines):
+            if 'départ' in line.lower() or 'arrivée' in line.lower() or 'vol' in line.lower():
+                print(f"  {i}: {line}", file=sys.stderr)
 
     departures = parse_flight_block(departures_lines)
     arrivals = parse_flight_block(arrivals_lines)
@@ -334,8 +371,8 @@ async def main() -> int:
         # Avant de déclarer une erreur complète, vérifier si on a un ancien fichier valide
         print(
             "ATTENTION: aucun vol détecté — la structure de la page a peut-être "
-            "changé, ou son contenu n'a pas pu être chargé. Vérifier que le page source "
-            "est accessible et que la structure HTML n'a pas changé.",
+            "changé, ou son contenu n'a pas pu être chargé. Vérifier l'HTML sauvegardé "
+            "dans _debug_page.html",
             file=sys.stderr,
         )
         
