@@ -24,13 +24,14 @@ Sortie : data/flights.json avec la structure :
 }
 """
 
+import asyncio
 import json
 import re
 import sys
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
-import requests
+from playwright.async_api import async_playwright
 from bs4 import BeautifulSoup
 
 SOURCE_URL = "https://www.tlp.aeroport.fr/page/informations-vols-du-jour"
@@ -73,10 +74,18 @@ STATUS_KEYWORDS = {
 }
 
 
-def fetch_html(url: str) -> str:
-    resp = requests.get(url, headers=HEADERS, timeout=20)
-    resp.raise_for_status()
-    return resp.text
+async def fetch_html(url: str) -> str:
+    """Fetch HTML using Playwright to execute JavaScript."""
+    async with async_playwright() as p:
+        browser = await p.chromium.launch()
+        page = await browser.new_page()
+        await page.set_extra_http_headers(HEADERS)
+        await page.goto(url, wait_until="networkidle", timeout=30000)
+        # Wait for flight data to be present
+        await page.wait_for_selector("text=Prochains départs", timeout=10000)
+        html = await page.content()
+        await browser.close()
+    return html
 
 
 def extract_lines(html: str) -> list[str]:
@@ -293,10 +302,10 @@ def compute_alerts(old_payload: dict | None, new_payload: dict) -> list[dict]:
     return alerts
 
 
-def main() -> int:
+async def main() -> int:
     try:
-        html = fetch_html(SOURCE_URL)
-    except requests.RequestException as exc:
+        html = await fetch_html(SOURCE_URL)
+    except Exception as exc:
         print(f"ERREUR: impossible de récupérer la page source : {exc}", file=sys.stderr)
         return 1
 
@@ -305,57 +314,12 @@ def main() -> int:
     if not payload["departures"] and not payload["arrivals"]:
         # On évite d'écraser un JSON valide précédent avec un résultat vide,
         # ce qui indiquerait probablement que la page a changé de structure
-        # — ou que son contenu est chargé en JavaScript après coup (dans ce
-        # cas, `requests` ne voit qu'une coquille HTML vide).
+        # — ou que son contenu n'a pas pu être chargé.
         print(
             "ATTENTION: aucun vol détecté — la structure de la page a peut-être "
-            "changé, ou son contenu est chargé dynamiquement en JavaScript.",
+            "changé, ou son contenu n'a pas pu être chargé.",
             file=sys.stderr,
         )
-        print(f"Taille du HTML récupéré : {len(html)} caractères", file=sys.stderr)
-        print("--- Premiers 1000 caractères du HTML reçu ---", file=sys.stderr)
-        print(html[:1000], file=sys.stderr)
-        print("--- Fin de l'extrait ---", file=sys.stderr)
-
-        lines_debug = extract_lines(html)
-        print(f"Nombre de lignes de texte extraites : {len(lines_debug)}", file=sys.stderr)
-        print("--- Premières 40 lignes de texte extraites ---", file=sys.stderr)
-        for l in lines_debug[:40]:
-            print(f"  {l!r}", file=sys.stderr)
-        print("--- Fin des lignes ---", file=sys.stderr)
-
-        found_marker = "Prochains départs" in lines_debug
-        print(f"'Prochains départs' trouvé dans le texte : {found_marker}", file=sys.stderr)
-
-        if found_marker:
-            idx = lines_debug.index("Prochains départs")
-            print("--- 40 lignes autour du marqueur 'Prochains départs' ---", file=sys.stderr)
-            for l in lines_debug[max(0, idx - 5):idx + 40]:
-                print(f"  {l!r}", file=sys.stderr)
-            print("--- Fin du contexte ---", file=sys.stderr)
-
-        # Recherche d'indices d'un chargement AJAX (appel API séparé) dans le
-        # HTML brut : URLs contenant "api", "vol", "flight", ou appels
-        # fetch/ajax/axios visibles dans les <script> inline.
-        print("--- Recherche d'indices d'appel AJAX/API dans le HTML brut ---", file=sys.stderr)
-        candidate_patterns = [
-            r'["\']([^"\']*(?:api|flight|vols?|json)[^"\']*)["\']',
-        ]
-        seen = set()
-        for pattern in candidate_patterns:
-            for m in re.finditer(pattern, html, re.IGNORECASE):
-                val = m.group(1)
-                if (
-                    val not in seen
-                    and 3 < len(val) < 150
-                    and not val.startswith("data:")
-                    and any(c.isalpha() for c in val)
-                ):
-                    seen.add(val)
-        for val in sorted(seen)[:60]:
-            print(f"  {val!r}", file=sys.stderr)
-        print(f"--- Fin ({len(seen)} correspondances au total) ---", file=sys.stderr)
-
         return 2
 
     old_payload = None
@@ -383,4 +347,4 @@ def main() -> int:
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    raise SystemExit(asyncio.run(main()))
